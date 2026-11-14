@@ -1,0 +1,653 @@
+{
+  "frames": {
+    "monster-golem-death-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-01": {
+      "frame": {
+        "x": 288,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-02": {
+      "frame": {
+        "x": 576,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-03": {
+      "frame": {
+        "x": 864,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-04": {
+      "frame": {
+        "x": 1152,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-05": {
+      "frame": {
+        "x": 1440,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-06": {
+      "frame": {
+        "x": 1728,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-07": {
+      "frame": {
+        "x": 2016,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-08": {
+      "frame": {
+        "x": 0,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-09": {
+      "frame": {
+        "x": 288,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-10": {
+      "frame": {
+        "x": 576,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-11": {
+      "frame": {
+        "x": 864,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-12": {
+      "frame": {
+        "x": 1152,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-13": {
+      "frame": {
+        "x": 1440,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-14": {
+      "frame": {
+        "x": 1728,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-15": {
+      "frame": {
+        "x": 2016,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-16": {
+      "frame": {
+        "x": 0,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-17": {
+      "frame": {
+        "x": 288,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-18": {
+      "frame": {
+        "x": 576,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-19": {
+      "frame": {
+        "x": 864,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-20": {
+      "frame": {
+        "x": 1152,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-21": {
+      "frame": {
+        "x": 1440,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-22": {
+      "frame": {
+        "x": 1728,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    },
+    "monster-golem-death-23": {
+      "frame": {
+        "x": 2016,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 67
+    }
+  },
+  "animations": {
+    "monster-golem-death": [
+      "monster-golem-death-00",
+      "monster-golem-death-01",
+      "monster-golem-death-02",
+      "monster-golem-death-03",
+      "monster-golem-death-04",
+      "monster-golem-death-05",
+      "monster-golem-death-06",
+      "monster-golem-death-07",
+      "monster-golem-death-08",
+      "monster-golem-death-09",
+      "monster-golem-death-10",
+      "monster-golem-death-11",
+      "monster-golem-death-12",
+      "monster-golem-death-13",
+      "monster-golem-death-14",
+      "monster-golem-death-15",
+      "monster-golem-death-16",
+      "monster-golem-death-17",
+      "monster-golem-death-18",
+      "monster-golem-death-19",
+      "monster-golem-death-20",
+      "monster-golem-death-21",
+      "monster-golem-death-22",
+      "monster-golem-death-23"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-golem-death.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2304,
+      "h": 903
+    },
+    "scale": "1",
+    "cell": {
+      "w": 288,
+      "h": 301
+    },
+    "fps": 15,
+    "loop": false,
+    "pivot_px": [
+      149,
+      271
+    ],
+    "license": "CC0-1.0"
+  }
+}

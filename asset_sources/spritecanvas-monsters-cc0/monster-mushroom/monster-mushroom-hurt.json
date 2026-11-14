@@ -1,0 +1,315 @@
+{
+  "frames": {
+    "monster-mushroom-hurt-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-01": {
+      "frame": {
+        "x": 221,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-02": {
+      "frame": {
+        "x": 442,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-03": {
+      "frame": {
+        "x": 663,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-04": {
+      "frame": {
+        "x": 884,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-05": {
+      "frame": {
+        "x": 1105,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-06": {
+      "frame": {
+        "x": 1326,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-07": {
+      "frame": {
+        "x": 1547,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-08": {
+      "frame": {
+        "x": 0,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-09": {
+      "frame": {
+        "x": 221,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    },
+    "monster-mushroom-hurt-10": {
+      "frame": {
+        "x": 442,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 56
+    }
+  },
+  "animations": {
+    "monster-mushroom-hurt": [
+      "monster-mushroom-hurt-00",
+      "monster-mushroom-hurt-01",
+      "monster-mushroom-hurt-02",
+      "monster-mushroom-hurt-03",
+      "monster-mushroom-hurt-04",
+      "monster-mushroom-hurt-05",
+      "monster-mushroom-hurt-06",
+      "monster-mushroom-hurt-07",
+      "monster-mushroom-hurt-08",
+      "monster-mushroom-hurt-09",
+      "monster-mushroom-hurt-10"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-mushroom-hurt.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1768,
+      "h": 312
+    },
+    "scale": "1",
+    "cell": {
+      "w": 221,
+      "h": 156
+    },
+    "fps": 18,
+    "loop": false,
+    "pivot_px": [
+      102,
+      143
+    ],
+    "license": "CC0-1.0"
+  }
+}

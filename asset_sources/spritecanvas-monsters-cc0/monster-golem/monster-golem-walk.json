@@ -1,0 +1,549 @@
+{
+  "frames": {
+    "monster-golem-walk-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-01": {
+      "frame": {
+        "x": 288,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-02": {
+      "frame": {
+        "x": 576,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-03": {
+      "frame": {
+        "x": 864,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-04": {
+      "frame": {
+        "x": 1152,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-05": {
+      "frame": {
+        "x": 1440,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-06": {
+      "frame": {
+        "x": 1728,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-07": {
+      "frame": {
+        "x": 2016,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-08": {
+      "frame": {
+        "x": 0,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-09": {
+      "frame": {
+        "x": 288,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-10": {
+      "frame": {
+        "x": 576,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-11": {
+      "frame": {
+        "x": 864,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-12": {
+      "frame": {
+        "x": 1152,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-13": {
+      "frame": {
+        "x": 1440,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-14": {
+      "frame": {
+        "x": 1728,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-15": {
+      "frame": {
+        "x": 2016,
+        "y": 301,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-16": {
+      "frame": {
+        "x": 0,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-17": {
+      "frame": {
+        "x": 288,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-18": {
+      "frame": {
+        "x": 576,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    },
+    "monster-golem-walk-19": {
+      "frame": {
+        "x": 864,
+        "y": 602,
+        "w": 288,
+        "h": 301
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 288,
+        "h": 301
+      },
+      "sourceSize": {
+        "w": 288,
+        "h": 301
+      },
+      "pivot": {
+        "x": 0.5174,
+        "y": 0.9003
+      },
+      "duration": 100
+    }
+  },
+  "animations": {
+    "monster-golem-walk": [
+      "monster-golem-walk-00",
+      "monster-golem-walk-01",
+      "monster-golem-walk-02",
+      "monster-golem-walk-03",
+      "monster-golem-walk-04",
+      "monster-golem-walk-05",
+      "monster-golem-walk-06",
+      "monster-golem-walk-07",
+      "monster-golem-walk-08",
+      "monster-golem-walk-09",
+      "monster-golem-walk-10",
+      "monster-golem-walk-11",
+      "monster-golem-walk-12",
+      "monster-golem-walk-13",
+      "monster-golem-walk-14",
+      "monster-golem-walk-15",
+      "monster-golem-walk-16",
+      "monster-golem-walk-17",
+      "monster-golem-walk-18",
+      "monster-golem-walk-19"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-golem-walk.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2304,
+      "h": 903
+    },
+    "scale": "1",
+    "cell": {
+      "w": 288,
+      "h": 301
+    },
+    "fps": 10,
+    "loop": true,
+    "pivot_px": [
+      149,
+      271
+    ],
+    "license": "CC0-1.0"
+  }
+}

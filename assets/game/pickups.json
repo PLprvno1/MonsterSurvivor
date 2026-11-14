@@ -1,0 +1,11 @@
+{
+  "source": "Kenney Roguelike pack (CC0), 16px cells / 1px margin",
+  "texture": "game/pickups.png",
+  "regions": {
+    "pickup_damage": [2,2,16,16],
+    "pickup_health": [22,2,16,16],
+    "pickup_speed": [42,2,16,16],
+    "pickup_drop": [62,2,16,16]
+  },
+  "sourceCells": [[49,21],[49,18],[49,20],[54,14]]
+}

@@ -1,0 +1,95 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Existing libGDX Theme (Kept untouched to prevent breaking AndroidLauncher) -->
+    <style name="GdxTheme" parent="android:Theme.Material.Light.NoActionBar.Fullscreen">
+        <item name="android:colorBackground">@color/background</item>
+    </style>
+
+    <!-- Base Native UI Theme -->
+    <style name="Theme.MonsterSurvivor.Base" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="android:fontFamily">sans-serif-medium</item>
+        <item name="alertDialogTheme">@style/Theme.MonsterSurvivor.Dialog</item>
+    </style>
+
+    <!-- Forest Theme (Default) -->
+    <style name="Theme.MonsterSurvivor.Forest" parent="Theme.MonsterSurvivor.Base">
+        <item name="colorPrimary">@color/forest_primary</item>
+        <item name="colorPrimaryDark">@color/forest_primary_dark</item>
+        <item name="colorAccent">@color/gold_bright</item>
+        <item name="android:colorBackground">@color/bg_dark_forest</item>
+        <item name="android:windowBackground">@drawable/bg_fantasy_forest</item>
+    </style>
+
+    <!-- Dark Magic Theme -->
+    <style name="Theme.MonsterSurvivor.Dark" parent="Theme.MonsterSurvivor.Base">
+        <item name="colorPrimary">@color/magic_primary</item>
+        <item name="colorPrimaryDark">@color/magic_primary_dark</item>
+        <item name="colorAccent">@color/magic_accent</item>
+        <item name="android:colorBackground">@color/bg_dark_magic</item>
+        <item name="android:windowBackground">@drawable/bg_fantasy_dark</item>
+    </style>
+
+    <!-- Fantasy Dialog Theme -->
+    <style name="Theme.MonsterSurvivor.Dialog" parent="Theme.MaterialComponents.Dialog.Alert">
+        <item name="android:background">@drawable/panel_fantasy_frame</item>
+        <item name="android:textColorPrimary">@color/text_primary</item>
+        <item name="android:textColorSecondary">@color/text_secondary</item>
+        <item name="colorAccent">@color/gold_bright</item>
+    </style>
+
+    <!-- Fantasy Toolbar Style -->
+    <style name="Widget.MonsterSurvivor.Toolbar" parent="Widget.MaterialComponents.Toolbar">
+        <item name="titleTextColor">@color/gold_bright</item>
+        <item name="subtitleTextColor">@color/text_secondary</item>
+        <item name="android:background">@color/forest_primary_dark</item>
+        <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Dark</item>
+    </style>
+
+    <!-- Pixel Fantasy Primary Gold Button -->
+    <style name="Widget.MonsterSurvivor.Button.Gold" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/btn_fantasy_gold</item>
+        <item name="android:textColor">#1A1002</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_header</item>
+        <item name="android:shadowColor">#FFEEB2</item>
+        <item name="android:shadowDx">0</item>
+        <item name="android:shadowDy">1</item>
+        <item name="android:shadowRadius">1</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="backgroundTint" tools:ignore="PrivateResource">@null</item>
+    </style>
+
+    <!-- Pixel Fantasy Green Primary Button -->
+    <style name="Widget.MonsterSurvivor.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/btn_fantasy_primary</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="backgroundTint" tools:ignore="PrivateResource">@null</item>
+    </style>
+
+    <!-- Pixel Fantasy Danger Red Button -->
+    <style name="Widget.MonsterSurvivor.Button.Danger" parent="Widget.MaterialComponents.Button">
+        <item name="android:background">@drawable/btn_fantasy_danger</item>
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="android:stateListAnimator">@null</item>
+        <item name="backgroundTint" tools:ignore="PrivateResource">@null</item>
+    </style>
+
+    <!-- Bottom Navigation View Custom Style -->
+    <style name="Widget.MonsterSurvivor.BottomNav" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/forest_primary_dark</item>
+        <item name="itemIconTint">@color/gold_bright</item>
+        <item name="itemTextColor">@color/text_primary</item>
+        <item name="itemRippleColor">@color/forest_primary_light</item>
+        <item name="elevation">8dp</item>
+    </style>
+</resources>

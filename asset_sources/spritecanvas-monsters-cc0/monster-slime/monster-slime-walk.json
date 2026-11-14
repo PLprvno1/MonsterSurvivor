@@ -1,0 +1,341 @@
+{
+  "frames": {
+    "monster-slime-walk-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-01": {
+      "frame": {
+        "x": 178,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-02": {
+      "frame": {
+        "x": 356,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-03": {
+      "frame": {
+        "x": 534,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-04": {
+      "frame": {
+        "x": 712,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-05": {
+      "frame": {
+        "x": 890,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-06": {
+      "frame": {
+        "x": 1068,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-07": {
+      "frame": {
+        "x": 1246,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-08": {
+      "frame": {
+        "x": 0,
+        "y": 164,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-09": {
+      "frame": {
+        "x": 178,
+        "y": 164,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-10": {
+      "frame": {
+        "x": 356,
+        "y": 164,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    },
+    "monster-slime-walk-11": {
+      "frame": {
+        "x": 534,
+        "y": 164,
+        "w": 178,
+        "h": 164
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 178,
+        "h": 164
+      },
+      "sourceSize": {
+        "w": 178,
+        "h": 164
+      },
+      "pivot": {
+        "x": 0.5843,
+        "y": 0.9329
+      },
+      "duration": 83
+    }
+  },
+  "animations": {
+    "monster-slime-walk": [
+      "monster-slime-walk-00",
+      "monster-slime-walk-01",
+      "monster-slime-walk-02",
+      "monster-slime-walk-03",
+      "monster-slime-walk-04",
+      "monster-slime-walk-05",
+      "monster-slime-walk-06",
+      "monster-slime-walk-07",
+      "monster-slime-walk-08",
+      "monster-slime-walk-09",
+      "monster-slime-walk-10",
+      "monster-slime-walk-11"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-slime-walk.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1424,
+      "h": 328
+    },
+    "scale": "1",
+    "cell": {
+      "w": 178,
+      "h": 164
+    },
+    "fps": 12,
+    "loop": true,
+    "pivot_px": [
+      104,
+      153
+    ],
+    "license": "CC0-1.0"
+  }
+}

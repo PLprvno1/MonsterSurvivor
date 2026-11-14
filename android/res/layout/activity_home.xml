@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/home_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fantasy_forest"
+    tools:context=".android.HomeActivity">
+
+    <!-- Top App Toolbar with Options Menu -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_home"
+        style="@style/Widget.MonsterSurvivor.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="#D90C1A14"
+        android:elevation="6dp"
+        app:title="@string/game_title"
+        app:titleTextColor="@color/gold_bright"
+        app:subtitle="@string/game_subtitle"
+        app:subtitleTextColor="@color/text_secondary"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Left Brand & Lore Column -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/panel_title"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="12dp"
+        android:background="@drawable/panel_fantasy_frame"
+        android:padding="16dp"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toStartOf="@+id/guideline_center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_home">
+
+        <ImageView
+            android:id="@+id/iv_hero_emblem"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:src="@drawable/ic_sword"
+            app:tint="@color/gold_bright"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_title_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:text="@string/game_title"
+            android:textColor="@color/gold_bright"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/tv_subtitle_main"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/iv_hero_emblem"
+            app:layout_constraintTop_toTopOf="@id/iv_hero_emblem" />
+
+        <TextView
+            android:id="@+id/tv_subtitle_main"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/game_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toBottomOf="@id/iv_hero_emblem"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/tv_title_main"
+            app:layout_constraintTop_toBottomOf="@id/tv_title_main" />
+
+        <!-- Lore Box -->
+        <TextView
+            android:id="@+id/tv_game_lore"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="12dp"
+            android:background="#4407130D"
+            android:padding="10dp"
+            android:text="Bóng đêm sắp bao phủ khu rừng 100x100. Chiến binh anh dũng hãy sẵn sàng vũ khí tự động, lướt né đòn và tích tụ Ultimate để đánh bại Lich Lord sau 10 phút sinh tồn nghẹt thở!"
+            android:textColor="@color/text_secondary"
+            android:textSize="13sp"
+            android:lineSpacingExtra="3dp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_version_tag"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_hero_emblem" />
+
+        <TextView
+            android:id="@+id/tv_version_tag"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="v1.0 • Offline Pixel 4 Landscape"
+            android:textColor="@color/text_muted"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <!-- Right Actions Column -->
+    <LinearLayout
+        android:id="@+id/layout_action_buttons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="12dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@id/bottom_navigation"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/guideline_center"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_home">
+
+        <!-- PLAY (Prominent Gold Button) -->
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_play"
+            style="@style/Widget.MonsterSurvivor.Button.Gold"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_primary"
+            android:layout_marginBottom="8dp"
+            android:drawableStart="@drawable/ic_sword"
+            android:text="@string/btn_play"
+            android:textSize="16sp" />
+
+        <!-- 2-column secondary buttons -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_achievements"
+                style="@style/Widget.MonsterSurvivor.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:drawableStart="@drawable/ic_trophy"
+                android:text="@string/btn_achievements" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_settings"
+                style="@style/Widget.MonsterSurvivor.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:drawableStart="@drawable/ic_settings"
+                android:text="@string/btn_settings" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_how_to_play"
+                style="@style/Widget.MonsterSurvivor.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginEnd="4dp"
+                android:drawableStart="@drawable/ic_help"
+                android:text="@string/btn_how_to_play" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_exit"
+                style="@style/Widget.MonsterSurvivor.Button.Danger"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:drawableStart="@drawable/ic_exit"
+                android:text="@string/btn_exit" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Navigation Bar -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        style="@style/Widget.MonsterSurvivor.BottomNav"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/bottom_nav_height"
+        app:labelVisibilityMode="labeled"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:menu="@menu/menu_navigation_bar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

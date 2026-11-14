@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- SubMenu for Theme Selection -->
+    <item
+        android:id="@+id/menu_theme"
+        android:icon="@drawable/ic_sparkles"
+        android:title="@string/menu_theme"
+        app:showAsAction="never">
+        <menu>
+            <item
+                android:id="@+id/action_theme_forest"
+                android:icon="@drawable/ic_check"
+                android:title="@string/theme_forest" />
+            <item
+                android:id="@+id/action_theme_dark"
+                android:title="@string/theme_dark" />
+        </menu>
+    </item>
+
+    <item
+        android:id="@+id/action_settings"
+        android:icon="@drawable/ic_settings"
+        android:title="@string/menu_settings"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_how_to_play"
+        android:icon="@drawable/ic_help"
+        android:title="@string/menu_how_to_play"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_about"
+        android:icon="@drawable/ic_info"
+        android:title="@string/menu_about"
+        app:showAsAction="never" />
+</menu>

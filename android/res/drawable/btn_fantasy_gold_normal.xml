@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Bottom dark drop shadow for 3D depth -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/gold_dark" />
+            <corners android:radius="8dp" />
+        </shape>
+    </item>
+    <!-- Foreground button face -->
+    <item android:bottom="4dp">
+        <shape android:shape="rectangle">
+            <gradient
+                android:type="linear"
+                android:angle="270"
+                android:startColor="@color/gold_bright"
+                android:centerColor="@color/gold_mid"
+                android:endColor="@color/gold_dark" />
+            <stroke
+                android:width="2dp"
+                android:color="#FFF3B0" />
+            <corners android:radius="8dp" />
+            <padding
+                android:bottom="8dp"
+                android:left="16dp"
+                android:right="16dp"
+                android:top="8dp" />
+        </shape>
+    </item>
+</layer-list>

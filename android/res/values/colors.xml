@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Backgrounds & Base Palette -->
+    <color name="bg_dark_forest">#08140F</color>
+    <color name="bg_forest_panel">#EE0C1712</color>
+    <color name="bg_dark_magic">#0F0819</color>
+    <color name="bg_magic_panel">#EE160C22</color>
+    <color name="ic_background_color">#143526</color>
+    <color name="background">#08140F</color>
+
+    <!-- Forest Theme Colors -->
+    <color name="forest_primary">#1E4D36</color>
+    <color name="forest_primary_dark">#123122</color>
+    <color name="forest_primary_light">#2D7351</color>
+    <color name="forest_accent">#4CAF50</color>
+    <color name="forest_border">#2E5C44</color>
+
+    <!-- Dark Magic Theme Colors -->
+    <color name="magic_primary">#381B57</color>
+    <color name="magic_primary_dark">#231038</color>
+    <color name="magic_primary_light">#52297D</color>
+    <color name="magic_accent">#9C27B0</color>
+    <color name="magic_border">#4E2C75</color>
+
+    <!-- Gold & Amber Accents (Pixel Fantasy) -->
+    <color name="gold_dark">#8A5E12</color>
+    <color name="gold_mid">#D49B28</color>
+    <color name="gold_bright">#FFD54F</color>
+    <color name="gold_border">#FFA000</color>
+    <color name="gold_text">#FFE082</color>
+
+    <!-- Functional & Status Colors -->
+    <color name="danger_red">#D32F2F</color>
+    <color name="danger_dark">#7B1818</color>
+    <color name="success_green">#388E3C</color>
+    <color name="info_blue">#1976D2</color>
+    <color name="card_bg_default">#E6111D17</color>
+    <color name="card_bg_selected">#E61F3628</color>
+    <color name="card_border_unselected">#3A5044</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#FFFFFF</color>
+    <color name="text_secondary">#C0D2C8</color>
+    <color name="text_muted">#7C9286</color>
+    <color name="text_shadow">#CC000000</color>
+
+    <!-- Overlay & Dialog -->
+    <color name="dialog_scrim">#AA000000</color>
+    <color name="divider_color">#2C4638</color>
+</resources>

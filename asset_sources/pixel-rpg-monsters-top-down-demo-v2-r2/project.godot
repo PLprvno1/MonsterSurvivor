@@ -1,0 +1,21 @@
+; Pixel RPG Monsters Top-Down Free Demo: open this folder with Godot 4.3 or newer and press Play.
+
+config_version=5
+
+[application]
+
+config/name="Pixel RPG Monsters Top-Down Free Demo"
+run/main_scene="res://demo_v2/monster_demo_v2.tscn"
+config/features=PackedStringArray("4.3")
+
+[display]
+
+window/size/viewport_width=480
+window/size/viewport_height=270
+window/size/window_width_override=1440
+window/size/window_height_override=810
+window/stretch/mode="viewport"
+
+[rendering]
+
+textures/canvas_textures/default_texture_filter=0

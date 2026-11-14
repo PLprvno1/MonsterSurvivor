@@ -1,0 +1,10 @@
+{
+  "license": "Kenney CC0",
+  "regions": {
+    "potion_red": [2,2,16,16],
+    "potion_green": [22,2,16,16],
+    "potion_blue": [42,2,16,16],
+    "pickup_chest": [62,2,16,16]
+  },
+  "sourceCells": [[7, 9],[6, 9],[8, 9],[7, 7]]
+}

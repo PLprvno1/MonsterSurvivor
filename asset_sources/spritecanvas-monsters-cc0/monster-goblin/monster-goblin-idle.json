@@ -1,0 +1,575 @@
+{
+  "frames": {
+    "monster-goblin-idle-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-01": {
+      "frame": {
+        "x": 298,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-02": {
+      "frame": {
+        "x": 596,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-03": {
+      "frame": {
+        "x": 894,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-04": {
+      "frame": {
+        "x": 1192,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-05": {
+      "frame": {
+        "x": 1490,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-06": {
+      "frame": {
+        "x": 1788,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-07": {
+      "frame": {
+        "x": 2086,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-08": {
+      "frame": {
+        "x": 0,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-09": {
+      "frame": {
+        "x": 298,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-10": {
+      "frame": {
+        "x": 596,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-11": {
+      "frame": {
+        "x": 894,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-12": {
+      "frame": {
+        "x": 1192,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-13": {
+      "frame": {
+        "x": 1490,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-14": {
+      "frame": {
+        "x": 1788,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-15": {
+      "frame": {
+        "x": 2086,
+        "y": 291,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-16": {
+      "frame": {
+        "x": 0,
+        "y": 582,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-17": {
+      "frame": {
+        "x": 298,
+        "y": 582,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-18": {
+      "frame": {
+        "x": 596,
+        "y": 582,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-19": {
+      "frame": {
+        "x": 894,
+        "y": 582,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    },
+    "monster-goblin-idle-20": {
+      "frame": {
+        "x": 1192,
+        "y": 582,
+        "w": 298,
+        "h": 291
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 298,
+        "h": 291
+      },
+      "sourceSize": {
+        "w": 298,
+        "h": 291
+      },
+      "pivot": {
+        "x": 0.4966,
+        "y": 0.8797
+      },
+      "duration": 200
+    }
+  },
+  "animations": {
+    "monster-goblin-idle": [
+      "monster-goblin-idle-00",
+      "monster-goblin-idle-01",
+      "monster-goblin-idle-02",
+      "monster-goblin-idle-03",
+      "monster-goblin-idle-04",
+      "monster-goblin-idle-05",
+      "monster-goblin-idle-06",
+      "monster-goblin-idle-07",
+      "monster-goblin-idle-08",
+      "monster-goblin-idle-09",
+      "monster-goblin-idle-10",
+      "monster-goblin-idle-11",
+      "monster-goblin-idle-12",
+      "monster-goblin-idle-13",
+      "monster-goblin-idle-14",
+      "monster-goblin-idle-15",
+      "monster-goblin-idle-16",
+      "monster-goblin-idle-17",
+      "monster-goblin-idle-18",
+      "monster-goblin-idle-19",
+      "monster-goblin-idle-20"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-goblin-idle.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 2384,
+      "h": 873
+    },
+    "scale": "1",
+    "cell": {
+      "w": 298,
+      "h": 291
+    },
+    "fps": 5,
+    "loop": true,
+    "pivot_px": [
+      148,
+      256
+    ],
+    "license": "CC0-1.0"
+  }
+}

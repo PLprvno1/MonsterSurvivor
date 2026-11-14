@@ -1,0 +1,523 @@
+{
+  "frames": {
+    "monster-mushroom-attack-00": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-01": {
+      "frame": {
+        "x": 221,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-02": {
+      "frame": {
+        "x": 442,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-03": {
+      "frame": {
+        "x": 663,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-04": {
+      "frame": {
+        "x": 884,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-05": {
+      "frame": {
+        "x": 1105,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-06": {
+      "frame": {
+        "x": 1326,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-07": {
+      "frame": {
+        "x": 1547,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-08": {
+      "frame": {
+        "x": 0,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-09": {
+      "frame": {
+        "x": 221,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-10": {
+      "frame": {
+        "x": 442,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-11": {
+      "frame": {
+        "x": 663,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-12": {
+      "frame": {
+        "x": 884,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-13": {
+      "frame": {
+        "x": 1105,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-14": {
+      "frame": {
+        "x": 1326,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-15": {
+      "frame": {
+        "x": 1547,
+        "y": 156,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-16": {
+      "frame": {
+        "x": 0,
+        "y": 312,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-17": {
+      "frame": {
+        "x": 221,
+        "y": 312,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    },
+    "monster-mushroom-attack-18": {
+      "frame": {
+        "x": 442,
+        "y": 312,
+        "w": 221,
+        "h": 156
+      },
+      "rotated": false,
+      "trimmed": false,
+      "spriteSourceSize": {
+        "x": 0,
+        "y": 0,
+        "w": 221,
+        "h": 156
+      },
+      "sourceSize": {
+        "w": 221,
+        "h": 156
+      },
+      "pivot": {
+        "x": 0.4615,
+        "y": 0.9167
+      },
+      "duration": 62
+    }
+  },
+  "animations": {
+    "monster-mushroom-attack": [
+      "monster-mushroom-attack-00",
+      "monster-mushroom-attack-01",
+      "monster-mushroom-attack-02",
+      "monster-mushroom-attack-03",
+      "monster-mushroom-attack-04",
+      "monster-mushroom-attack-05",
+      "monster-mushroom-attack-06",
+      "monster-mushroom-attack-07",
+      "monster-mushroom-attack-08",
+      "monster-mushroom-attack-09",
+      "monster-mushroom-attack-10",
+      "monster-mushroom-attack-11",
+      "monster-mushroom-attack-12",
+      "monster-mushroom-attack-13",
+      "monster-mushroom-attack-14",
+      "monster-mushroom-attack-15",
+      "monster-mushroom-attack-16",
+      "monster-mushroom-attack-17",
+      "monster-mushroom-attack-18"
+    ]
+  },
+  "meta": {
+    "app": "https://spritecanvas.com",
+    "image": "monster-mushroom-attack.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1768,
+      "h": 468
+    },
+    "scale": "1",
+    "cell": {
+      "w": 221,
+      "h": 156
+    },
+    "fps": 16,
+    "loop": false,
+    "pivot_px": [
+      102,
+      143
+    ],
+    "license": "CC0-1.0"
+  }
+}

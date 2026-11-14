@@ -1,0 +1,54 @@
+N3XUS STARTER (FREE) - LICENSE
+Copyright (c) 2026 N3XUS (https://n3xus.dev). All rights reserved.
+
+This pack is free. By downloading it you receive a non-exclusive, worldwide, perpetual license to use the
+included art under the terms below.
+
+YOU MAY
+- Use the art in an unlimited number of personal and commercial projects (games, game jams, apps, videos,
+  streams, websites, virtual offices and prototypes).
+- Edit, recolor, crop, combine and animate the art for those projects.
+- Sell the projects you make with the art (for example a game on Steam, itch.io or mobile stores).
+
+YOU MUST
+- Credit N3XUS in your project (credits screen, store page or description): "Art by N3XUS - n3xus.dev".
+
+YOU MAY NOT
+- Resell, share or redistribute the files, edited or not, on their own or as part of another asset pack,
+  template, tileset, character, pet, mount or monster generator or similar product.
+- Upload the files where others can download them (public repositories, asset sites, "free asset" posts).
+  Link to the official page instead: https://samura133.itch.io/n3xus-starter-free
+- Use the art in NFTs or other blockchain tokens.
+- Use the art to train, fine-tune or evaluate AI or machine-learning models, or as prompts for them.
+- Claim the original art as your own creation.
+
+The art is provided "as is", without warranty of any kind. N3XUS keeps the copyright of the original art.
+Questions: use the contact on https://n3xus.dev
+
+------------------------------------------------------------------------------------------------------------
+
+N3XUS STARTER (GRÁTIS) - LICENÇA (versão em português; em caso de dúvida vale a versão em inglês acima)
+
+Este pacote é grátis. Ao baixá-lo você recebe uma licença não exclusiva, mundial e perpétua para usar a arte
+nos termos abaixo.
+
+PODE
+- Usar a arte em quantos projetos pessoais e comerciais quiser (jogos, game jams, apps, vídeos, lives, sites,
+  escritórios virtuais e protótipos).
+- Editar, mudar a cor, recortar, combinar e animar a arte nesses projetos.
+- Vender os projetos que fizer com a arte (por exemplo um jogo na Steam, no itch.io ou nas lojas de apps).
+
+PRECISA
+- Dar o crédito à N3XUS no projeto (tela de créditos, página da loja ou descrição): "Art by N3XUS - n3xus.dev".
+
+NÃO PODE
+- Revender, compartilhar ou redistribuir os arquivos, editados ou não, sozinhos ou dentro de outro pacote de
+  assets, template, tileset, gerador de personagens, pets, montarias ou monstros ou produto parecido.
+- Publicar os arquivos onde outras pessoas possam baixá-los (repositórios públicos, sites de assets, posts de
+  "asset grátis"). Use o link da página oficial: https://samura133.itch.io/n3xus-starter-free
+- Usar a arte em NFTs ou outros tokens de blockchain.
+- Usar a arte para treinar, ajustar ou avaliar modelos de IA, ou como prompt para eles.
+- Dizer que a arte original é criação sua.
+
+A arte é fornecida "no estado em que se encontra", sem garantia de qualquer tipo. A N3XUS mantém os direitos
+autorais da arte original. Dúvidas: use o contato em https://n3xus.dev

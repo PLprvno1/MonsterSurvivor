@@ -1,0 +1,18 @@
+LICENSE - Pixel RPG Monsters Top-Down (Free Demo)
+Made by Willosuna - https://willosuna.itch.io
+
+You may:
+  - use these assets in personal and commercial projects (games, apps,
+    videos, prototypes), any number of projects, royalty free;
+  - edit, recolor, resize and combine them.
+
+You may not:
+  - resell or redistribute the files themselves, as they are or modified,
+    as an asset pack, sprite pack or similar collection;
+  - claim the original files as your own work.
+
+The demo map and the heroes in demo/ come from other Willosuna packs
+(Pixel RPG World Tileset and Pixel RPG Heroes Top-Down) and are included
+only so the demo runs; they are not part of this license.
+
+Credit is not required but always appreciated: "Art by Willosuna".

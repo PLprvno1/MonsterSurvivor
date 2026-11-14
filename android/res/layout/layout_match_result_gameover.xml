@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/layout_gameover_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#DD120505"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="520dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/panel_fantasy_frame"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Skull & Game Over Title -->
+        <ImageView
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_skull"
+            app:tint="@color/danger_red" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_gameover_title"
+            android:textColor="@color/danger_red"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="4dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/result_gameover_subtitle"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp"
+            android:layout_marginBottom="12dp" />
+
+        <!-- Stats Grid / Rows -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#33000000"
+            android:orientation="vertical"
+            android:padding="10dp"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tv_gameover_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Thời gian sinh tồn: 06:42"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_gameover_kills"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Số quái tiêu diệt: 74"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_gameover_difficulty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Độ khó: HARD"
+                android:textColor="@color/text_primary"
+                android:textSize="13sp"
+                android:layout_marginBottom="4dp" />
+
+            <TextView
+                android:id="@+id/tv_gameover_boss"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Trạng thái Boss: Chưa tiêu diệt"
+                android:textColor="@color/text_muted"
+                android:textSize="13sp" />
+        </LinearLayout>
+
+        <!-- Buttons: Retry & Home -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_gameover_retry"
+                style="@style/Widget.MonsterSurvivor.Button.Gold"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginEnd="6dp"
+                android:drawableStart="@drawable/ic_replay"
+                android:text="@string/btn_retry" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/btn_gameover_home"
+                style="@style/Widget.MonsterSurvivor.Button.Primary"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/button_height_secondary"
+                android:layout_weight="1"
+                android:layout_marginStart="6dp"
+                android:drawableStart="@drawable/ic_home"
+                android:text="@string/btn_home" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>

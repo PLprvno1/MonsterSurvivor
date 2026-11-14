@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg_fantasy_forest"
+    tools:context=".android.SettingsActivity">
+
+    <!-- Top Toolbar -->
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_settings"
+        style="@style/Widget.MonsterSurvivor.Toolbar"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/toolbar_height"
+        android:background="#D90C1A14"
+        android:elevation="6dp"
+        app:title="@string/title_settings"
+        app:navigationIcon="@drawable/ic_arrow_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- 2-column landscape settings area -->
+    <LinearLayout
+        android:id="@+id/layout_settings_columns"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/tv_settings_note"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_settings">
+
+        <!-- Column 1: Audio Controls -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/panel_fantasy_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ÂM THANH &amp; NHẠC NỀN"
+                android:textColor="@color/gold_bright"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Switch Music -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_music"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_music"
+                android:textColor="@color/text_primary"
+                android:checked="true"
+                app:thumbTint="@color/gold_bright"
+                app:trackTint="@color/forest_primary_light" />
+
+            <!-- Music Volume Slider -->
+            <TextView
+                android:id="@+id/tv_music_vol_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Âm lượng nhạc nền: 80%"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_music_volume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="80"
+                android:progressDrawable="@drawable/seekbar_fantasy_progress"
+                android:thumb="@drawable/seekbar_fantasy_thumb"
+                android:layout_marginBottom="6dp" />
+
+            <!-- Switch SFX -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_sfx"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_sfx"
+                android:textColor="@color/text_primary"
+                android:checked="true"
+                app:thumbTint="@color/gold_bright"
+                app:trackTint="@color/forest_primary_light" />
+
+            <!-- SFX Volume Slider -->
+            <TextView
+                android:id="@+id/tv_sfx_vol_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Âm lượng âm thanh: 80%"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="2dp" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/seekbar_sfx_volume"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:max="100"
+                android:progress="80"
+                android:progressDrawable="@drawable/seekbar_fantasy_progress"
+                android:thumb="@drawable/seekbar_fantasy_thumb" />
+
+        </LinearLayout>
+
+        <!-- Column 2: System, Theme, About -->
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/panel_fantasy_card"
+            android:orientation="vertical"
+            android:padding="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HỆ THỐNG &amp; GIAO DIỆN"
+                android:textColor="@color/gold_bright"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <!-- Switch Vibration -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/switch_vibration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_vibration"
+                android:textColor="@color/text_primary"
+                android:checked="true"
+                app:thumbTint="@color/gold_bright"
+                app:trackTint="@color/forest_primary_light" />
+
+            <!-- Theme RadioGroup -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_theme_title"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_theme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="8dp">
+
+                <RadioButton
+                    android:id="@+id/rb_theme_forest"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/theme_forest"
+                    android:textColor="@color/text_primary"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rb_theme_dark"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/theme_dark"
+                    android:textColor="@color/text_primary" />
+            </RadioGroup>
+
+            <!-- Action Buttons: Reset & About -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="12dp">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_reset_defaults"
+                    style="@style/Widget.MonsterSurvivor.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="4dp"
+                    android:text="@string/setting_reset_defaults"
+                    android:textSize="12sp" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/btn_about"
+                    style="@style/Widget.MonsterSurvivor.Button.Primary"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="4dp"
+                    android:text="@string/menu_about"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- Bottom Note -->
+    <TextView
+        android:id="@+id/tv_settings_note"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/settings_audio_note"
+        android:textColor="@color/text_muted"
+        android:textSize="11sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
