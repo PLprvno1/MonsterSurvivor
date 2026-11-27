@@ -16,9 +16,9 @@ public final class WeaponConfig {
                      int projectileCount,int initialBolts,float visualScale,float glow,float boltWidth,float fanDegrees) {
             if(!Float.isFinite(multiplier) || multiplier<=0 || bonus<0 || !Float.isFinite(cooldown) || cooldown<=0
                 || !Float.isFinite(range) || range<=0 || !Float.isFinite(speed) || speed<0 || !Float.isFinite(lifetime) || lifetime<0
-                || !Float.isFinite(radius) || radius<0 || targets<1 || targets>5 || !Float.isFinite(chainRange) || chainRange<0)
+                || !Float.isFinite(radius) || radius<0 || targets<1 || targets>8 || !Float.isFinite(chainRange) || chainRange<0)
                 throw new IllegalArgumentException("Weapon level tuning");
-            if(projectileCount<1 || projectileCount>3 || initialBolts<1 || initialBolts>2 || initialBolts>targets
+            if(projectileCount<1 || projectileCount>5 || initialBolts<1 || initialBolts>3 || initialBolts>targets
                 || !Float.isFinite(visualScale) || visualScale<=0 || !Float.isFinite(glow) || glow<0
                 || !Float.isFinite(boltWidth) || boltWidth<=0 || !Float.isFinite(fanDegrees) || fanDegrees<0 || fanDegrees>45)
                 throw new IllegalArgumentException("Weapon presentation tuning");

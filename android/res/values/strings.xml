@@ -2,7 +2,9 @@
 <resources>
     <string name="app_name">Monster Survivor</string>
     <string name="game_title">MONSTER SURVIVOR</string>
-    <string name="game_subtitle">Fantasy 2D Survival Action</string>
+    <string name="game_subtitle">Hành Động Sinh Tồn Pixel 2D</string>
+    <string name="home_lore">Bóng đêm sắp bao phủ khu rừng 200x200. Chiến binh anh dũng hãy sẵn sàng vũ khí tự động, lướt né đòn và điều khiển cần gạt linh hoạt để đánh bại bầy quái vật và chúa tể bóng đêm!</string>
+    <string name="home_version_tag">v1.1 • Song ngữ VI/EN</string>
 
     <!-- Main Navigation / Home Buttons -->
     <string name="btn_play">BẮT ĐẦU CHƠI</string>
@@ -26,13 +28,6 @@
     <string name="theme_forest">Forest (Rừng sâu)</string>
     <string name="theme_dark">Dark (Ma thuật tối)</string>
 
-    <!-- Context Menu -->
-    <string name="context_view_details">Xem chi tiết</string>
-    <string name="context_copy_info">Sao chép thông tin</string>
-    <string name="context_share_info">Chia sẻ thành tích</string>
-    <string name="context_menu_hint">Nhấn giữ thẻ bất kỳ để mở rộng tùy chọn</string>
-    <string name="toast_copied">Đã sao chép vào bộ nhớ tạm!</string>
-    <string name="share_title">Chia sẻ thành tích Monster Survivor</string>
 
     <!-- Navigation Bar -->
     <string name="nav_home">Trang chủ</string>
@@ -46,35 +41,102 @@
     <string name="difficulty_hard">HARD (KHÓ)</string>
     <string name="desc_easy">Quái yếu hơn, sát thương nhận giảm, tỷ lệ rơi bình hồi máu tăng. Thích hợp làm quen cơ chế.</string>
     <string name="desc_hard">Quái tăng sát thương và máu theo thời gian, đợt quái dồn dập hơn. Cân bằng ở mức trung bình chuẩn.</string>
+    <string name="sub_diff_easy">Quái nhẹ hơn • Dễ thở</string>
+    <string name="sub_diff_hard">Độ khó chuẩn • Thử thách</string>
 
     <string name="section_game_mode">THỜI GIAN &amp; SỰ KIỆN</string>
+    <string name="section_character">NHÂN VẬT</string>
+    <string name="character_warrior">Kiếm sĩ</string>
+    <string name="character_archer">Cung thủ</string>
+    <string name="character_mage">Phù thủy</string>
+    <string name="character_warrior_weapon">Vũ khí khởi đầu: Kiếm Lv1</string>
+    <string name="character_archer_weapon">Vũ khí khởi đầu: Cung Lv1</string>
+    <string name="character_mage_weapon">Vũ khí khởi đầu: Cầu lửa Lv1</string>
+    <string name="character_card_weapon_warrior">Kiếm Lv1</string>
+    <string name="character_card_weapon_archer">Cung Lv1</string>
+    <string name="character_card_weapon_mage">Cầu lửa Lv1</string>
+    <string name="character_card_desc_warrior">Kiếm sĩ cân bằng.</string>
+    <string name="character_card_desc_archer">Đánh xa bằng cung.</string>
+    <string name="character_card_desc_mage">Pháp sư dùng phép.</string>
+    <string name="character_card_owned_free">SỞ HỮU · MIỄN PHÍ</string>
+    <string name="character_card_owned">ĐÃ MỞ KHÓA</string>
+    <string name="character_card_locked">ĐANG KHÓA · %1$d xu</string>
+    <string name="character_unlock_save_failed">Không lưu được. Hãy thử lại.</string>
+    <string name="character_wallet_format">Ví: %1$d xu</string>
+    <string name="character_owned">Đã sở hữu</string>
+    <string name="character_locked_price">Đang khóa • Giá: %1$d xu</string>
+    <string name="character_option_owned">%1$s — Đã sở hữu</string>
+    <string name="character_option_locked">%1$s — %2$d xu</string>
+    <string name="character_unlock_button">Mở khóa</string>
+    <string name="character_unlock_button_price">Mở khóa • %1$d xu</string>
+    <string name="character_unlock_title">Mở khóa nhân vật</string>
+    <string name="character_unlock_confirm">Mở khóa %1$s với %2$d xu?</string>
+    <string name="character_unlock_cancel">Hủy</string>
+    <string name="character_unlock_success">Đã mở khóa nhân vật.</string>
+    <string name="character_unlock_insufficient">Cần %1$d xu để mở khóa.</string>
+    <string name="character_locked_start">Hãy mở khóa nhân vật trước.</string>
     <string name="mode_normal">NORMAL (10 PHÚT)</string>
-    <string name="mode_demo">DEMO (~90 GIÂY)</string>
-    <string name="desc_mode_normal">Trải nghiệm chuẩn 10 phút. Đêm buông xuống phút 5, Boss Lich Lord xuất hiện phút 9. Sống sót và tiêu diệt boss để chiến thắng!</string>
-    <string name="desc_mode_demo">Chế độ Demo nén thời gian còn ~90 giây phục vụ chấm bài/kiểm thử. Tốc độ nhân vật/đạn giữ nguyên, các mốc sự kiện đến nhanh hơn.</string>
+    <string name="mode_demo">CHƠI THỬ NHANH</string>
+    <string name="desc_mode_normal">Trải nghiệm chuẩn 10 phút. Đêm buông xuống phút 5, quái hung hãn hơn. Sống sót qua đêm tối để chiến thắng!</string>
+    <string name="desc_mode_demo">Chế độ chơi thử nhanh rút gọn trận đấu còn khoảng 90 giây. Tốc độ nhân vật và đạn giữ nguyên, các mốc sự kiện đến nhanh hơn.</string>
+    <string name="sub_mode_normal">Đêm p.5 • Khung chuẩn</string>
+    <string name="sub_mode_demo">Nén sự kiện • Test nhanh</string>
+    <string name="mode_detail_heading">CHI TIẾT THIẾT LẬP TRẬN ĐẤU</string>
+    <string name="mode_badge_format">%1$s + %2$s</string>
 
     <!-- Settings -->
     <string name="title_settings">CÀI ĐẶT HỆ THỐNG</string>
+    <string name="section_audio">ÂM THANH &amp; NHẠC NỀN</string>
+    <string name="section_system">HỆ THỐNG &amp; GIAO DIỆN</string>
     <string name="setting_music">Nhạc nền (BGM)</string>
     <string name="setting_sfx">Hiệu ứng âm thanh (SFX)</string>
     <string name="setting_music_volume">Âm lượng nhạc nền: %1$d%%</string>
     <string name="setting_sfx_volume">Âm lượng âm thanh: %1$d%%</string>
     <string name="setting_vibration">Rung phản hồi (Haptic)</string>
     <string name="setting_theme_title">Chủ đề giao diện</string>
+    <string name="setting_language_title">Ngôn ngữ / Language</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_english">English</string>
     <string name="setting_reset_defaults">Khôi phục mặc định</string>
-    <string name="settings_audio_note">Lưu ý: Thiết lập âm thanh và rung hiện được lưu trong SharedPreferences và sẵn sàng kết nối sang core gameplay bởi Codex.</string>
+    <string name="settings_audio_note">Lưu ý: Thiết lập ngôn ngữ và âm thanh được lưu trữ SharedPreferences theo chuẩn hợp đồng Codex.</string>
+    <string name="toast_theme_forest">Đã chọn giao diện Forest</string>
+    <string name="toast_theme_dark">Đã chọn giao diện Dark Magic</string>
+    <string name="toast_theme_changed">Đã áp dụng giao diện mới</string>
+    <string name="toast_defaults_reset">Đã khôi phục cài đặt mặc định</string>
+    <string name="toast_language_changed">Đã đổi ngôn ngữ sang Tiếng Việt</string>
 
     <!-- Achievements -->
     <string name="title_achievements">BẢNG VÀNG THÀNH TÍCH</string>
-    <string name="ach_empty_badge">Dữ liệu mặc định (Chưa có trận đấu)</string>
+    <string name="ach_section_lifetime">KỶ LỤC TRỌN ĐỜI</string>
+    <string name="ach_section_list">DANH MỤC THÀNH TÍCH DŨNG SĨ</string>
+    <string name="ach_progress_summary">Tiến độ: %1$d / %2$d Thành Tích (%3$d%%)</string>
+    <string name="ach_status_unlocked">ĐÃ ĐẠT</string>
+    <string name="ach_status_locked">CHƯA ĐẠT</string>
+    <string name="ach_empty_badge">Chưa có dữ liệu</string>
+    <string name="ach_empty_title">CHƯA CÓ LỊCH SỬ SINH TỒN</string>
+    <string name="ach_empty_desc">Tham gia trận đấu và sống sót qua các đợt quái vật. Kết quả trận đấu sẽ được hệ thống tự động ghi nhận vào bảng thành tích và mở khóa các huy hiệu vinh danh!</string>
+
+    <string name="ach_item_first_blood_title">Bước Khởi Đầu</string>
+    <string name="ach_item_first_blood_desc">Hoàn thành trận Normal đầu tiên.</string>
+    <string name="ach_item_novice_survivor_title">Người Sống Sót</string>
+    <string name="ach_item_novice_survivor_desc">Sống sót ít nhất 5 phút thực trong một trận Normal đã hoàn thành.</string>
+    <string name="ach_item_monster_slayer_title">Thợ Săn</string>
+    <string name="ach_item_monster_slayer_desc">Tiêu diệt tổng cộng 100 quái trong các trận Normal đã hoàn thành.</string>
+    <string name="ach_item_centurion_slayer_title">Sát Thủ Quái Vật</string>
+    <string name="ach_item_centurion_slayer_desc">Tiêu diệt tổng cộng 1.000 quái trong các trận Normal đã hoàn thành.</string>
+    <string name="ach_item_lich_bane_title">Kẻ Diệt Boss</string>
+    <string name="ach_item_lich_bane_desc">Tiêu diệt Mini Boss trong một trận Normal đã hoàn thành.</string>
+    <string name="ach_item_legendary_victor_title">Chiến Thắng Đầu Tiên</string>
+    <string name="ach_item_legendary_victor_desc">Hạ Lich Lord và chiến thắng trong chế độ Normal.</string>
+
     <string name="ach_best_time">Thời gian sinh tồn kỷ lục</string>
-    <string name="ach_best_time_desc">Thời gian sống sót lâu nhất trong một trận đấu.</string>
+    <string name="ach_best_time_desc">Thời gian thực lâu nhất trong một trận Normal đã hoàn thành.</string>
     <string name="ach_total_kills">Tổng số quái đã tiêu diệt</string>
-    <string name="ach_total_kills_desc">Số lượng quái vật đã hạ gục qua tất cả các trận.</string>
+    <string name="ach_total_kills_desc">Số quái đã hạ trong các trận Normal đã hoàn thành.</string>
     <string name="ach_victories">Số trận chiến thắng</string>
-    <string name="ach_victories_desc">Số lần sống sót đủ 10 phút và tiêu diệt Lich Lord.</string>
-    <string name="ach_matches">Tổng số trận đã chơi</string>
-    <string name="ach_matches_desc">Tổng số lần tham gia chiến đấu trong rừng quái vật.</string>
+    <string name="ach_victories_desc">Số trận Normal thắng sau khi hạ Lich Lord.</string>
+    <string name="ach_matches">Tổng số trận đã hoàn thành</string>
+    <string name="ach_matches_desc">Chỉ tính trận Normal kết thúc bằng Game Over hoặc Victory.</string>
     <string name="ach_boss">Lich Lord đã bị trừng phạt</string>
     <string name="ach_boss_desc">Số lần hạ gục chúa tể bóng đêm Lich Lord.</string>
     <string name="ach_boss_status_defeated">%1$d lần tiêu diệt</string>
@@ -83,20 +145,22 @@
     <!-- How To Play -->
     <string name="title_how_to_play">CẨM NANG SINH TỒN</string>
     <string name="htp_intro">Chào chiến binh! Hãy nắm rõ các quy tắc sinh tồn sau để sống sót qua đêm tối trong rừng quái vật:</string>
-    <string name="guide_joystick_title">1. Di chuyển bằng Joystick 360°</string>
-    <string name="guide_joystick_desc">Dùng cần điều khiển ảo góc trái màn hình để lượn tránh quái vật và chướng ngại vật (cây, đá, hồ nước).</string>
-    <string name="guide_weapons_title">2. Vũ khí tự động tấn công</string>
-    <string name="guide_weapons_desc">Vũ khí tự động nhắm và đánh kẻ địch gần nhất. Tối đa trang bị 3 vũ khí cùng lúc từ danh mục: Kiếm (chém/xoay), Cung (bắn tên), Cầu lửa (nổ lan), Sét (giật chuỗi). Cấp tối đa là 5 kèm 1 lần tiến hóa đặc biệt.</string>
-    <string name="guide_skills_title">3. Kỹ năng Dash &amp; Ultimate</string>
-    <string name="guide_skills_desc">Kích hoạt thủ công qua nút bấm riêng: Dash (lướt nhanh tránh đòn, hồi 5s) và Ultimate (sấm sét nổ diện rộng, hồi 30s).</string>
-    <string name="guide_boxes_title">4. Hộp nâng cấp bí ẩn (15–20s)</string>
-    <string name="guide_boxes_desc">Xuất hiện ngẫu nhiên gần người chơi: Hộp HP (hồi máu hoặc tăng Max HP), Hộp Damage (+1, +2 hoặc +3 Base Damage), Hộp Speed (+1 tốc độ, tối đa 20), Hộp Weapon (chọn 1 trong 3 vũ khí/nâng cấp). Tồn tại 60s và nhấp nháy trước khi biến mất.</string>
-    <string name="guide_night_title">5. Màn đêm buông xuống (Phút 5)</string>
-    <string name="guide_night_desc">Từ phút thứ 5, bản đồ chuyển sang đêm tối, tầm nhìn bị thu hẹp quanh nhân vật và các đợt quái đêm hung hãn hơn xuất hiện.</string>
-    <string name="guide_boss_title">6. Đại boss Lich Lord (Phút 9)</string>
-    <string name="guide_boss_desc">Chúa tể bóng đêm xuất hiện vào phút thứ 9 với 250 HP, 2 phase chiến đấu (phase 2 kích hoạt khi dưới 50% HP), bắn phép và triệu hồi tay sai.</string>
-    <string name="guide_win_title">7. Điều kiện chiến thắng tuyệt đối</string>
-    <string name="guide_win_desc">SỐNG SÓT TỐI THIỂU 10 PHÚT VÀ TIÊU DIỆT LICH LORD! Nếu qua phút 10 boss chưa chết, quái thường ngừng xuất hiện nhưng đồng hồ tiếp tục đếm đến khi bạn hạ gục boss hoặc hi sinh.</string>
+    <string name="guide_joystick_title">1. Di chuyển bằng Floating Joystick 360°</string>
+    <string name="guide_joystick_desc">Chạm bất kỳ đâu trong nửa trái màn hình để xuất hiện tâm cần gạt ảo nổi. Kéo để điều khiển hướng chạy, né tránh bầy quái và chướng ngại vật (cây, đá, hồ nước). Thả tay để dừng ngay lập tức.</string>
+    <string name="guide_weapons_title">2. Tự động tấn công &amp; 4 loại vũ khí</string>
+    <string name="guide_weapons_desc">Vũ khí tự động ngắm và tung đòn vào quái vật gần nhất. Bạn có thể trang bị tối đa 3 vũ khí đồng thời từ 4 loại: Kiếm Thánh (cận chiến), Cung Rừng (bắn tên xuyên), Cầu Lửa (nổ lan), và Sét Phẫn Nộ (giật chuỗi). Cấp thường từ 1 đến 5.</string>
+    <string name="guide_evolution_title">3. Tiến hóa vũ khí thần thoại (Evolution)</string>
+    <string name="guide_evolution_desc">Khi vũ khí đạt Cấp 5, rương vũ khí tiếp theo mở ra cơ hội TIẾN HÓA thành vũ khí tối thượng: Vòng Kiếm (lưỡi kiếm xoay bảo vệ), Mưa Tên (5 làn tên bão táp), Thiên Thạch Lửa (thiêu đốt diện rộng), Lôi Võng (mạng lưới sét hủy diệt).</string>
+    <string name="guide_skills_title">4. Kỹ năng tác chiến: Lướt (Dash) &amp; Nộ (Ultimate)</string>
+    <string name="guide_skills_desc">Nút Lướt (Dash - icon cyan) giúp dũng sĩ lướt nhanh và bất tử hoàn toàn trong tích tắc để thoát vòng vây quái. Nút Tuyệt kỹ (Ultimate - icon vàng) giải phóng cơn bão năng lượng quét sạch đạn đạo và đẩy lùi bầy quái xung quanh.</string>
+    <string name="guide_boxes_title">5. Hộp báu chiến trường &amp; Hộp kỹ năng</string>
+    <string name="guide_boxes_desc">Nhặt Hộp Máu (hồi phục hoặc tăng Max HP), Hộp Sát Thương, Hộp Tốc Độ và Rương Vũ Khí trên bản đồ. Đặc biệt, Hộp Kỹ Năng (rương cyan) xuất hiện định kỳ cho phép nâng cấp cấp độ Lướt và Tuyệt kỹ (giảm hồi chiêu, tăng uy lực).</string>
+    <string name="guide_night_title">6. Màn đêm tử thần &amp; Kỹ năng quái vật</string>
+    <string name="guide_night_desc">Từ phút thứ 5 (300 giây), bóng đêm buông xuống thu hẹp tầm nhìn. 67 loài quái vật sở hữu kỹ năng đặc biệt: đạn thẳng, đạn chùm, độc, lửa, làm chậm và dập chấn động. Luôn quan sát vệt đỏ cảnh báo (telegraph) dưới chân để né tránh kịp thời!</string>
+    <string name="guide_boss_title">7. Trùm Mini &amp; Chúa tể Lich Lord</string>
+    <string name="guide_boss_desc">Phút thứ 5 Trùm Mini thức tỉnh thử thách lòng can đảm. Phút thứ 9 (540s), Chúa tể bóng đêm Lich Lord xuất hiện với 2 giai đoạn (Phase 1 &amp; Phase 2 cuồng nộ) cùng lượng máu khổng lồ và ma thuật tử thần.</string>
+    <string name="guide_win_title">8. Điều kiện toàn thắng &amp; Chế độ Vô Hạn</string>
+    <string name="guide_win_desc">SỐNG SÓT QUA ĐÊM TỐI VÀ TIÊU DIỆT CHÚA TỂ LICH LORD! Vượt qua 10 phút ở chế độ Thường (hoặc 90 giây ở chế độ Demo) và đánh bại trùm cuối để toàn thắng. Với chế độ Vô Hạn (Endless), hãy thử thách giới hạn sinh tồn và săn lùng nhiều Boss nhất có thể!</string>
 
     <!-- Dialogs -->
     <string name="dialog_exit_title">Thoát trò chơi?</string>
@@ -105,7 +169,7 @@
     <string name="dialog_no">Hủy bỏ</string>
     <string name="dialog_close">Đóng</string>
     <string name="dialog_about_title">Về Monster Survivor</string>
-    <string name="dialog_about_msg">Monster Survivor v1.0\nPhát triển bởi nhóm sinh viên Android UI/UX.\n\nĐồ họa &amp; Tài nguyên:\n• Nhân vật &amp; Địa hình: Kenney Roguelike / Tiny Questers (CC0 &amp; Game License)\n• Quái vật: Willosuna RPG Monsters Top-Down Demo\n\nNền tảng: Android Native UI + libGDX Engine.</string>
+    <string name="dialog_about_msg">Monster Survivor v1.1\nPhát triển bởi nhóm Android UI/UX.\n\nĐồ họa &amp; Tài nguyên:\n• Nhân vật &amp; Địa hình: Kenney Roguelike / Tiny Questers (CC0 &amp; Game License)\n• Quái vật: Willosuna RPG Monsters Top-Down Demo &amp; MonstersCreatures\n• Font: Roboto Apache-2.0 Latin/NFC Vietnamese\n\nNền tảng: Android Native UI + libGDX Engine.</string>
 
     <!-- Match Results (Victory / Defeat / Pause) -->
     <string name="result_victory_title">VICTORY!</string>
@@ -120,4 +184,41 @@
     <string name="stat_boss_status">Trạng thái Boss: %1$s</string>
     <string name="stat_boss_defeated">Đã tiêu diệt (+1000 pts)</string>
     <string name="stat_boss_alive">Chưa tiêu diệt</string>
+    <string name="preview_title">XEM TRƯỚC GIAO DIỆN KẾT QUẢ / PAUSE</string>
+    <string name="preview_btn_victory">VICTORY</string>
+    <string name="preview_btn_gameover">GAME OVER</string>
+    <string name="preview_btn_pause">PAUSE</string>
+    <string name="toast_preview_retry">Nút Retry: Khởi động lại trận đấu</string>
+    <string name="toast_preview_resume">Nút Resume: Tiếp tục trận đấu</string>
+    <string name="ach_item_hard_title">Chiến Binh Bất Khuất</string>
+    <string name="ach_item_hard_desc">Hạ Lich Lord và chiến thắng Hard/Normal.</string>
+    <string name="ach_item_evolution_title">Bậc Thầy Vũ Khí</string>
+    <string name="ach_item_evolution_desc">Tiến hóa một vũ khí trong trận Normal đã hoàn thành.</string>
+    <string name="ach_extra_stats">Thời gian chơi (Normal đã hoàn thành): %1$s\nMini Boss: %2$d  ·  Thắng Hard: %3$d  ·  Vũ khí tiến hóa: %4$d</string>
+    <string name="ach_unlocked_date">Đạt ngày %1$s</string>
+    <string name="ach_progress_empty">Tiến độ: 0 / 8 Thành Tích (0%)</string>
+    <string name="mode_endless">VÔ HẠN</string>
+    <string name="sub_mode_endless">ENDLESS</string>
+    <string name="desc_mode_endless">Không giới hạn thời gian. Cứ 5 phút, một Boss xuất hiện và quái mới mạnh hơn. Đợt Boss kế tiếp chờ Boss hiện tại bị hạ. Trận kết thúc khi bạn chết hoặc rời trận; không có Victory hay thành tích Normal.</string>
+    <string name="title_item_shop">CỬA HÀNG BÌNH</string>
+    <string name="shop_wallet">Xu: %1$d</string>
+    <string name="potion_health_name">Bình Máu</string>
+    <string name="potion_health_desc">Hồi ngay 4 HP. Không dùng được khi đầy máu.</string>
+    <string name="potion_speed_name">Bình Tăng Tốc</string>
+    <string name="potion_speed_desc">Tăng 25% tốc độ chạy trong 8 giây. Không tăng Dash.</string>
+    <string name="potion_cooldown_name">Bình Giảm Hồi Chiêu</string>
+    <string name="potion_cooldown_desc">Tăng tốc hồi Dash, Tuyệt Kỹ và kỹ năng bị động 25% trong 8 giây.</string>
+    <string name="shop_price">Giá: %1$d xu</string>
+    <string name="shop_owned">Đang có: %1$d</string>
+    <string name="shop_buy">MUA</string>
+    <string name="shop_full">ĐÃ ĐẦY</string>
+    <string name="shop_purchase_success">Đã mua bình.</string>
+    <string name="shop_purchase_insufficient">Không đủ xu.</string>
+    <string name="shop_purchase_failed">Không thể lưu giao dịch. Hãy thử lại.</string>
+    <string name="shop_action_label">Cửa hàng</string>
+    <string name="coin_test_button">Nạp xu thử</string>
+    <string name="coin_test_title">Nạp xu thử · không thanh toán</string>
+    <string name="coin_test_option">Cộng thêm %1$d xu (test)</string>
+    <string name="coin_test_success">Đã cộng %1$d xu thử nghiệm.</string>
+    <string name="coin_test_error">Không thể cộng xu thử nghiệm.</string>
 </resources>

@@ -17,7 +17,7 @@
         android:layout_height="@dimen/toolbar_height"
         android:background="#D90C1A14"
         android:elevation="6dp"
-        app:title="XEM TRƯỚC GIAO DIỆN KẾT QUẢ / PAUSE"
+        app:title="@string/preview_title"
         app:navigationIcon="@drawable/ic_arrow_back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -44,7 +44,7 @@
             android:layout_height="38dp"
             android:layout_weight="1"
             android:layout_marginEnd="4dp"
-            android:text="VICTORY"
+            android:text="@string/preview_btn_victory"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -55,7 +55,7 @@
             android:layout_weight="1"
             android:layout_marginStart="2dp"
             android:layout_marginEnd="2dp"
-            android:text="GAME OVER"
+            android:text="@string/preview_btn_gameover"
             android:textSize="12sp" />
 
         <androidx.appcompat.widget.AppCompatButton
@@ -65,7 +65,7 @@
             android:layout_height="38dp"
             android:layout_weight="1"
             android:layout_marginStart="4dp"
-            android:text="PAUSE"
+            android:text="@string/preview_btn_pause"
             android:textSize="12sp" />
     </LinearLayout>
 

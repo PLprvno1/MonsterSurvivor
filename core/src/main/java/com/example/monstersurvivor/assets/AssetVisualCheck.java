@@ -12,8 +12,8 @@ import com.example.monstersurvivor.render.WorldSprite;
 /** Opt-in local GPU verification. Enable with a local file, never in the normal frame loop. */
 public final class AssetVisualCheck {
     private AssetVisualCheck() { }
-    public static void runIfRequested(GameAssets assets) {
-        if (!Gdx.files.local("asset-visual-check").exists()) return;
+    public static void runIfRequested(GameAssets assets,com.example.monstersurvivor.debug.DiagnosticRun run) {
+        if (!run.enabled() || !run.file("asset-visual-check").exists()) return;
         FrameBuffer target=new FrameBuffer(Pixmap.Format.RGBA8888,960,540,false);
         SpriteBatch batch=new SpriteBatch();
         try {

@@ -3,6 +3,7 @@ package com.example.monstersurvivor.spawn;
 import com.badlogic.gdx.math.RandomXS128;
 import com.example.monstersurvivor.ai.*;
 import com.example.monstersurvivor.config.GameConfig;
+import com.example.monstersurvivor.config.GameMode;
 import com.example.monstersurvivor.entity.*;
 import com.example.monstersurvivor.enemy.*;
 
@@ -21,9 +22,9 @@ public final class EnemySpawner {
     }
     public int spawned(EnemyDefinition definition) {return spawnedByType[definition.index];}
     public void update(float dt,float progress,Player player,float left,float bottom,float right,float top) {
-        if(progress>=EnemySpawnProfile.END_PROGRESS)return;
+        if(config.mode!=GameMode.ENDLESS && progress>=EnemySpawnProfile.END_PROGRESS)return;
         cooldown-=dt;
-        if(cooldown>0 || enemies.size()>=config.targetPopulation(progress))return;
+        if(cooldown>0 || enemies.normalSize()>=config.targetPopulation(progress))return;
         cooldown=config.spawnInterval(progress);
         EnemyDefinition type=profile.pick(progress,enemies);if(type==null)return;
         NavigationGrid nav=enemies.navigation;
@@ -34,7 +35,7 @@ public final class EnemySpawner {
             int cell=nav.cell(x,y);
             if(accept(type,cell,target,player,left,bottom,right,top,progress))return;
         }
-        // Inspect only the same local rectangle: the 200x200 map must not turn fallback into remote spawns.
+        // Inspect only the same local rectangle so fallback placement stays camera-relative on either map fixture.
         int tile=nav.collision.tileSize;
         int minX=Math.max(0,(int)Math.floor((left-192)/tile)),maxX=Math.min(nav.collision.width-1,(int)Math.floor((right+192)/tile));
         int minY=Math.max(0,(int)Math.floor((bottom-192)/tile)),maxY=Math.min(nav.collision.height-1,(int)Math.floor((top+192)/tile));

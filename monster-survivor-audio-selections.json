@@ -1,0 +1,253 @@
+{
+  "schema_version": 2,
+  "task": "05.1A.1",
+  "asset_root": "asset_sources/audio/",
+  "exported_at": "2026-11-15T08:05:39.317Z",
+  "events": [
+    {
+      "event_id": "BGM_MENU",
+      "file_path": "asset_sources/audio/end_dungeon.mp3",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_DAY",
+      "file_path": "asset_sources/audio/hope_orchestral_battle_music_bpm165.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_NIGHT",
+      "file_path": "asset_sources/audio/end_dungeon.mp3",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_MINI",
+      "file_path": "asset_sources/audio/heavy_boss_battle_1_bpm200.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_FINAL",
+      "file_path": "asset_sources/audio/heavy_boss_battle_1_bpm200.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_VICTORY",
+      "file_path": "asset_sources/audio/hope_orchestral_battle_music_bpm165.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "BGM_GAME_OVER",
+      "file_path": "asset_sources/audio/end_dungeon.mp3",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_SWORD_SWING",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/knifeSlice2.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_SWORD_HIT",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/chop.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_BOW_RELEASE",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/scratch_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_ARROW_HIT",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/dropLeather.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_FIRE_CAST",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/maximize_005.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_FIRE_EXPLOSION",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/impactPlate_medium_004.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_LIGHTNING_ACTIVATE",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/maximize_007.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "WEAPON_LIGHTNING_IMPACT",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/minimize_005.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_DAMAGE",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/impactPunch_medium_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_HEALTH",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_SPEED",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/glass_002.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_HEALTH_DROP",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/glass_005.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_WEAPON_OPEN",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/open_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_WEAPON_SELECTED",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PICKUP_WEAPON_UPGRADED",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "MINI_APPEARS",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/scroll_002.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "MINI_SLAM_WARNING",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/bong_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "MINI_SLAM_IMPACT",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/impactPunch_medium_004.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "MINI_DEFEATED",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/close_002.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_APPEARS",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/scroll_002.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_PROJECTILE",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/minimize_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_AOE_WARNING",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/scratch_005.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_AOE_IMPACT",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/question_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_PHASE2",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/maximize_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "LICH_DEFEATED",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_004.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_TAP",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/click_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_NAVIGATION",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/select_002.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_CONFIRM",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_CANCEL",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/back_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_PAUSE",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/minimize_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_RESUME",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/maximize_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_GAME_OVER",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/error_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "UI_VICTORY",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/confirmation_004.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_HIT",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/chop.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_DEATH",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/dropLeather.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_FLYING_REACTION",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/footstep_concrete_003.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_BEAST_REACTION",
+      "file_path": "asset_sources/audio/kenney_rpg-audio/Audio/footstep02.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_UNDEAD_REACTION",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/click_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_TANK_REACTION",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/footstep_grass_001.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "ENEMY_LEGACY_CHARGE",
+      "file_path": "asset_sources/audio/kenney_impact-sounds/Audio/impactBell_heavy_000.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PLAYER_HURT",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/error_007.ogg",
+      "status": "selected"
+    },
+    {
+      "event_id": "PLAYER_DEATH",
+      "file_path": "asset_sources/audio/kenney_interface-sounds/Audio/error_004.ogg",
+      "status": "selected"
+    }
+  ]
+}

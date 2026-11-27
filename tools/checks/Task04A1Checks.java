@@ -52,9 +52,10 @@ public final class Task04A1Checks {
         }
         for(var difficulty:Difficulty.values()) {
             var c=new GameConfig.Builder().difficulty(difficulty).build();var layout=ForestGenerator.generate(42);
-            var sys=new EnemySystem(new NavigationGrid(layout.grid),null,c);var p=new Player(1608,1608);
+            float sx=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,sy=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            var sys=new EnemySystem(new NavigationGrid(layout.grid),null,c);var p=new Player(sx,sy);
             var spawner=new EnemySpawner(c,sys,42);
-            for(int i=0;i<1600;i++)spawner.update(.1f,599,p,1469,1504,1747,1712);
+            for(int i=0;i<1600;i++)spawner.update(.1f,599,p,sx-139,sy-104,sx+139,sy+104);
             check(sys.size()==c.maxEnemies,"actual spawn fills unchanged cap "+difficulty);check(sys.size()<61,"absolute cap");
             for(int i=0;i<sys.size();i++)check(layout.grid.canOccupy(sys.get(i).x,sys.get(i).y,sys.get(i).definition.halfWidth,sys.get(i).definition.halfHeight,sys.get(i).definition.flying),"valid spawn");
             int old=sys.get(0).hp();sys.get(0).damage(Integer.MAX_VALUE);check(sys.get(0).hp()==0 && old>0,"scaled enemy death HP");

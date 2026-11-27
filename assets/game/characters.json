@@ -1,0 +1,1530 @@
+{
+  "textures": [
+    "game/characters/archer.png",
+    "game/characters/mage.png"
+  ],
+  "sprites": [
+    {
+      "id": "archer",
+      "title": "Freddyka Archer",
+      "texture": "game/characters/archer.png",
+      "frameWidth": 32,
+      "frameHeight": 32,
+      "feetX": 16,
+      "feetY": 28,
+      "displayScale": 1.4,
+      "animations": [
+        {
+          "state": "idle",
+          "direction": "down",
+          "sourceClip": "Idle_Down",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              0,
+              32,
+              32
+            ],
+            [
+              32,
+              0,
+              32,
+              32
+            ],
+            [
+              64,
+              0,
+              32,
+              32
+            ],
+            [
+              96,
+              0,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Idle/Archer_IDLE_DOWN.png"
+        },
+        {
+          "state": "idle",
+          "direction": "left",
+          "sourceClip": "Idle_Left",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              32,
+              32,
+              32
+            ],
+            [
+              32,
+              32,
+              32,
+              32
+            ],
+            [
+              64,
+              32,
+              32,
+              32
+            ],
+            [
+              96,
+              32,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Idle/Archer_IDLE_LEFT.png"
+        },
+        {
+          "state": "idle",
+          "direction": "right",
+          "sourceClip": "Idle_Right",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              64,
+              32,
+              32
+            ],
+            [
+              32,
+              64,
+              32,
+              32
+            ],
+            [
+              64,
+              64,
+              32,
+              32
+            ],
+            [
+              96,
+              64,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Idle/Archer_IDLE_RIGHT.png"
+        },
+        {
+          "state": "idle",
+          "direction": "up",
+          "sourceClip": "Idle_Up",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              96,
+              32,
+              32
+            ],
+            [
+              32,
+              96,
+              32,
+              32
+            ],
+            [
+              64,
+              96,
+              32,
+              32
+            ],
+            [
+              96,
+              96,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Idle/Archer_IDLE_UP.png"
+        },
+        {
+          "state": "walk",
+          "direction": "down",
+          "sourceClip": "Walk_Down",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              128,
+              32,
+              32
+            ],
+            [
+              32,
+              128,
+              32,
+              32
+            ],
+            [
+              64,
+              128,
+              32,
+              32
+            ],
+            [
+              96,
+              128,
+              32,
+              32
+            ],
+            [
+              128,
+              128,
+              32,
+              32
+            ],
+            [
+              160,
+              128,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Walk/Archer_WALK_DOWN.png"
+        },
+        {
+          "state": "walk",
+          "direction": "left",
+          "sourceClip": "Walk_Left",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              160,
+              32,
+              32
+            ],
+            [
+              32,
+              160,
+              32,
+              32
+            ],
+            [
+              64,
+              160,
+              32,
+              32
+            ],
+            [
+              96,
+              160,
+              32,
+              32
+            ],
+            [
+              128,
+              160,
+              32,
+              32
+            ],
+            [
+              160,
+              160,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Walk/Archer_WALK_LEFT.png"
+        },
+        {
+          "state": "walk",
+          "direction": "right",
+          "sourceClip": "Walk_Right",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              192,
+              32,
+              32
+            ],
+            [
+              32,
+              192,
+              32,
+              32
+            ],
+            [
+              64,
+              192,
+              32,
+              32
+            ],
+            [
+              96,
+              192,
+              32,
+              32
+            ],
+            [
+              128,
+              192,
+              32,
+              32
+            ],
+            [
+              160,
+              192,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Walk/Archer_WALK_RIGHT.png"
+        },
+        {
+          "state": "walk",
+          "direction": "up",
+          "sourceClip": "Walk_Up",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              224,
+              32,
+              32
+            ],
+            [
+              32,
+              224,
+              32,
+              32
+            ],
+            [
+              64,
+              224,
+              32,
+              32
+            ],
+            [
+              96,
+              224,
+              32,
+              32
+            ],
+            [
+              128,
+              224,
+              32,
+              32
+            ],
+            [
+              160,
+              224,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Walk/Archer_WALK_UP.png"
+        },
+        {
+          "state": "attack",
+          "direction": "down",
+          "sourceClip": "Attack_Down",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              256,
+              32,
+              32
+            ],
+            [
+              32,
+              256,
+              32,
+              32
+            ],
+            [
+              64,
+              256,
+              32,
+              32
+            ],
+            [
+              96,
+              256,
+              32,
+              32
+            ],
+            [
+              128,
+              256,
+              32,
+              32
+            ],
+            [
+              160,
+              256,
+              32,
+              32
+            ],
+            [
+              192,
+              256,
+              32,
+              32
+            ],
+            [
+              224,
+              256,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Attack/Archer_ATTACK_DOWN.png"
+        },
+        {
+          "state": "attack",
+          "direction": "left",
+          "sourceClip": "Attack_Left",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              288,
+              32,
+              32
+            ],
+            [
+              32,
+              288,
+              32,
+              32
+            ],
+            [
+              64,
+              288,
+              32,
+              32
+            ],
+            [
+              96,
+              288,
+              32,
+              32
+            ],
+            [
+              128,
+              288,
+              32,
+              32
+            ],
+            [
+              160,
+              288,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Attack/Archer_ATTACK_LEFT.png"
+        },
+        {
+          "state": "attack",
+          "direction": "right",
+          "sourceClip": "Attack_Right",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              320,
+              32,
+              32
+            ],
+            [
+              32,
+              320,
+              32,
+              32
+            ],
+            [
+              64,
+              320,
+              32,
+              32
+            ],
+            [
+              96,
+              320,
+              32,
+              32
+            ],
+            [
+              128,
+              320,
+              32,
+              32
+            ],
+            [
+              160,
+              320,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Attack/Archer_ATTACK_RIGHT.png"
+        },
+        {
+          "state": "attack",
+          "direction": "up",
+          "sourceClip": "Attack_Up",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              352,
+              32,
+              32
+            ],
+            [
+              32,
+              352,
+              32,
+              32
+            ],
+            [
+              64,
+              352,
+              32,
+              32
+            ],
+            [
+              96,
+              352,
+              32,
+              32
+            ],
+            [
+              128,
+              352,
+              32,
+              32
+            ],
+            [
+              160,
+              352,
+              32,
+              32
+            ],
+            [
+              192,
+              352,
+              32,
+              32
+            ],
+            [
+              224,
+              352,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Attack/Archer_ATTACK_UP.png"
+        },
+        {
+          "state": "hurt",
+          "direction": "down",
+          "sourceClip": "Hit_Down",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              384,
+              32,
+              32
+            ],
+            [
+              32,
+              384,
+              32,
+              32
+            ],
+            [
+              64,
+              384,
+              32,
+              32
+            ],
+            [
+              96,
+              384,
+              32,
+              32
+            ],
+            [
+              128,
+              384,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Hit/Archer_HIT_DOWN.png"
+        },
+        {
+          "state": "hurt",
+          "direction": "left",
+          "sourceClip": "Hit_Left",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              416,
+              32,
+              32
+            ],
+            [
+              32,
+              416,
+              32,
+              32
+            ],
+            [
+              64,
+              416,
+              32,
+              32
+            ],
+            [
+              96,
+              416,
+              32,
+              32
+            ],
+            [
+              128,
+              416,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Hit/Archer_HIT_LEFT.png"
+        },
+        {
+          "state": "hurt",
+          "direction": "right",
+          "sourceClip": "Hit_Right",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              448,
+              32,
+              32
+            ],
+            [
+              32,
+              448,
+              32,
+              32
+            ],
+            [
+              64,
+              448,
+              32,
+              32
+            ],
+            [
+              96,
+              448,
+              32,
+              32
+            ],
+            [
+              128,
+              448,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Hit/Archer_HIT_RIGHT.png"
+        },
+        {
+          "state": "hurt",
+          "direction": "up",
+          "sourceClip": "Hit_Up",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              480,
+              32,
+              32
+            ],
+            [
+              32,
+              480,
+              32,
+              32
+            ],
+            [
+              64,
+              480,
+              32,
+              32
+            ],
+            [
+              96,
+              480,
+              32,
+              32
+            ],
+            [
+              128,
+              480,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Hit/Archer_HIT_UP.png"
+        },
+        {
+          "state": "death",
+          "direction": "down",
+          "sourceClip": "Death_Down",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              512,
+              32,
+              32
+            ],
+            [
+              32,
+              512,
+              32,
+              32
+            ],
+            [
+              64,
+              512,
+              32,
+              32
+            ],
+            [
+              96,
+              512,
+              32,
+              32
+            ],
+            [
+              128,
+              512,
+              32,
+              32
+            ],
+            [
+              160,
+              512,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Death/Archer_DEATH_DOWN.png"
+        },
+        {
+          "state": "death",
+          "direction": "left",
+          "sourceClip": "Death_Left",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              544,
+              32,
+              32
+            ],
+            [
+              32,
+              544,
+              32,
+              32
+            ],
+            [
+              64,
+              544,
+              32,
+              32
+            ],
+            [
+              96,
+              544,
+              32,
+              32
+            ],
+            [
+              128,
+              544,
+              32,
+              32
+            ],
+            [
+              160,
+              544,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Death/Archer_DEATH_LEFT.png"
+        },
+        {
+          "state": "death",
+          "direction": "right",
+          "sourceClip": "Death_Right",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              576,
+              32,
+              32
+            ],
+            [
+              32,
+              576,
+              32,
+              32
+            ],
+            [
+              64,
+              576,
+              32,
+              32
+            ],
+            [
+              96,
+              576,
+              32,
+              32
+            ],
+            [
+              128,
+              576,
+              32,
+              32
+            ],
+            [
+              160,
+              576,
+              32,
+              32
+            ],
+            [
+              192,
+              576,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Death/Archer_DEATH_RIGHT.png"
+        },
+        {
+          "state": "death",
+          "direction": "up",
+          "sourceClip": "Death_Up",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 16,
+          "feetY": 28,
+          "frames": [
+            [
+              0,
+              608,
+              32,
+              32
+            ],
+            [
+              32,
+              608,
+              32,
+              32
+            ],
+            [
+              64,
+              608,
+              32,
+              32
+            ],
+            [
+              96,
+              608,
+              32,
+              32
+            ],
+            [
+              128,
+              608,
+              32,
+              32
+            ],
+            [
+              160,
+              608,
+              32,
+              32
+            ]
+          ],
+          "source": "asset_sources/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/32x32-Top-Down-Character-Animation-Pack-Free-Sampler-v2.0/Spritesheets/Directional/Archer/Death/Archer_DEATH_UP.png"
+        }
+      ]
+    },
+    {
+      "id": "mage",
+      "title": "GandalfHardcore Wizard",
+      "texture": "game/characters/mage.png",
+      "frameWidth": 48,
+      "frameHeight": 48,
+      "feetX": 24,
+      "feetY": 32,
+      "displayScale": 1.8,
+      "animations": [
+        {
+          "state": "idle",
+          "direction": "down",
+          "sourceClip": "Idle Down",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              0,
+              48,
+              48
+            ],
+            [
+              48,
+              0,
+              48,
+              48
+            ],
+            [
+              96,
+              0,
+              48,
+              48
+            ],
+            [
+              144,
+              0,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "idle",
+          "direction": "up",
+          "sourceClip": "Idle Up",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              48,
+              48,
+              48
+            ],
+            [
+              48,
+              48,
+              48,
+              48
+            ],
+            [
+              96,
+              48,
+              48,
+              48
+            ],
+            [
+              144,
+              48,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "idle",
+          "direction": "left",
+          "sourceClip": "Idle Left",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              96,
+              48,
+              48
+            ],
+            [
+              48,
+              96,
+              48,
+              48
+            ],
+            [
+              96,
+              96,
+              48,
+              48
+            ],
+            [
+              144,
+              96,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "idle",
+          "direction": "right",
+          "sourceClip": "Idle Right",
+          "fps": 6.6666667,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              144,
+              48,
+              48
+            ],
+            [
+              48,
+              144,
+              48,
+              48
+            ],
+            [
+              96,
+              144,
+              48,
+              48
+            ],
+            [
+              144,
+              144,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "walk",
+          "direction": "down",
+          "sourceClip": "Walk Down",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              192,
+              48,
+              48
+            ],
+            [
+              48,
+              192,
+              48,
+              48
+            ],
+            [
+              96,
+              192,
+              48,
+              48
+            ],
+            [
+              144,
+              192,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "walk",
+          "direction": "up",
+          "sourceClip": "Walk Up",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              240,
+              48,
+              48
+            ],
+            [
+              48,
+              240,
+              48,
+              48
+            ],
+            [
+              96,
+              240,
+              48,
+              48
+            ],
+            [
+              144,
+              240,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "walk",
+          "direction": "left",
+          "sourceClip": "Walk Left",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              288,
+              48,
+              48
+            ],
+            [
+              48,
+              288,
+              48,
+              48
+            ],
+            [
+              96,
+              288,
+              48,
+              48
+            ],
+            [
+              144,
+              288,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "walk",
+          "direction": "right",
+          "sourceClip": "Walk Right",
+          "fps": 8.0,
+          "loop": true,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              336,
+              48,
+              48
+            ],
+            [
+              48,
+              336,
+              48,
+              48
+            ],
+            [
+              96,
+              336,
+              48,
+              48
+            ],
+            [
+              144,
+              336,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "attack",
+          "direction": "down",
+          "sourceClip": "Attack Down",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              384,
+              48,
+              48
+            ],
+            [
+              48,
+              384,
+              48,
+              48
+            ],
+            [
+              96,
+              384,
+              48,
+              48
+            ],
+            [
+              144,
+              384,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "attack",
+          "direction": "up",
+          "sourceClip": "Attack Up",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              432,
+              48,
+              48
+            ],
+            [
+              48,
+              432,
+              48,
+              48
+            ],
+            [
+              96,
+              432,
+              48,
+              48
+            ],
+            [
+              144,
+              432,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "attack",
+          "direction": "left",
+          "sourceClip": "Attack Left",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              480,
+              48,
+              48
+            ],
+            [
+              48,
+              480,
+              48,
+              48
+            ],
+            [
+              96,
+              480,
+              48,
+              48
+            ],
+            [
+              144,
+              480,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "attack",
+          "direction": "right",
+          "sourceClip": "Attack Right",
+          "fps": 8.0,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "frames": [
+            [
+              0,
+              528,
+              48,
+              48
+            ],
+            [
+              48,
+              528,
+              48,
+              48
+            ],
+            [
+              96,
+              528,
+              48,
+              48
+            ],
+            [
+              144,
+              528,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "death",
+          "direction": "down",
+          "sourceClip": "Death (single facing)",
+          "fps": 6.6666667,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "note": "One source death facing reused for cardinal fallback.",
+          "frames": [
+            [
+              0,
+              576,
+              48,
+              48
+            ],
+            [
+              48,
+              576,
+              48,
+              48
+            ],
+            [
+              96,
+              576,
+              48,
+              48
+            ],
+            [
+              144,
+              576,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "death",
+          "direction": "left",
+          "sourceClip": "Death (single facing)",
+          "fps": 6.6666667,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "note": "One source death facing reused for cardinal fallback.",
+          "frames": [
+            [
+              0,
+              576,
+              48,
+              48
+            ],
+            [
+              48,
+              576,
+              48,
+              48
+            ],
+            [
+              96,
+              576,
+              48,
+              48
+            ],
+            [
+              144,
+              576,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "death",
+          "direction": "right",
+          "sourceClip": "Death (single facing)",
+          "fps": 6.6666667,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "note": "One source death facing reused for cardinal fallback.",
+          "frames": [
+            [
+              0,
+              576,
+              48,
+              48
+            ],
+            [
+              48,
+              576,
+              48,
+              48
+            ],
+            [
+              96,
+              576,
+              48,
+              48
+            ],
+            [
+              144,
+              576,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        },
+        {
+          "state": "death",
+          "direction": "up",
+          "sourceClip": "Death (single facing)",
+          "fps": 6.6666667,
+          "loop": false,
+          "feetX": 24,
+          "feetY": 32,
+          "note": "One source death facing reused for cardinal fallback.",
+          "frames": [
+            [
+              0,
+              576,
+              48,
+              48
+            ],
+            [
+              48,
+              576,
+              48,
+              48
+            ],
+            [
+              96,
+              576,
+              48,
+              48
+            ],
+            [
+              144,
+              576,
+              48,
+              48
+            ]
+          ],
+          "source": "asset_sources/Top Down Pixel Art Wizard/Top Down Pixel Art Wizard/Wizard sheet.png"
+        }
+      ]
+    }
+  ]
+}

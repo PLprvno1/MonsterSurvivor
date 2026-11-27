@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Monster Survivor · Audio Audition — 49 Events</title>
+<style>
+:root{color-scheme:dark;font:16px system-ui,sans-serif;background:#101b19;color:#edf4ee}
+*{box-sizing:border-box}body{margin:0 auto;max-width:1160px;padding:20px}h1{font-size:25px;margin:0 0 10px}h2{font-size:21px;margin:0 0 6px}p{line-height:1.5}button,input,select{font:inherit;border:1px solid #729084;border-radius:5px;background:#18352d;color:inherit;padding:9px}button{cursor:pointer}button:hover{background:#2b5143}button:disabled{cursor:default;opacity:.45}input[type=checkbox]{accent-color:#8edbae}button:focus-visible,input:focus-visible,select:focus-visible,a:focus-visible{outline:3px solid #f4da93;outline-offset:2px}a{color:#b4e6cf}code{overflow-wrap:anywhere}.muted,small{color:#b7cbbf}small{display:block;margin:7px 0}header{position:sticky;top:0;background:#101b19;z-index:2;padding:10px 0;border-bottom:1px solid #587567}.toolbar,.actions{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.toolbar{margin:10px 0}.toolbar label{display:flex;gap:7px;align-items:center}.toolbar input[type=search]{width:220px}.notice{padding:10px;border-left:3px solid #f4da93;background:#292d22;overflow-wrap:anywhere}.notice:empty{display:none}.card{padding:20px;margin:18px 0;border:1px solid #587567;border-radius:9px;scroll-margin-top:300px}.card[hidden]{display:none}.badge{display:inline-block;font-size:14px;padding:4px 9px;border-radius:5px;background:#423f30;color:#ffe5a4}.badge.chosen{background:#204b37;color:#b0f2cb}.pickers{display:grid;grid-template-columns:2fr 1fr;gap:12px;margin:16px 0 8px}.pickers label{display:grid;gap:6px}.file-select{width:100%;margin:6px 0;min-height:168px}.file-select option{padding:5px}.file-select optgroup{color:#9ee3ba}.file-select option{color:#edf4ee}.details,.saved{padding:10px 12px;background:#172922;border-radius:5px;overflow-wrap:anywhere;line-height:1.6}.saved{margin:10px 0;border-left:3px solid #789587}.saved.chosen{border-color:#8edbae}audio{width:100%;height:34px;display:block;margin-top:8px}#now{margin:7px 0;font-size:14px;overflow-wrap:anywhere}.help{font-size:14px}.card .actions{margin-top:12px}#empty{padding:20px;border:1px dashed #729084}@media(max-width:650px){body{padding:10px}.pickers{grid-template-columns:1fr}header{position:static}.toolbar input[type=search]{width:160px}.card{padding:14px;scroll-margin-top:10px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Monster Survivor · Audio Audition</h1>
+  <div id="summary" aria-live="polite"></div>
+  <div class="toolbar">
+    <label>Nhóm <select id="group"><option value="all">Tất cả</option></select></label>
+    <label>Tìm event <input id="event-search" type="search" placeholder="48, Player Hurt, PLAYER_HURT"></label>
+    <label><input id="unselected-only" type="checkbox"> Chỉ chưa chọn</label>
+    <button id="export" type="button">Xuất toàn bộ lựa chọn ra JSON</button>
+    <button id="import" type="button">Nhập JSON</button>
+    <input id="import-file" type="file" accept=".json,application/json" hidden>
+  </div>
+  <div id="notice" class="notice" role="status" aria-live="polite"></div>
+  <div class="toolbar"><button id="stop" type="button">■ Dừng</button><span id="now" role="status">Chưa phát file.</span></div>
+  <audio id="player" controls preload="none"></audio>
+</header>
+<details class="help">
+  <summary>Cách dùng và lưu kết quả cho Task 05.1B</summary>
+  <p>Mở <code>AUDIO_AUDITION.html</code> bằng Edge hoặc Chrome trên Windows. Giữ HTML ở gốc project và thư mục <code>asset_sources/audio/</code> tại vị trí hiện tại. Manifest đã nhúng trong HTML; không dùng mạng, server hay fetch. Không chuyển riêng HTML sang thư mục khác.</p>
+  <p>Tìm tên file hoặc lọc nguồn ở mỗi event, chọn một dòng, bấm ▶ Nghe thử, rồi ✓ Chọn âm thanh này. Duyệt/nghe không tự lưu lựa chọn. Candidate cũ chỉ là gợi ý, không tự duyệt; event MISSING cũng có đầy đủ thư viện. Nhiều event có thể dùng chung file.</p>
+  <p>Lựa chọn được lưu trong trình duyệt nếu localStorage khả dụng. Hãy xuất <code>monster-survivor-audio-selections.json</code> để giữ bản chắc chắn và chuẩn bị cho Task 05.1B. JSON luôn chứa cả 49 event, gồm <code>event_id</code>, <code>file_path</code> tương đối từ gốc project và <code>status</code> (selected/unselected). Nhập JSON để tiếp tục; chỉ những event có trong JSON được cập nhật, các event còn lại giữ nguyên. Bản xuất cũ 05.1A cũng được hỗ trợ; lựa chọn im lặng cũ được chuyển về chưa chọn file.</p>
+  <p>Thời lượng lấy từ lần quét/giải mã file, không cần tải trước hàng trăm âm thanh. File preview của pack không thuộc danh sách SFX/BGM. Khi thêm audio, chạy <code>python tools/build_audio_audition.py</code> để quét lại và cập nhật cả HTML lẫn <code>AUDIO_AUDITION_MANIFEST.json</code>. Đây là công cụ lựa chọn, chưa tích hợp audio vào game.</p>
+</details>
+<main id="cards"></main>
+<p id="empty" hidden>Không có event phù hợp bộ lọc.</p>
+<script id="manifest" type="application/json">__MANIFEST__</script>
+<script>
+'use strict';
+const manifest = JSON.parse(document.getElementById('manifest').textContent);
+const events = manifest.events, audio = manifest.audio;
+const byPath = new Map(audio.map(item => [item.path, item]));
+const byEvent = new Map(events.map(event => [event.id, event]));
+const selected = new Map(), views = new Map();
+const player = document.getElementById('player');
+const notice = document.getElementById('notice'), now = document.getElementById('now');
+const group = document.getElementById('group'), eventSearch = document.getElementById('event-search');
+const unselectedOnly = document.getElementById('unselected-only');
+const STORAGE = 'monster-survivor-audio-audition-v2', LEGACY = 'monster-survivor-audio-audit-v1';
+const root = manifest.asset_root;
+let playbackToken = 0, playingLabel = '';
+const normalize = value => String(value).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+const kind = event => event.group === 'BGM' ? 'BGM' : 'SFX';
+const compatible = (event, path) => byPath.has(path) && byPath.get(path).kind === kind(event);
+const duration = seconds => `${seconds.toFixed(3)} s`;
+function fileURL(path) {
+  if (!byPath.has(path)) throw new Error('File không có trong manifest.');
+  return new URL(root + path.split('/').map(encodeURIComponent).join('/'), document.baseURI).href;
+}
+function say(message) { notice.textContent = message; }
+function exportData() {
+  return {schema_version:2, task:'05.1A.1', asset_root:root, exported_at:new Date().toISOString(),
+    events:events.map(event => ({event_id:event.id,
+      file_path:selected.has(event.id) ? root + selected.get(event.id) : null,
+      status:selected.has(event.id) ? 'selected' : 'unselected'}))};
+}
+function readSelections(data) {
+  if (!data || typeof data !== 'object' || Array.isArray(data)) throw new Error('JSON phải là object.');
+  let rows, legacy = false, silenceCount = 0;
+  if (data.schema_version === 2 && Array.isArray(data.events)) {
+    if (data.asset_root !== root) throw new Error('asset_root không đúng asset_sources/audio/.');
+    rows = data.events;
+  } else if (data.choices && typeof data.choices === 'object' && !Array.isArray(data.choices)) {
+    legacy = true;
+    rows = Object.entries(data.choices).map(([id, choice]) => {
+      if (!choice || !['approved','pending','replace','silence'].includes(choice.status)) throw new Error('Trạng thái bản cũ không hợp lệ: ' + id);
+      if (choice.status === 'silence') silenceCount++;
+      return {event_id:id, status:choice.status === 'approved' ? 'selected' : 'unselected',
+        file_path:choice.status === 'approved' ? choice.candidate : null};
+    });
+  } else throw new Error('Không nhận diện định dạng lựa chọn (schema_version 2 hoặc bản 05.1A cũ).');
+  if (rows.length > events.length) throw new Error('JSON có quá nhiều event.');
+  const result = new Map();
+  for (const row of rows) {
+    if (!row || !byEvent.has(row.event_id)) throw new Error('event_id không hợp lệ: ' + row?.event_id);
+    if (result.has(row.event_id)) throw new Error('event_id bị trùng: ' + row.event_id);
+    if (!['selected','unselected'].includes(row.status)) throw new Error('Trạng thái không hợp lệ: ' + row.event_id);
+    let path = null;
+    if (row.status === 'selected') {
+      if (typeof row.file_path !== 'string') throw new Error('Thiếu file_path: ' + row.event_id);
+      path = legacy ? row.file_path : row.file_path.startsWith(root) ? row.file_path.slice(root.length) : '';
+      if (!compatible(byEvent.get(row.event_id), path)) throw new Error('File không có trong thư viện hoặc sai loại SFX/BGM: ' + row.event_id);
+    } else if (row.file_path !== null) throw new Error('Event chưa chọn phải có file_path: null.');
+    result.set(row.event_id, path);
+  }
+  return {result, silenceCount};
+}
+function applySelections(data) {
+  const parsed = readSelections(data); // Validate the whole import before changing anything.
+  for (const [id, path] of parsed.result) {
+    if (path === null) selected.delete(id); else selected.set(id, path);
+  }
+  return parsed;
+}
+function persist() {
+  try { localStorage.setItem(STORAGE, JSON.stringify(exportData())); return true; }
+  catch (error) { say('Trình duyệt không lưu được tại file://. Hãy xuất JSON trước khi đóng trang.'); return false; }
+}
+function loadSelections() {
+  try {
+    const current = localStorage.getItem(STORAGE);
+    if (current !== null) { applySelections(JSON.parse(current)); return; }
+    const legacy = localStorage.getItem(LEGACY);
+    if (legacy !== null) {
+      const parsed = applySelections({choices:JSON.parse(legacy)});
+      say(`Đã đọc lựa chọn cũ: ${selected.size} file. ${parsed.silenceCount ? 'Im lặng cũ được chuyển về chưa chọn file. ' : ''}Hãy xuất JSON để giữ bản mới.`);
+    }
+  } catch (error) { say('Không đọc được lưu cục bộ: ' + error.message + ' Bạn vẫn có thể chọn và nhập/xuất JSON.'); }
+}
+function stop() {
+  playbackToken++;
+  player.pause();
+  player.removeAttribute('src');
+  player.load();
+  playingLabel = '';
+  now.textContent = 'Đã dừng.';
+}
+async function play(event, path) {
+  stop();
+  const token = playbackToken;
+  playingLabel = event.id + ' · ' + path;
+  now.textContent = 'Đang mở: ' + playingLabel;
+  player.src = fileURL(path);
+  try {
+    await player.play();
+    if (token === playbackToken) now.textContent = 'Đang phát: ' + playingLabel;
+  } catch (error) {
+    if (token === playbackToken) now.textContent = 'Không phát được: ' + path + '. Kiểm tra vị trí thư mục và thử liên kết Mở file. ' + error.message;
+  }
+}
+player.addEventListener('error', () => {
+  if (player.hasAttribute('src') && player.error) now.textContent = `Lỗi audio ${player.error.code}: ${playingLabel}. Kiểm tra file còn ở asset_sources/audio/; thử Mở file bằng Edge/Chrome.`;
+});
+player.addEventListener('ended', () => { now.textContent = 'Đã phát xong: ' + playingLabel; });
+function updateSummary() {
+  document.getElementById('summary').textContent = `${selected.size}/49 đã chọn · ${49-selected.size} chưa chọn · ${manifest.counts.sfx} SFX · ${manifest.counts.bgm} BGM`;
+}
+function updateSaved(event) {
+  const view = views.get(event.id), path = selected.get(event.id);
+  view.badge.textContent = path ? 'Đã chọn' : 'Chưa chọn';
+  view.badge.classList.toggle('chosen', !!path);
+  view.saved.classList.toggle('chosen', !!path);
+  view.saved.textContent = path ? 'Đã lưu: ' + root + path : 'Chưa chọn âm thanh cho event này.';
+  view.clear.disabled = !path;
+  view.showSaved.disabled = !path;
+}
+function filters() {
+  let visible = 0;
+  for (const event of events) {
+    const view = views.get(event.id);
+    view.card.hidden = (group.value !== 'all' && event.group !== group.value)
+      || (unselectedOnly.checked && selected.has(event.id))
+      || !normalize(`${view.index}. ${event.id} ${event.label}`).includes(normalize(eventSearch.value.trim()));
+    if (!view.card.hidden) visible++;
+  }
+  document.getElementById('empty').hidden = visible !== 0;
+}
+function element(tag, text, className) {
+  const node = document.createElement(tag);
+  if (text !== undefined) node.textContent = text;
+  if (className) node.className = className;
+  return node;
+}
+function buildCard(event, index) {
+  const card = element('section', undefined, 'card');
+  card.dataset.eventId = event.id;
+  card.append(element('h2', `${index}. ${event.label}`), element('code', event.id));
+  const badge = element('span', '', 'badge');
+  card.append(document.createTextNode(' '), badge);
+  card.append(element('p', event.reason));
+  card.append(element('small', `Gợi ý cũ: ${event.candidates.length ? event.candidates.length + ' candidate' : 'MISSING · chưa có candidate'}. ${kind(event)}: chọn từ toàn bộ thư viện phù hợp.`));
+  const pickers = element('div', undefined, 'pickers');
+  const searchLabel = element('label', 'Tìm tên file / đường dẫn');
+  const search = element('input'); search.type = 'search'; search.placeholder = 'Ví dụ: impact, hurt, click…'; search.setAttribute('aria-label', 'Tìm file cho ' + event.id);
+  searchLabel.append(search);
+  const sourceLabel = element('label', 'Thư mục nguồn');
+  const source = element('select'); source.setAttribute('aria-label', 'Lọc nguồn cho ' + event.id);
+  source.append(new Option('Tất cả nguồn', 'all'));
+  const available = audio.filter(item => item.kind === kind(event));
+  for (const name of [...new Set(available.map(item => item.source))].sort()) source.append(new Option(name === '.' ? 'BGM · gốc audio/' : name, name));
+  sourceLabel.append(source); pickers.append(searchLabel, sourceLabel); card.append(pickers);
+  const selectLabel = element('label', 'Danh sách file (gợi ý ở đầu, chưa tự chọn)');
+  const select = element('select', undefined, 'file-select'); select.size = 6; select.setAttribute('aria-label', 'File âm thanh cho ' + event.id);
+  selectLabel.append(select); card.append(selectLabel);
+  const count = element('small'); card.append(count);
+  const details = element('div', undefined, 'details'); card.append(details);
+  const saved = element('div', undefined, 'saved'); card.append(saved);
+  const actions = element('div', undefined, 'actions');
+  const playButton = element('button', '▶ Nghe thử'), stopButton = element('button', '■ Dừng');
+  const choose = element('button', '✓ Chọn âm thanh này'), clear = element('button', 'Bỏ lựa chọn');
+  const showSaved = element('button', 'Xem file đã chọn'), open = element('a', 'Mở file');
+  playButton.className = 'play'; choose.className = 'choose'; clear.className = 'clear'; showSaved.className = 'show-saved';
+  open.target = '_blank'; open.rel = 'noopener'; open.hidden = true;
+  actions.append(playButton, stopButton, choose, showSaved, clear, open); card.append(actions);
+  const view = {card, badge, saved, clear, showSaved, index}; views.set(event.id, view);
+  function detail() {
+    const item = byPath.get(select.value);
+    playButton.disabled = choose.disabled = !item;
+    open.hidden = !item;
+    if (!item) { details.textContent = 'Chọn một file trong danh sách để xem thông tin và nghe thử.'; open.removeAttribute('href'); return; }
+    details.replaceChildren(element('strong', item.name), element('small', 'Nguồn: ' + (item.source === '.' ? 'asset_sources/audio/ (BGM)' : item.source)),
+      element('span', `${duration(item.duration)} · ${item.format.toUpperCase()} · ${(item.bytes/1024).toFixed(1)} KiB`), element('small', root + item.path));
+    open.href = fileURL(item.path);
+  }
+  function populate(preferred = select.value) {
+    select.replaceChildren(new Option('— Chọn file để duyệt / nghe thử —', ''));
+    const needle = normalize(search.value.trim());
+    const matches = available.filter(item => (source.value === 'all' || item.source === source.value) && normalize(item.path).includes(needle));
+    const suggestionPaths = new Set(event.candidates);
+    const suggestions = event.candidates.map(path => byPath.get(path)).filter(item => matches.includes(item));
+    const others = matches.filter(item => !suggestionPaths.has(item.path));
+    for (const [label, items] of [['Gợi ý cũ · cần nghe và bấm chọn', suggestions], ['Toàn bộ file khác', others]]) {
+      if (!items.length) continue;
+      const optgroup = element('optgroup'); optgroup.label = label;
+      for (const item of items) optgroup.append(new Option(`${item.name} · ${duration(item.duration)} · ${item.source === '.' ? 'BGM' : item.source}`, item.path));
+      select.append(optgroup);
+    }
+    select.value = matches.some(item => item.path === preferred) ? preferred : '';
+    count.textContent = `${matches.length}/${available.length} file · ${suggestions.length} gợi ý phù hợp bộ lọc`;
+    detail();
+  }
+  select.onchange = detail; search.oninput = () => populate(); source.onchange = () => populate();
+  playButton.onclick = () => { if (compatible(event, select.value)) play(event, select.value); };
+  stopButton.onclick = stop;
+  choose.onclick = () => {
+    if (!compatible(event, select.value)) return;
+    selected.set(event.id, select.value); updateSaved(event); updateSummary(); filters();
+    if (persist()) say('Đã lưu lựa chọn cho ' + event.id + '. Bạn có thể đổi hoặc xuất JSON bất kỳ lúc nào.');
+  };
+  clear.onclick = () => {
+    selected.delete(event.id); updateSaved(event); updateSummary(); filters();
+    if (persist()) say('Đã bỏ lựa chọn cho ' + event.id + '.');
+  };
+  showSaved.onclick = () => { search.value = ''; source.value = 'all'; populate(selected.get(event.id)); select.focus(); };
+  populate(''); updateSaved(event);
+  document.getElementById('cards').append(card);
+}
+loadSelections();
+for (const name of [...new Set(events.map(event => event.group))]) group.append(new Option(name, name));
+events.forEach((event, index) => buildCard(event, index + 1));
+updateSummary(); filters();
+group.onchange = filters; eventSearch.oninput = filters; unselectedOnly.onchange = filters;
+document.getElementById('stop').onclick = stop;
+document.getElementById('export').onclick = () => {
+  const blob = new Blob([JSON.stringify(exportData(), null, 2) + '\n'], {type:'application/json'});
+  const address = URL.createObjectURL(blob), link = element('a');
+  link.href = address; link.download = 'monster-survivor-audio-selections.json'; document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(address), 30000);
+  say('Đã yêu cầu tải JSON gồm cả 49 event. Giữ file này để nhập lại hoặc dùng cho Task 05.1B.');
+};
+const importFile = document.getElementById('import-file');
+document.getElementById('import').onclick = () => importFile.click();
+importFile.onchange = async () => {
+  const file = importFile.files[0]; if (!file) return;
+  try {
+    if (file.size > 2*1024*1024) throw new Error('JSON lớn hơn 2 MiB.');
+    const parsed = applySelections(JSON.parse(await file.text()));
+    for (const event of events) updateSaved(event);
+    updateSummary(); filters();
+    if (persist()) say(`Đã nhập ${parsed.result.size} event; hiện ${selected.size}/49 đã chọn.${parsed.silenceCount ? ' Im lặng cũ được chuyển về chưa chọn file.' : ''}`);
+  } catch (error) { say('Không nhập JSON: ' + error.message + ' Các lựa chọn hiện tại được giữ nguyên.'); }
+  finally { importFile.value = ''; }
+};
+</script>
+</body>
+</html>

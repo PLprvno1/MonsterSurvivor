@@ -20,6 +20,12 @@
     </item>
 
     <item
+        android:id="@+id/action_item_shop"
+        android:icon="@drawable/ic_shop_potion"
+        android:title="@string/shop_action_label"
+        app:showAsAction="always|withText" />
+
+    <item
         android:id="@+id/action_settings"
         android:icon="@drawable/ic_settings"
         android:title="@string/menu_settings"

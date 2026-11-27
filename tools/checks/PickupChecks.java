@@ -13,7 +13,8 @@ public final class PickupChecks {
     private static void close(float actual,float expected,float epsilon,String label) {check(Math.abs(actual-expected)<=epsilon,label+": "+actual+" / "+expected);}
     private static CollisionGrid open() {return new CollisionGrid(100,100,16,new byte[10000]);}
     private static GameConfig config(GameMode mode,PickupConfig pickups) {
-        return new GameConfig.Builder().mode(mode).pickups(pickups).population(0,60)
+        // This clock fixture now crosses the live Mini Boss event; isolate pickup expiry from player death.
+        return new GameConfig.Builder().mode(mode).pickups(pickups).playerHp(100000).population(0,60)
             .stages(new GameConfig.Stage(0,0,1000000,1,0,0,0)).build();
     }
     private static void collect(PickupSystem items,Player p,CollisionGrid grid,PickupType type) {
@@ -92,7 +93,7 @@ public final class PickupChecks {
             check(box.age==age && s.elapsed()==real && s.progress()==progress && s.pickups.nextSpawnProgress()==next,"Pause freezes age, schedule and both clocks");
             int id=(int)box.id;boolean expired=false;
             for(int i=0;i<601;i++) {
-                s.update(.1f,0,0,false,600,680,1000,920);check(s.pickups.boxes()<=6,"Box cap holds in "+mode);
+                s.update(.1f,0,0,false,600,680,1000,920);check(s.pickups.ordinaryBoxes()<=6 && s.pickups.skillBoxes()<=2,"Independent ordinary/skill box caps hold in "+mode);
                 boolean exists=false;for(int j=0;j<s.pickups.size();j++)if(s.pickups.get(j).id==id)exists=true;
                 if(!exists) {check(box.age>=60 && box.age<60.11f,"Expiration uses 60 real gameplay seconds in "+mode);expired=true;break;}
             }
@@ -106,16 +107,17 @@ public final class PickupChecks {
         }
         for(long seed:new long[]{42,20261113,8675309}) {
             var layout=ForestGenerator.generate(seed);var c=config(GameMode.DEMO,new PickupConfig());
-            var a=new GameSession(c,layout.grid,1608,1608,null,null,seed);
-            var b=new GameSession(c,layout.grid,1608,1608,null,null,seed);
+            float sx=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,sy=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            var a=new GameSession(c,layout.grid,sx,sy,null,null,seed);
+            var b=new GameSession(c,layout.grid,sx,sy,null,null,seed);
             for(int i=0;i<420;i++) {
-                a.update(.1f,0,0,false,1400,1480,1816,1736);b.update(.1f,0,0,false,1400,1480,1816,1736);
+                a.update(.1f,0,0,false,sx-208,sy-128,sx+208,sy+128);b.update(.1f,0,0,false,sx-208,sy-128,sx+208,sy+128);
                 check(a.pickups.size()==b.pickups.size(),"Seed reproduces schedule and caps");
                 for(int j=0;j<a.pickups.size();j++) {
                     var p=a.pickups.get(j);var q=b.pickups.get(j);var nav=a.enemies.navigation;
                     check(p.type==q.type && p.x==q.x && p.y==q.y,"Seed reproduces types and positions");
-                    check(nav.connected(nav.cell(1608,1608),nav.cell(p.x,p.y),false) && layout.grid.canOccupy(p.x,p.y,5,4),"Procedural item is reachable on valid ground");
-                    check(Math.hypot(p.x-1608,p.y-1608)>=48,"Box never spawns under player");
+                    check(nav.connected(nav.cell(sx,sy),nav.cell(p.x,p.y),false) && layout.grid.canOccupy(p.x,p.y,5,4),"Procedural item is reachable on valid ground");
+                    check(Math.hypot(p.x-sx,p.y-sy)>=48,"Box never spawns under player");
                 }
             }
         }

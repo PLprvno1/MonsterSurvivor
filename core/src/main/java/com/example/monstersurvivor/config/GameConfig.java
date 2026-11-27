@@ -40,6 +40,8 @@ public final class GameConfig {
     public final GameMode mode;
     public final GameLanguage language;
     public final GameStrings strings;
+    public final BossConfig bosses;
+    public final SkillConfig skills;
     public final int playerHp, swordDamage, initialEnemies, maxEnemies, pathSearchesPerFrame;
     public final float swordRange, swordCooldown, swordHitTime, swordDetectionRange, swordAnimationDuration, spawnInterval, densityGrowthSeconds;
     public final float enemySpeedMultiplier;
@@ -56,6 +58,8 @@ public final class GameConfig {
     private GameConfig(Builder b) {
         difficulty=b.difficulty; mode=b.mode; playerHp=b.playerHp; swordDamage=b.swordDamage;
         language=b.language;strings=GameStrings.of(language);
+        bosses=b.bosses;
+        skills=b.skills;
         pickups=b.pickups;
         weapons=b.weapons;
         visuals=b.visuals;
@@ -101,11 +105,13 @@ public final class GameConfig {
         }
     }
     public EnemyStats enemy(EnemyType type) { return stats[type.ordinal()]; }
-    public EnemyStats enemy(EnemyType type,float progress) { return stageStats[stageIndex(progress)][type.ordinal()]; }
-    public EnemyStats enemy(EnemyDefinition definition,float progress) {return rosterStats[stageIndex(progress)][definition.index];}
+    public EnemyStats enemy(EnemyType type,float progress) {return endlessStats(stageStats[stageIndex(progress)][type.ordinal()],progress);}
+    public EnemyStats enemy(EnemyDefinition definition,float progress) {return endlessStats(rosterStats[stageIndex(progress)][definition.index],progress);}
+    private EnemyStats endlessStats(EnemyStats base,float progress) {return mode==GameMode.ENDLESS?EndlessRules.enemy(base,progress,difficulty):base;}
     private int stageIndex(float progress) {int i=stages.length-1;while(i>0 && progress<stages[i].startSeconds)i--;return i;}
     public Stage stage(float progress) {return stages[stageIndex(progress)];}
     public int targetPopulation(float progressSeconds) {
+        if(mode==GameMode.ENDLESS && progressSeconds>=600)return maxEnemies;
         Stage stage=stage(progressSeconds);
         return Math.min(maxEnemies,Math.max(initialEnemies,stage.population+initialEnemies-defaultInitial
             +(int)(Math.max(0,progressSeconds-stage.startSeconds)/stage.growthSeconds)));
@@ -126,6 +132,8 @@ public final class GameConfig {
         private Difficulty difficulty=Difficulty.EASY;
         private GameMode mode=GameMode.NORMAL;
         private GameLanguage language=GameLanguage.VI;
+        private BossConfig bosses=new BossConfig();
+        private SkillConfig skills=new SkillConfig();
         private int playerHp=10, swordDamage=1, initialEnemies=-1, maxEnemies=-1, pathSearchesPerFrame=2;
         // Retain the entire source clip and scale playback to gameplay time without modifying the asset.
         private float swordRange=48, swordCooldown=1f, swordHitTime=.15f, swordDetectionRange=60, swordAnimationDuration=.65f;
@@ -141,6 +149,8 @@ public final class GameConfig {
         public Builder mode(GameMode v) { mode=v; return this; }
         public Builder language(GameLanguage v) {language=v==null?GameLanguage.VI:v;return this;}
         public Builder language(String v) {return language(GameLanguage.parse(v));}
+        public Builder bosses(BossConfig v) {if(v==null)throw new IllegalArgumentException("Boss tuning required");bosses=v;return this;}
+        public Builder skills(SkillConfig v) {if(v==null)throw new IllegalArgumentException("Skill tuning required");skills=v;return this;}
         public Builder playerHp(int v) { playerHp=v; return this; }
         public Builder sword(int damage,float range,float cooldown,float hitTime) {
             swordDamage=damage;swordRange=range;swordCooldown=cooldown;swordHitTime=hitTime;

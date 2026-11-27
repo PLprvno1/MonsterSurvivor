@@ -20,10 +20,11 @@ public final class BalanceProbe {
         json.append("],\"stationary\":[");comma=false;
         for(long seed:new long[]{42,43})for(var difficulty:Difficulty.values()) {
             var c=new GameConfig.Builder().difficulty(difficulty).fixedSeed(seed).build();
-            var layout=ForestGenerator.generate(seed);var s=new GameSession(c,layout.grid,1608,1608,null,null,seed);
+            var layout=ForestGenerator.generate(seed);float sx=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,sy=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            var s=new GameSession(c,layout.grid,sx,sy,null,null,seed);
             double population=0;int frames=0,max=0;float firstDamage=-1;
             for(int n=0;n<12000 && s.player.alive();n++) {
-                s.update(.05f,0,0,false,1469,1504,1747,1712);
+                s.update(.05f,0,0,false,sx-139,sy-104,sx+139,sy+104);
                 if(firstDamage<0 && s.player.hp()<10)firstDamage=s.elapsed();
                 population+=s.enemies.livingCount();frames++;max=Math.max(max,s.enemies.livingCount());
                 if(s.choosingWeapon())throw new AssertionError("Stationary probe unexpectedly collected modal");
@@ -34,10 +35,11 @@ public final class BalanceProbe {
         json.append("],\"heldHpPopulation\":[");comma=false;
         for(long seed:new long[]{42,43})for(var difficulty:Difficulty.values()) {
             var c=new GameConfig.Builder().difficulty(difficulty).fixedSeed(seed).playerHp(100000).build();
-            var layout=ForestGenerator.generate(seed);var s=new GameSession(c,layout.grid,1608,1608,null,null,seed);
+            var layout=ForestGenerator.generate(seed);float sx=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,sy=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            var s=new GameSession(c,layout.grid,sx,sy,null,null,seed);
             int[] starts={0,60,120,300,420,540},ends={60,120,300,420,540,600};double[] sum=new double[6];int[] count=new int[6];int stage=0;
             for(int frame=0;frame<6000;frame++) {
-                s.update(.1f,0,0,false,1469,1504,1747,1712);while(stage<5 && s.progress()>=ends[stage])stage++;
+                s.update(.1f,0,0,false,sx-139,sy-104,sx+139,sy+104);while(stage<5 && s.progress()>=ends[stage])stage++;
                 sum[stage]+=s.enemies.livingCount();count[stage]++;
             }
             for(int i=0;i<6;i++) {

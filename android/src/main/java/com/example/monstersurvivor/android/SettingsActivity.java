@@ -1,6 +1,7 @@
 package com.example.monstersurvivor.android;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.os.Bundle;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -18,10 +19,10 @@ import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.switchmaterial.SwitchMaterial;
 
 /**
- * Settings Activity managing BGM, SFX, Haptic Vibration, and Theme options.
+ * Settings Activity managing BGM, SFX, Haptic Vibration, Language, and Theme options.
  * Persists all configurations to SharedPreferences.
  */
-public class SettingsActivity extends AppCompatActivity {
+public class SettingsActivity extends NativeAudioActivity {
 
     private GamePreferences mPrefs;
 
@@ -35,9 +36,18 @@ public class SettingsActivity extends AppCompatActivity {
     private TextView mTvMusicVol;
     private TextView mTvSfxVol;
 
+    private RadioGroup mRgLanguage;
+    private RadioButton mRbLangVi;
+    private RadioButton mRbLangEn;
+
     private RadioGroup mRgTheme;
     private RadioButton mRbForest;
     private RadioButton mRbDark;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(UiUtils.wrapLocale(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,11 +59,19 @@ public class SettingsActivity extends AppCompatActivity {
         mPrefs = GamePreferences.getInstance(this);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar_settings);
-        toolbar.setNavigationOnClickListener(v -> finish());
+        toolbar.setNavigationOnClickListener(v -> UiUtils.navigateBack(this));
+
+        getOnBackPressedDispatcher().addCallback(this, new androidx.activity.OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                UiUtils.navigateBack(SettingsActivity.this);
+            }
+        });
 
         initViews();
         loadValues();
         setupListeners();
+        mSeekMusic.setEnabled(mPrefs.isMusicEnabled());mSeekSfx.setEnabled(mPrefs.isSfxEnabled());
     }
 
     @Override
@@ -72,6 +90,10 @@ public class SettingsActivity extends AppCompatActivity {
 
         mTvMusicVol = findViewById(R.id.tv_music_vol_label);
         mTvSfxVol = findViewById(R.id.tv_sfx_vol_label);
+
+        mRgLanguage = findViewById(R.id.rg_language);
+        mRbLangVi = findViewById(R.id.rb_lang_vi);
+        mRbLangEn = findViewById(R.id.rb_lang_en);
 
         mRgTheme = findViewById(R.id.rg_theme);
         mRbForest = findViewById(R.id.rb_theme_forest);
@@ -92,6 +114,12 @@ public class SettingsActivity extends AppCompatActivity {
         mSeekSfx.setProgress(sfxVol);
         mTvSfxVol.setText(getString(R.string.setting_sfx_volume, sfxVol));
 
+        if ("en".equalsIgnoreCase(mPrefs.getGameLanguage())) {
+            mRbLangEn.setChecked(true);
+        } else {
+            mRbLangVi.setChecked(true);
+        }
+
         if (GamePreferences.THEME_DARK.equals(mPrefs.getTheme())) {
             mRbDark.setChecked(true);
         } else {
@@ -102,11 +130,13 @@ public class SettingsActivity extends AppCompatActivity {
     private void setupListeners() {
         mSwitchMusic.setOnCheckedChangeListener((buttonView, isChecked) -> {
             mPrefs.setMusicEnabled(isChecked);
+            com.example.monstersurvivor.android.audio.NativeAudio.refresh(this);
             mSeekMusic.setEnabled(isChecked);
         });
 
         mSwitchSfx.setOnCheckedChangeListener((buttonView, isChecked) -> {
             mPrefs.setSfxEnabled(isChecked);
+            com.example.monstersurvivor.android.audio.NativeAudio.refresh(this);
             mSeekSfx.setEnabled(isChecked);
         });
 
@@ -119,6 +149,7 @@ public class SettingsActivity extends AppCompatActivity {
                 mTvMusicVol.setText(getString(R.string.setting_music_volume, progress));
                 if (fromUser) {
                     mPrefs.setMusicVolume(progress);
+                    com.example.monstersurvivor.android.audio.NativeAudio.refresh(SettingsActivity.this);
                 }
             }
 
@@ -126,7 +157,7 @@ public class SettingsActivity extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {com.example.monstersurvivor.android.audio.NativeAudio.play(SettingsActivity.this,com.example.monstersurvivor.audio.AudioEvent.UI_CONFIRM);}
         });
 
         mSeekSfx.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
@@ -135,6 +166,7 @@ public class SettingsActivity extends AppCompatActivity {
                 mTvSfxVol.setText(getString(R.string.setting_sfx_volume, progress));
                 if (fromUser) {
                     mPrefs.setSfxVolume(progress);
+                    com.example.monstersurvivor.android.audio.NativeAudio.refresh(SettingsActivity.this);
                 }
             }
 
@@ -142,7 +174,18 @@ public class SettingsActivity extends AppCompatActivity {
             public void onStartTrackingTouch(SeekBar seekBar) {}
 
             @Override
-            public void onStopTrackingTouch(SeekBar seekBar) {}
+            public void onStopTrackingTouch(SeekBar seekBar) {com.example.monstersurvivor.android.audio.NativeAudio.play(SettingsActivity.this,com.example.monstersurvivor.audio.AudioEvent.UI_CONFIRM);}
+        });
+
+        mRgLanguage.setOnCheckedChangeListener((group, checkedId) -> {
+            String currentLang = mPrefs.getGameLanguage();
+            String targetLang = (checkedId == R.id.rb_lang_en) ? "en" : "vi";
+
+            if (!targetLang.equalsIgnoreCase(currentLang)) {
+                mPrefs.setGameLanguage(targetLang);
+                Toast.makeText(this, R.string.toast_language_changed, Toast.LENGTH_SHORT).show();
+                recreate();
+            }
         });
 
         mRgTheme.setOnCheckedChangeListener((group, checkedId) -> {
@@ -153,15 +196,16 @@ public class SettingsActivity extends AppCompatActivity {
 
             if (!targetTheme.equals(currentTheme)) {
                 mPrefs.setTheme(targetTheme);
-                Toast.makeText(this, "Đã áp dụng giao diện mới", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, R.string.toast_theme_changed, Toast.LENGTH_SHORT).show();
                 recreate();
             }
         });
 
         findViewById(R.id.btn_reset_defaults).setOnClickListener(v -> UiUtils.animateClick(v, () -> {
             mPrefs.resetDefaults();
+            com.example.monstersurvivor.android.audio.NativeAudio.refresh(this);
             loadValues();
-            Toast.makeText(this, "Đã khôi phục cài đặt mặc định", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_defaults_reset, Toast.LENGTH_SHORT).show();
             recreate();
         }));
 
@@ -169,11 +213,13 @@ public class SettingsActivity extends AppCompatActivity {
     }
 
     private void showAboutDialog() {
-        new AlertDialog.Builder(this)
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.dialog_about_title)
                 .setMessage(R.string.dialog_about_msg)
                 .setIcon(R.drawable.ic_info)
-                .setPositiveButton(R.string.dialog_close, (dialog, which) -> dialog.dismiss())
-                .show();
+                .setPositiveButton(R.string.dialog_close, (d, which) -> d.dismiss())
+                .create();
+        dialog.show();
+        UiUtils.styleDialog(dialog);
     }
 }

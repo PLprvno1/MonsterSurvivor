@@ -24,7 +24,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <!-- Left Column: Difficulty & Game Mode Selection Cards -->
-    <LinearLayout
+    <ScrollView
         android:id="@+id/layout_selectors"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -32,11 +32,219 @@
         android:layout_marginTop="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginBottom="16dp"
-        android:orientation="vertical"
+        android:fillViewport="true"
+        android:overScrollMode="ifContentScrolls"
+        android:scrollbars="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/guideline_mode_split"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar_mode">
+
+        <LinearLayout
+            android:id="@+id/layout_selectors_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/section_character"
+                android:textColor="@color/gold_bright"
+                android:textSize="13sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/tv_character_wallet"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/panel_fantasy_badge"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textColor="@color/gold_bright"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/character_cards"
+            android:layout_width="match_parent"
+            android:layout_height="144dp"
+            android:layout_marginBottom="9dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/card_character_warrior"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/panel_fantasy_card_selected"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="4dp">
+                <ImageView
+                    android:id="@+id/iv_character_warrior"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="@string/character_warrior"
+                    android:scaleType="centerInside" />
+                <TextView
+                    android:id="@+id/tv_character_warrior_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_character_warrior_weapon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tv_character_warrior_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/text_muted"
+                    android:textSize="9sp" />
+                <TextView
+                    android:id="@+id/tv_character_warrior_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_character_archer"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                android:layout_marginEnd="3dp"
+                android:background="@drawable/panel_fantasy_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="4dp">
+                <ImageView
+                    android:id="@+id/iv_character_archer"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="@string/character_archer"
+                    android:scaleType="centerInside" />
+                <TextView
+                    android:id="@+id/tv_character_archer_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_character_archer_weapon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tv_character_archer_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/text_muted"
+                    android:textSize="9sp" />
+                <TextView
+                    android:id="@+id/tv_character_archer_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/card_character_mage"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="3dp"
+                android:background="@drawable/panel_fantasy_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_horizontal"
+                android:orientation="vertical"
+                android:padding="4dp">
+                <ImageView
+                    android:id="@+id/iv_character_mage"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:contentDescription="@string/character_mage"
+                    android:scaleType="centerInside" />
+                <TextView
+                    android:id="@+id/tv_character_mage_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/tv_character_mage_weapon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="10sp" />
+                <TextView
+                    android:id="@+id/tv_character_mage_description"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/text_muted"
+                    android:textSize="9sp" />
+                <TextView
+                    android:id="@+id/tv_character_mage_status"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:maxLines="2"
+                    android:textColor="@color/gold_bright"
+                    android:textSize="9sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+        </LinearLayout>
 
         <!-- Section 1: Difficulty -->
         <TextView
@@ -79,7 +287,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Quái nhẹ hơn • Dễ thở"
+                    android:text="@string/sub_diff_easy"
                     android:textColor="@color/text_secondary"
                     android:textSize="11sp"
                     android:layout_marginTop="2dp" />
@@ -110,7 +318,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Độ khó chuẩn • Thử thách"
+                    android:text="@string/sub_diff_hard"
                     android:textColor="@color/text_muted"
                     android:textSize="11sp"
                     android:layout_marginTop="2dp" />
@@ -129,19 +337,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="96dp"
             android:orientation="horizontal">
 
             <!-- Card NORMAL -->
             <LinearLayout
                 android:id="@+id/card_mode_normal"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginEnd="6dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/panel_fantasy_card_selected"
                 android:clickable="true"
                 android:focusable="true"
+                android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -157,7 +366,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Đêm p.5 • Boss p.9"
+                    android:text="@string/sub_mode_normal"
                     android:textColor="@color/text_secondary"
                     android:textSize="11sp"
                     android:layout_marginTop="2dp" />
@@ -167,12 +376,14 @@
             <LinearLayout
                 android:id="@+id/card_mode_demo"
                 android:layout_width="0dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:layout_marginStart="6dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginEnd="4dp"
                 android:background="@drawable/panel_fantasy_card"
                 android:clickable="true"
                 android:focusable="true"
+                android:gravity="center_vertical"
                 android:orientation="vertical"
                 android:padding="10dp">
 
@@ -188,24 +399,58 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nén sự kiện • Test nhanh"
+                    android:text="@string/sub_mode_demo"
+                    android:textColor="@color/text_muted"
+                    android:textSize="11sp"
+                    android:layout_marginTop="2dp" />
+            </LinearLayout>
+
+            <!-- Card ENDLESS -->
+            <LinearLayout
+                android:id="@+id/card_mode_endless"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:layout_marginStart="4dp"
+                android:background="@drawable/panel_fantasy_card"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <TextView
+                    android:id="@+id/tv_mode_endless_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/mode_endless"
+                    android:textColor="@color/text_secondary"
+                    android:textStyle="bold"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/sub_mode_endless"
                     android:textColor="@color/text_muted"
                     android:textSize="11sp"
                     android:layout_marginTop="2dp" />
             </LinearLayout>
         </LinearLayout>
 
-        <!-- Preview UI button for grading -->
+        <!-- Preview UI button for grading (hidden in production) -->
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_preview_screens"
             style="@style/Widget.MonsterSurvivor.Button.Primary"
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:layout_marginTop="16dp"
+            android:visibility="gone"
             android:text="@string/btn_preview_screens"
             android:textSize="12sp" />
 
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_mode_split"
@@ -234,7 +479,7 @@
             android:id="@+id/tv_detail_heading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="CHI TIẾT THIẾT LẬP TRẬN ĐẤU"
+            android:text="@string/mode_detail_heading"
             android:textColor="@color/gold_bright"
             android:textSize="14sp"
             android:textStyle="bold"
@@ -254,22 +499,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/tv_detail_heading" />
 
-        <TextView
-            android:id="@+id/tv_mode_description"
+        <ScrollView
+            android:id="@+id/scroll_mode_description"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="12dp"
-            android:background="#3307130D"
-            android:padding="10dp"
-            android:text="@string/desc_mode_normal"
-            android:textColor="@color/text_secondary"
-            android:textSize="13sp"
-            android:lineSpacingExtra="3dp"
-            app:layout_constraintBottom_toTopOf="@+id/btn_start_game"
+            android:fillViewport="true"
+            android:overScrollMode="ifContentScrolls"
+            android:scrollbars="vertical"
+            app:layout_constraintBottom_toTopOf="@+id/btn_unlock_character"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/tv_detail_selection_badge" />
+            app:layout_constraintTop_toBottomOf="@id/tv_detail_selection_badge">
+
+            <TextView
+                android:id="@+id/tv_mode_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#3307130D"
+                android:padding="10dp"
+                android:text="@string/desc_mode_normal"
+                android:textColor="@color/text_secondary"
+                android:textSize="13sp"
+                android:lineSpacingExtra="3dp" />
+        </ScrollView>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_unlock_character"
+            style="@style/Widget.MonsterSurvivor.Button.Primary"
+            android:layout_width="match_parent"
+            android:layout_height="38dp"
+            android:layout_marginBottom="6dp"
+            android:text="@string/character_unlock_button"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toTopOf="@id/btn_start_game"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/btn_start_game"

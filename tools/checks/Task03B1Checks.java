@@ -80,36 +80,41 @@ public final class Task03B1Checks {
         int previous=0;
         for(long seed:new long[]{42,20261113,8675309}) {
             var layout=ForestGenerator.generate(seed);var grid=layout.grid;
-            check(grid.width==200 && grid.height==200 && grid.tileSize==16,"200x200 world");
-            check(layout.walkableTiles>=34000 && !layout.fallback,"85 percent with varied layout");
+            check(grid.width==ForestGenerator.WIDTH && grid.height==ForestGenerator.HEIGHT && grid.tileSize==16,"150x150 world");
+            check(layout.walkableTiles>=ForestGenerator.CELLS*.85f && !layout.fallback,"85 percent with varied layout");
             var nav=new com.example.monstersurvivor.ai.NavigationGrid(grid);
             var finder=new com.example.monstersurvivor.ai.AStarPathfinder(nav);var path=new com.badlogic.gdx.utils.IntArray();
             int hash=1;
-            for(int cell=0;cell<40000;cell++) {
+            for(int cell=0;cell<ForestGenerator.CELLS;cell++) {
                 if(nav.walkable(cell,false))check(nav.connected(ForestGenerator.SPAWN_CELL,cell,false),"all ground connected");
                 hash=hash*31+layout.terrain[cell].hashCode()+(nav.walkable(cell,false)?1:0);
             }
             check(hash!=previous,"different seeds yield different terrain/blockers");previous=hash;
             int maxExpanded=0,maxPath=0;
-            for(int goal:new int[]{201,398,39601,39798,20100,20198,39700,300}) {
+            int width=grid.width,height=grid.height,low=1,high=width-2,top=height-2;
+            int[] edgeGoals={low*width+low,low*width+high,top*width+low,top*width+high,
+                ForestGenerator.CENTER_Y*width+low,ForestGenerator.CENTER_Y*width+high,
+                low*width+ForestGenerator.CENTER_X,top*width+ForestGenerator.CENTER_X,300};
+            for(int goal:edgeGoals) {
                 check(finder.find(ForestGenerator.SPAWN_CELL,goal,false,path),"far/edge A* path");
                 maxExpanded=Math.max(maxExpanded,finder.lastExpanded);maxPath=Math.max(maxPath,path.size);
                 int before=ForestGenerator.SPAWN_CELL;
-                for(int i=0;i<path.size;i++) {int cell=path.get(i);check(nav.walkable(cell,false) && (Math.abs(cell-before)==1 || Math.abs(cell-before)==200),"valid four-neighbor path");before=cell;}
+                for(int i=0;i<path.size;i++) {int cell=path.get(i);check(nav.walkable(cell,false) && (Math.abs(cell-before)==1 || Math.abs(cell-before)==width),"valid four-neighbor path");before=cell;}
             }
-            check(grid.canOccupy(1608,1608,4,3),"safe center spawn");
-            for(int goal=997;goal<40000;goal+=997)if(nav.walkable(goal,false)) {
-                check(finder.find(201,goal,false,path),"long path across real clusters");
+            float spawnX=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,spawnY=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            check(grid.canOccupy(spawnX,spawnY,4,3),"safe center spawn");
+            for(int goal=997;goal<ForestGenerator.CELLS;goal+=997)if(nav.walkable(goal,false)) {
+                check(finder.find(low*width+low,goal,false,path),"long path across real clusters");
                 maxExpanded=Math.max(maxExpanded,finder.lastExpanded);maxPath=Math.max(maxPath,path.size);
             }
             var enemies=new com.example.monstersurvivor.ai.EnemySystem(nav,null,GameConfig.defaults());
             var spawner=new com.example.monstersurvivor.spawn.EnemySpawner(GameConfig.defaults(),enemies,seed);
-            var player=new Player(1608,1608);
-            for(int frame=0;frame<180;frame++)spawner.update(.1f,0,player,1388,1504,1828,1712);
+            var player=new Player(spawnX,spawnY);
+            for(int frame=0;frame<180;frame++)spawner.update(.1f,0,player,player.x-220,player.y-104,player.x+220,player.y+104);
             check(enemies.livingCount()==6,"normal initial population on expanded navigation");
             for(int i=0;i<enemies.size();i++) {var e=enemies.get(i);check(grid.canOccupy(e.x,e.y,5,3,e.definition.flying),"expanded world spawn off blockers");}
             for(int frame=0;frame<60;frame++) {enemies.beginFrame();enemies.update(1f/30,player);check(enemies.searchesThisFrame<=2,"A* per-frame budget remains bounded");}
-            System.out.println("MAP seed="+seed+" walkable="+layout.walkableTiles+" percent="+(layout.walkableTiles/400f)+" props="+layout.props.size+" repairs="+layout.repairs+" fallback="+layout.fallback+" hash="+hash+" longestPath="+maxPath+" maxExpanded="+maxExpanded);
+            System.out.println("MAP seed="+seed+" walkable="+layout.walkableTiles+" percent="+(layout.walkableTiles*100f/ForestGenerator.CELLS)+" props="+layout.props.size+" repairs="+layout.repairs+" fallback="+layout.fallback+" hash="+hash+" longestPath="+maxPath+" maxExpanded="+maxExpanded);
         }
     }
     public static void main(String[] args) {weapons();night();zoom();maps();System.out.println("Task03B1 checks passed: "+checks);}

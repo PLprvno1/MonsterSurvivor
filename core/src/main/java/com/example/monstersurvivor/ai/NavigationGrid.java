@@ -9,12 +9,15 @@ public final class NavigationGrid {
     private final boolean[][] open;
     private final int[][] components;
     public NavigationGrid(CollisionGrid collision) {
+        this(collision,HALF_WIDTH,HALF_HEIGHT);
+    }
+    public NavigationGrid(CollisionGrid collision,float halfWidth,float halfHeight) {
         this.collision=collision;
         int count=collision.width*collision.height;
         open=new boolean[2][count]; components=new int[2][count];
         int[] queue=new int[count];
         for(int layer=0;layer<2;layer++) {
-            for(int id=0;id<count;id++) open[layer][id]=collision.canOccupy(x(id),y(id),HALF_WIDTH,HALF_HEIGHT,layer==1);
+            for(int id=0;id<count;id++) open[layer][id]=collision.canOccupy(x(id),y(id),halfWidth,halfHeight,layer==1);
             int component=0;
             for(int id=0;id<count;id++) if(open[layer][id] && components[layer][id]==0) {
                 component++;int head=0,tail=1;queue[0]=id;components[layer][id]=component;
@@ -39,6 +42,18 @@ public final class NavigationGrid {
     public boolean walkable(int id,boolean flying) { return id>=0 && id<open[0].length && open[flying?1:0][id]; }
     public boolean connected(int a,int b,boolean flying) {
         return walkable(a,flying) && walkable(b,flying) && components[flying?1:0][a]==components[flying?1:0][b];
+    }
+    /** Bounded nearby approach node when a small player stands inside a gap too narrow for a boss. */
+    public int approach(float x,float y,boolean flying) {
+        int center=cell(x,y);if(walkable(center,flying))return center;
+        int found=-1;float best=Float.POSITIVE_INFINITY;
+        int cx=(int)(x/collision.tileSize),cy=(int)(y/collision.tileSize);
+        for(int iy=cy-4;iy<=cy+4;iy++)for(int ix=cx-4;ix<=cx+4;ix++) {
+            if(ix<0 || iy<0 || ix>=collision.width || iy>=collision.height)continue;int id=iy*collision.width+ix;
+            float dx=x(id)-x,dy=y(id)-y,d2=dx*dx+dy*dy;
+            if(walkable(id,flying) && d2<best && collision.clearLine(x(id),y(id),x,y,.5f,.5f,true)) {found=id;best=d2;}
+        }
+        return found;
     }
     public int neighbor(int id,int direction) {
         int x=id%collision.width,y=id/collision.width;

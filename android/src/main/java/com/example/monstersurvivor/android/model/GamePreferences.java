@@ -67,6 +67,11 @@ public class GamePreferences {
     public void setSfxVolume(int volume) {
         mPrefs.edit().putInt(KEY_SFX_VOLUME, Math.max(0, Math.min(100, volume))).apply();
     }
+    public com.example.monstersurvivor.audio.AudioSettings audioSettings() {
+        return new com.example.monstersurvivor.audio.AudioSettings(isMusicEnabled(),isSfxEnabled(),getMusicVolume(),getSfxVolume());
+    }
+    public void listen(SharedPreferences.OnSharedPreferenceChangeListener listener) {mPrefs.registerOnSharedPreferenceChangeListener(listener);}
+    public void unlisten(SharedPreferences.OnSharedPreferenceChangeListener listener) {mPrefs.unregisterOnSharedPreferenceChangeListener(listener);}
 
     public boolean isVibrationEnabled() {
         return mPrefs.getBoolean(KEY_VIBRATION_ENABLED, true);

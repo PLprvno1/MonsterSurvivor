@@ -55,7 +55,8 @@ public final class WeaponChecks {
         s.chooseWeapon(0,s.selection.token());
         for(int i=0;i<3;i++)while(s.weapons.loadout.grant(s.weapons.loadout.slot(i).type)) { }
         for(int i=0;i<3;i++)check(s.weapons.loadout.slot(i).level()==5 && !s.weapons.loadout.grant(s.weapons.loadout.slot(i).type),"Normal level cap is exactly 5");
-        modal(s);check(s.selection.size()==3,"All maxed weapons receive useful stat alternatives");
+        for(int i=0;i<3;i++) {modal(s);check(s.selection.get(0).kind==WeaponOffer.Kind.EVOLUTION,"Lv5 now offers evolution before fallback");check(s.chooseWeapon(0,s.selection.token()),"each max weapon evolves once");}
+        modal(s);check(s.selection.size()==3,"All evolved weapons receive useful stat alternatives");
         for(int i=0;i<3;i++)check(s.selection.get(i).kind!=WeaponOffer.Kind.WEAPON && s.selection.get(i).valid(s.weapons.loadout,s.player),"Fallback is applicable, not a capped weapon");
         old=s.player.stats.damage();s.chooseWeapon(0,s.selection.token());check(s.player.stats.damage()==old+2,"Fallback applies a real stat reward");
         for(int i=0;i<10;i++)s.player.stats.addSpeed();modal(s);check(s.selection.size()==2,"Fewer offers shown when Speed fallback is capped");
@@ -136,8 +137,8 @@ public final class WeaponChecks {
             for(int event=0;event<30;event++) {
                 for(int i=0;i<s.pickups.size();i++)s.pickups.get(i).age=60;
                 float due=s.pickups.nextSpawnProgress();s.pickups.update(0,due,s.player);
-                check(s.pickups.size()==1 && s.pickups.nextSpawnProgress()-due>=15 && s.pickups.nextSpawnProgress()-due<=20,"Weapon pool preserves common schedule and valid placement");
-                if(s.pickups.get(0).type==PickupType.WEAPON_BOX)weapon++;
+                check(s.pickups.ordinaryBoxes()==1 && s.pickups.skillBoxes()<=2 && s.pickups.nextSpawnProgress()-due>=15 && s.pickups.nextSpawnProgress()-due<=20,"Weapon pool preserves common schedule and valid placement with independent bounded skill boxes");
+                for(int i=0;i<s.pickups.size();i++)if(s.pickups.get(i).type==PickupType.WEAPON_BOX)weapon++;
                 if(event==1 && probability>0)check(weapon>=1,"At least one of first two boxes is Weapon");
             }
             check(probability==0?weapon==0:probability==1?weapon==30:weapon>=5 && weapon<=20,"Configurable weighted Weapon Box pool: "+probability);

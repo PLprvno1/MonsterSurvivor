@@ -93,8 +93,9 @@ public final class EnemyRosterChecks {
         check(overall.size()>=78,"broad diversity in finite seeded samples");
         for(var difficulty:Difficulty.values()) {
             int cap=difficulty==Difficulty.EASY?40:60;var c=new GameConfig.Builder().difficulty(difficulty).population(cap,cap).build();
-            var layout=ForestGenerator.generate(42);var s=new GameSession(c,layout.grid,1608,1608,null,null,42);
-            for(int frame=0;frame<1500 && s.enemies.size()<cap;frame++)s.spawner.update(.1f,540,s.player,1388,1504,1828,1712);
+            var layout=ForestGenerator.generate(42);float sx=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,sy=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            var s=new GameSession(c,layout.grid,sx,sy,null,null,42);
+            for(int frame=0;frame<1500 && s.enemies.size()<cap;frame++)s.spawner.update(.1f,540,s.player,sx-220,sy-104,sx+220,sy+104);
             check(s.enemies.size()==cap,"fills exactly the existing resident cap "+difficulty);
             int[] counts=new int[EnemyRegistry.all().size()],families=new int[EnemyRegistry.FAMILY_COUNT];
             for(int i=0;i<s.enemies.size();i++) {

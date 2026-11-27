@@ -4,12 +4,13 @@ import com.badlogic.gdx.math.RandomXS128;
 import com.example.monstersurvivor.ai.EnemySystem;
 import com.example.monstersurvivor.config.Difficulty;
 import com.example.monstersurvivor.config.GameConfig;
+import com.example.monstersurvivor.config.GameMode;
 import com.example.monstersurvivor.enemy.*;
 import java.util.Arrays;
 
 /** Per-match weighted roster. Only sampled at spawn boundaries, never per resident/frame. */
 public final class EnemySpawnProfile {
-    public static final float NIGHT_PROGRESS=300,BOSS_PROGRESS=540,END_PROGRESS=600;
+    public static final float NIGHT_PROGRESS=300,BOSS_PROGRESS=600,END_PROGRESS=600;
     public static final String FUTURE_BOSS_ID="lich_lord";
     private static final String[] THEMES={"Forest","Cave","Swamp","Coast","Night"};
     private final RandomXS128 random;
@@ -32,7 +33,7 @@ public final class EnemySpawnProfile {
     }
     /** Base eligibility/weight is also inspectable by finite gameplay tests and diagnostics. */
     public float weight(EnemyDefinition d,float progress) {
-        if(progress<d.unlock || progress>=END_PROGRESS)return 0;
+        if(progress<d.unlock || config.mode!=GameMode.ENDLESS && progress>=END_PROGRESS)return 0;
         float result=d.weight*matchWeight[d.index]*config.spawnWeightMultiplier(d,progress);
         if(difficulty==Difficulty.HARD)result*=d.hardWeight;
         if(progress>=NIGHT_PROGRESS)result*=d.nightWeight;
@@ -41,12 +42,12 @@ public final class EnemySpawnProfile {
     }
     public String theme(float progress) {return progress<themeEnds?theme:"";}
     public EnemyDefinition pick(float progress,EnemySystem residents) {
-        if(progress>=END_PROGRESS)return null;
+        if(config.mode!=GameMode.ENDLESS && progress>=END_PROGRESS)return null;
         if(progress>=nextTheme) {
             theme=THEMES[random.nextInt(THEMES.length)];themeEnds=progress+18;nextTheme=progress+60+random.nextFloat()*30;
         }
         Arrays.fill(counts,0);Arrays.fill(families,0);
-        for(int i=0;i<residents.size();i++) {var d=residents.get(i).definition;counts[d.index]++;families[d.familyIndex]++;}
+        for(int i=0;i<residents.size();i++) {var d=residents.get(i).definition;if(d.index<0)continue;counts[d.index]++;families[d.familyIndex]++;}
         float total=0;
         for(EnemyDefinition d:EnemyRegistry.all()) {
             float w=counts[d.index]>=d.residentLimit || families[d.familyIndex]>=familyCap?0:weight(d,progress);

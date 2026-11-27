@@ -1,5 +1,6 @@
 package com.example.monstersurvivor.android;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -17,9 +18,14 @@ import com.google.android.material.appbar.MaterialToolbar;
  * Interactive preview activity showcasing Victory, Game Over, and Pause layouts.
  * Used for evaluation and testing without having to finish a full 10-minute gameplay session.
  */
-public class ResultPreviewActivity extends AppCompatActivity {
+public class ResultPreviewActivity extends NativeAudioActivity {
 
     private ViewGroup mContainer;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(UiUtils.wrapLocale(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +35,7 @@ public class ResultPreviewActivity extends AppCompatActivity {
         setContentView(R.layout.activity_result_preview);
 
         MaterialToolbar toolbar = findViewById(R.id.toolbar_preview);
-        toolbar.setNavigationOnClickListener(v -> finish());
+        toolbar.setNavigationOnClickListener(v -> {com.example.monstersurvivor.android.audio.NativeAudio.play(this,com.example.monstersurvivor.audio.AudioEvent.UI_CANCEL);finish();});
 
         mContainer = findViewById(R.id.frame_preview_container);
 
@@ -53,7 +59,7 @@ public class ResultPreviewActivity extends AppCompatActivity {
         mContainer.addView(view);
 
         view.findViewById(R.id.btn_victory_retry).setOnClickListener(v -> {
-            Toast.makeText(this, "Nút Retry: Khởi động lại trận đấu", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_preview_retry, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AndroidLauncher.class);
             startActivity(intent);
             finish();
@@ -73,7 +79,7 @@ public class ResultPreviewActivity extends AppCompatActivity {
         mContainer.addView(view);
 
         view.findViewById(R.id.btn_gameover_retry).setOnClickListener(v -> {
-            Toast.makeText(this, "Nút Retry: Thử lại trận đấu", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_preview_retry, Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this, AndroidLauncher.class);
             startActivity(intent);
             finish();
@@ -93,7 +99,7 @@ public class ResultPreviewActivity extends AppCompatActivity {
         mContainer.addView(view);
 
         view.findViewById(R.id.btn_pause_resume).setOnClickListener(v ->
-                Toast.makeText(this, "Nút Resume: Tiếp tục trận đấu", Toast.LENGTH_SHORT).show());
+                Toast.makeText(this, R.string.toast_preview_resume, Toast.LENGTH_SHORT).show());
 
         view.findViewById(R.id.btn_pause_settings).setOnClickListener(v -> {
             Intent intent = new Intent(this, SettingsActivity.class);

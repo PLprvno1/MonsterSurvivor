@@ -11,22 +11,33 @@ import static com.example.monstersurvivor.debug.FrameMetrics.Part.*;
 
 /** Bounded navigation work, soft separation, and swept collision for every displacement. */
 public final class EnemySystem {
-    private final Array<Enemy> enemies=new Array<>(false,60);
+    private com.example.monstersurvivor.audio.AudioSink audio=com.example.monstersurvivor.audio.AudioSink.NONE;
+    public void audio(com.example.monstersurvivor.audio.AudioSink sink) {
+        audio=sink;for(int i=0;i<enemies.size;i++)enemies.get(i).audio=sink;
+    }
+    private final Array<Enemy> enemies=new Array<>(false,62);
     public final NavigationGrid navigation;
     private final AStarPathfinder pathfinder;
+    public final NavigationGrid bossNavigation;
+    private final AStarPathfinder bossPathfinder;
     private final GameAssets assets;
     private final GameConfig config;
     private int nextId,rotation;
     public int searchesThisFrame,totalSearches,maxSearchesObserved;
     public FrameMetrics metrics;
+    public final com.example.monstersurvivor.enemy.skill.EnemySkillSystem skills;
     private java.util.function.Consumer<Enemy> deathListener;
     public void onDeath(java.util.function.Consumer<Enemy> listener) {
         deathListener=listener;for(int i=0;i<enemies.size;i++)enemies.get(i).onDeath(listener);
     }
     public EnemySystem(NavigationGrid navigation,GameAssets assets,GameConfig config) {
         this.navigation=navigation;this.assets=assets;this.config=config;pathfinder=new AStarPathfinder(navigation);
+        bossNavigation=new NavigationGrid(navigation.collision,9,6);bossPathfinder=new AStarPathfinder(bossNavigation);
+        skills=new com.example.monstersurvivor.enemy.skill.EnemySkillSystem(this,config);
     }
     public int size() { return enemies.size; }
+    public int normalSize() {int n=0;for(int i=0;i<enemies.size;i++)if(!enemies.get(i).boss)n++;return n;}
+    public int bossSize() {return size()-normalSize();}
     public Enemy get(int index) { return enemies.get(index); }
     public int livingCount() { int n=0;for(int i=0;i<enemies.size;i++)if(enemies.get(i).alive())n++;return n; }
     public Enemy spawn(EnemyType type,float x,float y) {
@@ -37,14 +48,29 @@ public final class EnemySystem {
     }
     public Enemy spawn(EnemyDefinition type,float x,float y) {return spawn(type,x,y,0);}
     public Enemy spawn(EnemyDefinition type,float x,float y,float progress) {
-        if(enemies.size>=config.maxEnemies || enemies.size>=60
+        if(type.index<0 || normalSize()>=config.maxEnemies || normalSize()>=60
             || !navigation.collision.canOccupy(x,y,type.halfWidth,type.halfHeight,type.flying))return null;
         Enemy e=new Enemy(++nextId,type,config.enemy(type,progress),assets==null?null:assets.sprite(type.spriteId),x,y);
-        e.onDeath(deathListener);enemies.add(e);return e;
+        e.audio=audio;e.onDeath(deathListener);enemies.add(e);return e;
+    }
+    public Enemy spawnBoss(EnemyDefinition body,GameConfig.EnemyStats stats,float x,float y) {
+        if(body.index>=0 || bossSize()>=config.bosses.actorCap || !bossNavigation.collision.canOccupy(x,y,body.halfWidth,body.halfHeight,false))return null;
+        Enemy e=new Enemy(++nextId,body,stats,assets==null?null:assets.sprite(body.spriteId),x,y);
+        e.audio=audio;e.onDeath(deathListener);enemies.add(e);return e;
+    }
+    public void advanceDeaths(float dt) {
+        for(int i=enemies.size-1;i>=0;i--) {Enemy e=enemies.get(i);if(!e.alive()) {e.advance(dt);if(e.deathFinished())enemies.removeIndex(i);}}
     }
     public void clear() {
+        skills.clear();
         for(int i=0;i<enemies.size;i++) {Enemy e=enemies.get(i);e.path.clear();e.pathIndex=0;e.onDeath(null);}
         enemies.clear();
+    }
+    public void clearPoisonStatuses() {for(int i=0;i<enemies.size;i++)enemies.get(i).clearPoison();}
+    /** Explicit isolated diagnostic arena only; Boss actors and their own pool are preserved. */
+    public void diagnosticClearOrdinary(){
+        if(!config.debug)throw new IllegalStateException("Diagnostic only");skills.clear();
+        for(int i=enemies.size-1;i>=0;i--)if(!enemies.get(i).boss){enemies.get(i).onDeath(null);enemies.removeIndex(i);}
     }
     public void beginFrame() { searchesThisFrame=0; }
     public void update(float dt,Player player) {
@@ -63,7 +89,7 @@ public final class EnemySystem {
         int first=rotation++%enemies.size;
         for(int n=0;n<enemies.size;n++) {
             Enemy e=enemies.get((first+n)%enemies.size);
-            if(!e.alive() || e.acting())continue;
+            if(!e.alive() || e.acting() || e.aiLocked)continue;
             steer(e,player,dt);
         }
         maxSearchesObserved=Math.max(maxSearchesObserved,searchesThisFrame);
@@ -86,8 +112,9 @@ public final class EnemySystem {
         }
     }
     private void steer(Enemy e,Player player,float dt) {
+        NavigationGrid navigation=e.boss?bossNavigation:this.navigation;
         float dx=player.x-e.x,dy=player.y-e.y,distance2=dx*dx+dy*dy;
-        int target=navigation.cell(player.x,player.y);
+        int target=e.boss?navigation.approach(player.x,player.y,false):navigation.cell(player.x,player.y);
         if(e.lineTimer<=0) {
             e.lineTimer=.22f+(e.id%5)*.02f;
             e.direct=navigation.collision.clearLine(e.x,e.y,player.x,player.y,e.definition.halfWidth,e.definition.halfHeight,e.definition.flying);
@@ -97,11 +124,11 @@ public final class EnemySystem {
         if(!e.direct) {
             int changed=e.targetCell<0?100:Math.abs(target%navigation.collision.width-e.targetCell%navigation.collision.width)
                 +Math.abs(target/navigation.collision.width-e.targetCell/navigation.collision.width);
-            if((e.pathTimer<=0 || changed>=2) && searchesThisFrame<config.pathSearchesPerFrame) {
+            if((e.pathTimer<=0 || changed>=2) && searchesThisFrame<Math.min(2,config.pathSearchesPerFrame)) {
                 searchesThisFrame++;totalSearches++;
                 int start=navigation.cell(e.x,e.y);
                 long searchStart=metrics==null?0:metrics.start();
-                boolean found=pathfinder.find(start,target,e.definition.flying,e.path);
+                boolean found=(e.boss?bossPathfinder:pathfinder).find(start,target,e.definition.flying,e.path);
                 if(metrics!=null)metrics.finish(ASTAR,searchStart);
                 e.targetCell=target;e.pathIndex=0;
                 // Recenter only if needed for a tight corner; periodic refresh must not pull
@@ -120,13 +147,18 @@ public final class EnemySystem {
         }
         dx=tx-e.x;dy=ty-e.y;
         float length=(float)Math.sqrt(dx*dx+dy*dy);
-        float speed=e.stats.speed*config.enemySpeedMultiplier;
+        float speed=e.stats.speed*(e.boss?1:config.enemySpeedMultiplier)*e.movementMultiplier();
         if(e.definition.charge && e.direct && distance2>45*45 && distance2<150*150 && e.chargeCooldown<=0) {
             e.chargeTime=.7f;e.chargeCooldown=3.5f;
+            audio.at(com.example.monstersurvivor.audio.AudioEvent.ENEMY_LEGACY_CHARGE,e.x,e.y,e.id);
         }
         if(e.chargeTime>0 && e.direct)speed*=1.65f;
         float vx=length>.01f?dx/length*speed:0,vy=length>.01f?dy/length*speed:0;
         if(e.direct && distance2<e.definition.contactRadius()*e.definition.contactRadius())vx=vy=0;
+        if(e.standOffRange>0 && e.direct && distance2<e.standOffRange*e.standOffRange) {
+            if(distance2<(e.standOffRange*.65f)*(e.standOffRange*.65f)) {vx=-dx/Math.max(.01f,length)*speed;vy=-dy/Math.max(.01f,length)*speed;}
+            else vx=vy=0;
+        }
         vx+=e.separationX*20;vy+=e.separationY*20;
         float v2=vx*vx+vy*vy;
         if(v2>speed*speed) {float factor=speed/(float)Math.sqrt(v2);vx*=factor;vy*=factor;}
@@ -141,12 +173,22 @@ public final class EnemySystem {
             e.pathTimer=0;e.direct=false;e.lineTimer=1.2f;e.path.clear();e.pathIndex=0;e.stuckTime=0;
         }
     }
+    /** Instant, swept radial displacement. Ordinary actors only; leave speed/AI tuning unchanged. */
+    public boolean knockback(Enemy e,float dx,float dy,float distance) {
+        if(e.boss || !e.alive() || distance<=0)return false;
+        float length=(float)Math.hypot(dx,dy);if(length<.001f) {dx=1;dy=0;length=1;}
+        float x=e.x,y=e.y;move(e,dx/length*distance,dy/length*distance);
+        if(e.x==x && e.y==y)return false;
+        skills.cancel(e);
+        e.path.clear();e.pathIndex=0;e.targetCell=-1;e.pathTimer=e.lineTimer=0;e.direct=false;e.stuckTime=0;return true;
+    }
     private void move(Enemy e,float dx,float dy) {
+        if(dx==0 && dy==0)return;
         int steps=Math.max(1,(int)Math.ceil(Math.max(Math.abs(dx),Math.abs(dy))/Player.MAX_STEP));
         dx/=steps;dy/=steps;
         for(int i=0;i<steps;i++) {
-            if(navigation.collision.canOccupy(e.x+dx,e.y,e.definition.halfWidth,e.definition.halfHeight,e.definition.flying))e.x+=dx;
-            if(navigation.collision.canOccupy(e.x,e.y+dy,e.definition.halfWidth,e.definition.halfHeight,e.definition.flying))e.y+=dy;
+            if(dx!=0 && navigation.collision.canOccupy(e.x+dx,e.y,e.definition.halfWidth,e.definition.halfHeight,e.definition.flying))e.x+=dx;
+            if(dy!=0 && navigation.collision.canOccupy(e.x,e.y+dy,e.definition.halfWidth,e.definition.halfHeight,e.definition.flying))e.y+=dy;
         }
     }
 }

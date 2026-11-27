@@ -22,12 +22,14 @@ public final class CombatProfile {
     private final int warmup,samples;
     private final float[] rows;
     private final String label;
+    private final DiagnosticRun run;
     private final boolean[] used=new boolean[40000];
     private int stage,frame,rowCount;
     private long previous;
     private boolean setup=true,done;
     private final int columns=4+FrameMetrics.Part.values().length+12;
-    private CombatProfile(JsonValue value) {
+    private CombatProfile(JsonValue value,DiagnosticRun run) {
+        this.run=run;
         pickupProbe=value.getBoolean("pickupProbe",false);weaponProbe=value.getBoolean("weaponProbe",false);
         rosterProbe=value.getBoolean("rosterProbe",false);worldProbe=value.getBoolean("worldProbe",false) || rosterProbe;
         populations=worldProbe?new int[]{10,10,30,30,60,60}:weaponProbe?new int[]{8,8,8}:pickupProbe?new int[]{8,8}:new int[]{8,20,40,60};
@@ -36,20 +38,19 @@ public final class CombatProfile {
         samples=Math.max(30,Math.min(180,value.getInt("sampleFrames",60)));
         rows=new float[populations.length*samples*columns];
     }
-    public static CombatProfile load() {
-        FileHandle file=Gdx.files.local("combat-profile.json");
-        return file.exists()?new CombatProfile(new JsonReader().parse(file)):null;
+    public static CombatProfile load(DiagnosticRun run) {
+        var value=run.object("combat-profile.json");return value==null?null:new CombatProfile(value,run);
     }
     public GameConfig tuning(GameConfig source) {
         if(rosterProbe) {
-            var builder=new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).language(source.language).visuals(source.visuals).population(0,60).playerHp(100000)
+            var builder=new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).skills(source.skills).language(source.language).visuals(source.visuals).population(0,60).playerHp(100000)
                 .stages(new GameConfig.Stage(0,0,1000000,1,0,0,0)).sword(1,1,1,.15f);
             for(var d:EnemyRegistry.all())builder.enemy(d,100000,1,d.speed);return builder.build();
         }
-        if(weaponProbe || worldProbe)return new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).language(source.language).population(0,60).playerHp(100000)
+        if(weaponProbe || worldProbe)return new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).skills(source.skills).language(source.language).population(0,60).playerHp(100000)
             .enemy(EnemyType.SLIME,100000,1,28).enemy(EnemyType.BAT,100000,1,52).enemy(EnemyType.WILD_BOAR,100000,1,38)
             .stages(new GameConfig.Stage(0,0,1000000,1,0,0,0)).sword(1,1,1,.15f).build();
-        return new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).language(source.language).population(0,60).playerHp(100000)
+        return new GameConfig.Builder().difficulty(source.difficulty).mode(source.mode).skills(source.skills).language(source.language).population(0,60).playerHp(100000)
             .sword(1,1,1,.15f).build();
     }
     public void beforeFrame(GameScreen screen) {
@@ -122,7 +123,7 @@ public final class CombatProfile {
             rows[i++]=screen.getSession().enemies.searchesThisFrame;rows[i++]=screen.getWorldDrawCalls();rows[i++]=screen.getVisibleCount();rows[i++]=screen.getSession().pickups.size();
             rows[i++]=stage;rows[i++]=screen.getSession().weapons.projectiles.size();rows[i++]=screen.getSession().weapons.projectiles.effectCount();
             java.util.Arrays.fill(seenSpecies,false);int distinct=0;
-            for(int n=0;n<screen.getSession().enemies.size();n++) {int id=screen.getSession().enemies.get(n).definition.index;if(!seenSpecies[id]) {seenSpecies[id]=true;distinct++;}}
+            for(int n=0;n<screen.getSession().enemies.size();n++) {int id=screen.getSession().enemies.get(n).definition.index;if(id>=0 && !seenSpecies[id]) {seenSpecies[id]=true;distinct++;}}
             rows[i++]=distinct;rows[i++]=screen.getAssets().textureCount();rows[i]=screen.getAssets().textureBytes();
         }
         previous=now;
@@ -138,8 +139,8 @@ public final class CombatProfile {
         csv.append("population,deltaMs,callbackMs,living");for(var part:PARTS)csv.append(',').append(part).append("Ms");
         csv.append(",separationPairs,occupancyChecks,aStarSearches,worldDrawCalls,visibleSprites,pickupCount,probeStage,projectiles,weaponEffects,distinctSpecies,gameTextureCount,gameTextureBytes\n");
         for(int row=0;row<rowCount;row++)for(int col=0;col<columns;col++)csv.append(rows[row*columns+col]).append(col==columns-1?'\n':',');
-        Gdx.files.local("combat-profile-"+label+".csv").writeString(csv.toString(),false,"UTF-8");
-        Gdx.files.local("combat-profile-"+label+"-environment.txt").writeString("renderer="+Gdx.gl.glGetString(GL20.GL_RENDERER)
+        run.file("combat-profile-"+label+".csv").writeString(csv.toString(),false,"UTF-8");
+        run.file("combat-profile-"+label+"-environment.txt").writeString("renderer="+Gdx.gl.glGetString(GL20.GL_RENDERER)
             +"\nplatform="+Gdx.app.getType()+"\nresolution="+Gdx.graphics.getWidth()+"x"+Gdx.graphics.getHeight()
             +"\nwarmupFrames="+warmup+"\nsampleFrames="+samples+"\ntextures="+screen.getAssets().textureCount()+"\nrgbaBytes="+screen.getAssets().textureBytes()+"\nrosterProbe="+rosterProbe+"\n",false,"UTF-8");
         Gdx.app.log("MonsterSurvivor","Profile complete "+label+" rows="+rowCount);

@@ -1,0 +1,228 @@
+{
+  "primitivePixel": [
+    255,
+    255,
+    1,
+    1
+  ],
+  "clips": {
+    "meteor": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          2,
+          16,
+          16
+        ],
+        [
+          20,
+          2,
+          16,
+          16
+        ],
+        [
+          38,
+          2,
+          16,
+          16
+        ],
+        [
+          56,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "arrow": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          20,
+          16,
+          16
+        ],
+        [
+          20,
+          20,
+          16,
+          16
+        ]
+      ]
+    },
+    "blast": {
+      "fps": 18.75,
+      "frames": [
+        [
+          2,
+          38,
+          32,
+          32
+        ],
+        [
+          36,
+          38,
+          32,
+          32
+        ],
+        [
+          70,
+          38,
+          32,
+          32
+        ],
+        [
+          104,
+          38,
+          32,
+          32
+        ],
+        [
+          138,
+          38,
+          32,
+          32
+        ],
+        [
+          172,
+          38,
+          32,
+          32
+        ]
+      ]
+    },
+    "slash": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          72,
+          32,
+          32
+        ],
+        [
+          36,
+          72,
+          32,
+          32
+        ],
+        [
+          70,
+          72,
+          32,
+          32
+        ],
+        [
+          104,
+          72,
+          32,
+          32
+        ]
+      ]
+    },
+    "spark": {
+      "fps": 28.5714286,
+      "frames": [
+        [
+          2,
+          106,
+          16,
+          16
+        ],
+        [
+          20,
+          106,
+          16,
+          16
+        ],
+        [
+          38,
+          106,
+          16,
+          16
+        ],
+        [
+          56,
+          106,
+          16,
+          16
+        ]
+      ]
+    },
+    "burn": {
+      "fps": 8,
+      "frames": [
+        [
+          2,
+          124,
+          32,
+          32
+        ],
+        [
+          36,
+          124,
+          32,
+          32
+        ],
+        [
+          70,
+          124,
+          32,
+          32
+        ],
+        [
+          104,
+          124,
+          32,
+          32
+        ]
+      ]
+    }
+  },
+  "provenance": [
+    {
+      "name": "meteor",
+      "source": "03_Projectiles_FX/Projectiles/fireball_right_4f.png",
+      "sha256": "7250f2c3ea5610ca103285c7730e457b899ebbfee4dab4c176e8033d1fe25aea",
+      "count": 4,
+      "fps": 12
+    },
+    {
+      "name": "arrow",
+      "source": "03_Projectiles_FX/Projectiles/arrow_right_2f.png",
+      "sha256": "11d130ed361e0351c9abafea2a1859451b9e670c5ec8ecf974e9aac2a37da27c",
+      "count": 2,
+      "fps": 12
+    },
+    {
+      "name": "blast",
+      "source": "03_Projectiles_FX/Combat_FX/explosion_32x32_6f.png",
+      "sha256": "b4e1a5e1a07e62d1066e8f960506686a8835741ea58f6b429c0bceb9b40474dd",
+      "count": 6,
+      "fps": 18.75
+    },
+    {
+      "name": "slash",
+      "source": "03_Projectiles_FX/Combat_FX/slash_white_32x32_4f.png",
+      "sha256": "b0336c0780434898e22a20620cf0efd38faccd8378ff82a63e9edfd8bcf9ec14",
+      "count": 4,
+      "fps": 12
+    },
+    {
+      "name": "spark",
+      "source": "03_Projectiles_FX/Combat_FX/hit_spark_16x16_4f.png",
+      "sha256": "2cb6e1a98d86052c17ef548126246fcc58055bdb7a4ce87bca9876e8eebdd2af",
+      "count": 4,
+      "fps": 28.5714286
+    },
+    {
+      "name": "burn",
+      "source": "04_Status_Effects/Overlays_32x32/overlay_burn_32x32_4f.png",
+      "sha256": "41d6ad4e19556a75c4d5637576d9a1667ebfe13abaee5db603f0fd029615d17f",
+      "count": 4,
+      "fps": 8
+    }
+  ]
+}

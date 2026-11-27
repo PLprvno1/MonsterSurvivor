@@ -63,17 +63,41 @@ public final class GameAssets implements Disposable {
     private Texture weaponPixel;
     private final ObjectMap<String, SpriteSet> sets = new ObjectMap<>();
     private final ObjectMap<String, TextureRegion> terrain = new ObjectMap<>();
+    private final ObjectMap<String, Animation<TextureRegion>> evolution=new ObjectMap<>();
+    private final ObjectMap<String, Animation<TextureRegion>> enemyFx=new ObjectMap<>();
+    public TextureRegion evolutionFrame(String name,float age) {return evolution.get(name).getKeyFrame(age,true);}
+    public TextureRegion enemyFrame(String name,float age){return enemyFrame(name,age,true);}
+    public TextureRegion enemyFrame(String name,float age,boolean loop){var clip=enemyFx.get(name);if(clip==null)throw new GdxRuntimeException("Unknown enemy FX: "+name);return clip.getKeyFrame(age,loop);}
     public GameAssets() {
         try {
             JsonValue root = new JsonReader().parse(Gdx.files.internal("game/catalog.json"));
             JsonValue enemies=new JsonReader().parse(Gdx.files.internal("game/enemy-catalog.json"));
+            JsonValue characters=new JsonReader().parse(Gdx.files.internal("game/characters.json"));
             for (JsonValue path = root.get("textures").child; path != null; path = path.next)
+                manager.load(path.asString(), Texture.class);
+            for (JsonValue path = characters.get("textures").child; path != null; path = path.next)
                 manager.load(path.asString(), Texture.class);
             manager.load("game/pickups.png",Texture.class);
             manager.load("game/dungeon-pickups.png",Texture.class);
             manager.load("game/world-expanded.png",Texture.class);
+            manager.load("game/evolution-fx.png",Texture.class);
+            manager.load("game/enemy-fx.png",Texture.class);
             for(JsonValue path=enemies.get("textures").child;path!=null;path=path.next)manager.load(path.asString(),Texture.class);
             manager.finishLoading();
+            Texture hostile=manager.get("game/enemy-fx.png",Texture.class);hostile.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
+            terrain.put("enemy_pixel",new TextureRegion(hostile,511,511,1,1));
+            for(JsonValue clip=new JsonReader().parse(Gdx.files.internal("game/enemy-fx.json")).get("clips").child;clip!=null;clip=clip.next){
+                Array<TextureRegion> frames=new Array<>();for(JsonValue r=clip.get("frames").child;r!=null;r=r.next)frames.add(new TextureRegion(hostile,r.getInt(0),r.getInt(1),r.getInt(2),r.getInt(3)));
+                Animation<TextureRegion> animation=new Animation<>(1/clip.getFloat("fps"),frames);
+                if(clip.name.startsWith("coin_shot_") && !clip.name.endsWith("_impact"))animation.setPlayMode(Animation.PlayMode.LOOP_PINGPONG);
+                enemyFx.put(clip.name,animation);
+            }
+            Texture fx=manager.get("game/evolution-fx.png",Texture.class);fx.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
+            terrain.put("evolution_pixel",new TextureRegion(fx,255,255,1,1));
+            for(JsonValue clip=new JsonReader().parse(Gdx.files.internal("game/evolution-fx.json")).get("clips").child;clip!=null;clip=clip.next) {
+                Array<TextureRegion> frames=new Array<>();for(JsonValue r=clip.get("frames").child;r!=null;r=r.next)frames.add(new TextureRegion(fx,r.getInt(0),r.getInt(1),r.getInt(2),r.getInt(3)));
+                evolution.put(clip.name,new Animation<>(1/clip.getFloat("fps"),frames));
+            }
             for (JsonValue path = root.get("textures").child; path != null; path = path.next) {
                 Texture texture = manager.get(path.asString(), Texture.class);
                 texture.setFilter(Texture.TextureFilter.Nearest, Texture.TextureFilter.Nearest);
@@ -95,7 +119,12 @@ public final class GameAssets implements Disposable {
                 texture.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
                 texture.setWrap(Texture.TextureWrap.ClampToEdge,Texture.TextureWrap.ClampToEdge);
             }
-            loadSprites(root);loadSprites(enemies);
+            for(JsonValue path=characters.get("textures").child;path!=null;path=path.next) {
+                Texture texture=manager.get(path.asString(),Texture.class);
+                texture.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);
+                texture.setWrap(Texture.TextureWrap.ClampToEdge,Texture.TextureWrap.ClampToEdge);
+            }
+            loadSprites(root);loadSprites(enemies);loadSprites(characters);
             com.badlogic.gdx.graphics.Pixmap pixel=new com.badlogic.gdx.graphics.Pixmap(1,1,com.badlogic.gdx.graphics.Pixmap.Format.RGBA8888);
             try {pixel.setColor(1,1,1,1);pixel.fill();weaponPixel=new Texture(pixel);}finally {pixel.dispose();}
             weaponPixel.setFilter(Texture.TextureFilter.Nearest,Texture.TextureFilter.Nearest);

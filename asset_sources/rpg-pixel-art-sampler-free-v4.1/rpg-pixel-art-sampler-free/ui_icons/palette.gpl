@@ -1,0 +1,43 @@
+GIMP Palette
+Name: RPG UI ICONS
+Columns: 8
+#
+ 27  19  37	outline
+255 255 255	white
+ 90  16  48	red 1
+163  32  58	red 2
+224  70  63	red 3
+255 143 128	red 4
+156  58  28	fire orange 1
+224 120  42	fire orange 2
+255 176  74	fire orange 3
+122  74  14	gold 1
+201 138  20	gold 2
+245 200  60	gold 3
+255 242 166	gold 4
+ 30  74  60	green 1
+ 47 122  69	green 2
+ 92 179  78	green 3
+176 224 112	green 4
+ 26  36 102	blue 1
+ 43  86 194	blue 2
+ 67 160 240	blue 3
+166 236 255	blue 4
+ 58  26  94	purple 1
+107  53 168	purple 2
+164  94 224	purple 3
+224 176 255	purple 4
+ 44  53  71	iron 1
+ 88 102 124	iron 2
+148 163 184	iron 3
+221 230 239	iron 4
+ 74  42  28	leather 1
+138  79  38	leather 2
+201 138  69	leather 3
+240 201 135	leather 4
+233 214 176	parchment 2
+255 245 220	parchment 3
+ 37  37  64	ui slate 1
+ 52  58  98	ui slate 2
+ 74  85 144	ui slate 3
+109 124 192	ui slate 4

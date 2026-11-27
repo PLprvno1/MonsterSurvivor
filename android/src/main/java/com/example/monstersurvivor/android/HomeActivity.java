@@ -1,5 +1,6 @@
 package com.example.monstersurvivor.android;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -21,13 +22,19 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /**
  * Main Home Activity for Monster Survivor.
- * Acts as the primary LAUNCHER entry point.
+ * Acts as the primary LAUNCHER entry point. Supports bilingual localization.
  */
-public class HomeActivity extends AppCompatActivity {
+public class HomeActivity extends NativeAudioActivity {
 
     private BottomNavigationView mBottomNav;
     private View mPanelTitle;
     private View mLayoutButtons;
+    private String mCurrentLanguage;
+
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(UiUtils.wrapLocale(newBase));
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,21 +43,43 @@ public class HomeActivity extends AppCompatActivity {
         UiUtils.applyImmersiveMode(this);
         setContentView(R.layout.activity_home);
 
+        mCurrentLanguage = GamePreferences.getInstance(this).getGameLanguage();
+
         MaterialToolbar toolbar = findViewById(R.id.toolbar_home);
         setSupportActionBar(toolbar);
+        if (getSupportActionBar() != null) {
+            getSupportActionBar().setTitle(R.string.game_title);
+            getSupportActionBar().setSubtitle(null);
+        }
 
         mPanelTitle = findViewById(R.id.panel_title);
         mLayoutButtons = findViewById(R.id.layout_action_buttons);
 
         setupButtons();
         setupBottomNavigation();
+        setupBackNavigation();
         playEntranceAnimations();
+    }
+
+    private void setupBackNavigation() {
+        getOnBackPressedDispatcher().addCallback(this, new androidx.activity.OnBackPressedCallback(true) {
+            @Override
+            public void handleOnBackPressed() {
+                showExitConfirmationDialog();
+            }
+        });
     }
 
     @Override
     protected void onResume() {
         super.onResume();
         UiUtils.applyImmersiveMode(this);
+        String savedLang = GamePreferences.getInstance(this).getGameLanguage();
+        if (mCurrentLanguage != null && !mCurrentLanguage.equals(savedLang)) {
+            mCurrentLanguage = savedLang;
+            recreate();
+            return;
+        }
         if (mBottomNav != null) {
             mBottomNav.setSelectedItemId(R.id.nav_home);
         }
@@ -124,22 +153,40 @@ public class HomeActivity extends AppCompatActivity {
     }
 
     private void showExitConfirmationDialog() {
-        new AlertDialog.Builder(this)
+        com.example.monstersurvivor.android.audio.NativeAudio.play(this, com.example.monstersurvivor.audio.AudioEvent.UI_CANCEL);
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.dialog_exit_title)
                 .setMessage(R.string.dialog_exit_msg)
                 .setIcon(R.drawable.ic_exit)
-                .setPositiveButton(R.string.dialog_yes, (dialog, which) -> finishAffinity())
-                .setNegativeButton(R.string.dialog_no, (dialog, which) -> dialog.dismiss())
-                .show();
+                .setPositiveButton(R.string.dialog_yes, (d, which) -> {
+                    d.dismiss();
+                    com.example.monstersurvivor.android.audio.NativeAudio.pause(this);
+                    finishAffinity();
+                    if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.LOLLIPOP) {
+                        finishAndRemoveTask();
+                    }
+                })
+                .setNegativeButton(R.string.dialog_no, (d, which) -> {
+                    com.example.monstersurvivor.android.audio.NativeAudio.play(this, com.example.monstersurvivor.audio.AudioEvent.UI_CANCEL);
+                    d.dismiss();
+                })
+                .setOnCancelListener(d -> {
+                    com.example.monstersurvivor.android.audio.NativeAudio.play(this, com.example.monstersurvivor.audio.AudioEvent.UI_CANCEL);
+                })
+                .create();
+        dialog.show();
+        UiUtils.styleDialog(dialog);
     }
 
     private void showAboutDialog() {
-        new AlertDialog.Builder(this)
+        AlertDialog dialog = new AlertDialog.Builder(this)
                 .setTitle(R.string.dialog_about_title)
                 .setMessage(R.string.dialog_about_msg)
                 .setIcon(R.drawable.ic_info)
-                .setPositiveButton(R.string.dialog_close, (dialog, which) -> dialog.dismiss())
-                .show();
+                .setPositiveButton(R.string.dialog_close, (d, which) -> d.dismiss())
+                .create();
+        dialog.show();
+        UiUtils.styleDialog(dialog);
     }
 
     @Override
@@ -151,7 +198,11 @@ public class HomeActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         int id = item.getItemId();
-        if (id == R.id.action_settings) {
+        if (id == R.id.action_item_shop) {
+            startActivity(new Intent(this, ItemShopActivity.class));
+            overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
+            return true;
+        } else if (id == R.id.action_settings) {
             startActivity(new Intent(this, SettingsActivity.class));
             overridePendingTransition(R.anim.slide_in_right, R.anim.slide_out_left);
             return true;
@@ -164,12 +215,12 @@ public class HomeActivity extends AppCompatActivity {
             return true;
         } else if (id == R.id.action_theme_forest) {
             GamePreferences.getInstance(this).setTheme(GamePreferences.THEME_FOREST);
-            Toast.makeText(this, "Đã chọn giao diện Forest", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_theme_forest, Toast.LENGTH_SHORT).show();
             recreate();
             return true;
         } else if (id == R.id.action_theme_dark) {
             GamePreferences.getInstance(this).setTheme(GamePreferences.THEME_DARK);
-            Toast.makeText(this, "Đã chọn giao diện Dark Magic", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, R.string.toast_theme_dark, Toast.LENGTH_SHORT).show();
             recreate();
             return true;
         }

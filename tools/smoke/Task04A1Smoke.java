@@ -49,7 +49,7 @@ public final class Task04A1Smoke extends ApplicationAdapter {
         check(!screen.weaponSelection() && screen.getSession().weapons.loadout.size()==2,"one reward commit");
         screen.getPlayer().damage(10000);for(int i=0;i<40 && !screen.gameOver();i++)screen.render(.1f);check(screen.gameOver() && in.activePointer()==-1,"GameOver resets input");
         int textures=screen.getAssets().textureCount();in.keyDown(Input.Keys.R);tick(2);check(screen.getSession().config.language==language && in.activePointer()==-1,"Retry retains language and resets pointer");
-        check(textures==19 && screen.getAssets().textureCount()==19,"game texture count stable");check(screen.getMap().grid.width==200 && screen.getSession().config.visuals.zoom==1.15f,"map/zoom preserved");
+        check(textures==19 && screen.getAssets().textureCount()==19,"game texture count stable");check(screen.getMap().grid.width==150 && screen.getSession().config.visuals.zoom==1.15f,"map/zoom preserved");
         in.keyDown(Input.Keys.W);in.keyDown(Input.Keys.D);in.sampleAxes();check(Math.abs(in.axisX()-.7071f)<.001,"desktop controls intact");screen.home();check(in.axisX()==0 && in.activePointer()==-1,"Home resets");
         check(Gdx.gl.glGetError()==GL20.GL_NO_ERROR,"no GL errors");screen.dispose();screen=null;
     }

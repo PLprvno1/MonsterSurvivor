@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Monster Survivor</string>
+    <string name="game_title">MONSTER SURVIVOR</string>
+    <string name="game_subtitle">Fantasy 2D Pixel Survival Action</string>
+    <string name="home_lore">Darkness descends upon the 200x200 forest. Brave warrior, arm your automatic weapons, dash to evade foes, and steer with the floating joystick to overcome the monster horde!</string>
+    <string name="home_version_tag">v1.1 • Bilingual VI/EN</string>
+
+    <!-- Main Navigation / Home Buttons -->
+    <string name="btn_play">PLAY NOW</string>
+    <string name="btn_achievements">ACHIEVEMENTS</string>
+    <string name="btn_settings">SETTINGS</string>
+    <string name="btn_how_to_play">HOW TO PLAY</string>
+    <string name="btn_exit">EXIT GAME</string>
+    <string name="btn_back">BACK</string>
+    <string name="btn_start_game">START MATCH</string>
+    <string name="btn_retry">RETRY</string>
+    <string name="btn_home">MAIN MENU</string>
+    <string name="btn_resume">RESUME</string>
+    <string name="btn_give_up">GIVE UP</string>
+    <string name="btn_preview_screens">PREVIEW RESULT UI</string>
+
+    <!-- Options Menu -->
+    <string name="menu_settings">Settings</string>
+    <string name="menu_how_to_play">How to Play</string>
+    <string name="menu_about">About</string>
+    <string name="menu_theme">Theme</string>
+    <string name="theme_forest">Forest (Deep Green)</string>
+    <string name="theme_dark">Dark (Arcane Magic)</string>
+
+
+    <!-- Navigation Bar -->
+    <string name="nav_home">Home</string>
+    <string name="nav_achievements">Achievements</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Game Mode Selection -->
+    <string name="title_mode_select">SELECT GAME MODE</string>
+    <string name="section_difficulty">DIFFICULTY LEVEL</string>
+    <string name="difficulty_easy">EASY</string>
+    <string name="difficulty_hard">HARD</string>
+    <string name="desc_easy">Weaker monsters, reduced incoming damage, higher health drop rates. Ideal for learning mechanics.</string>
+    <string name="desc_hard">Monsters scale damage and health over time, denser enemy waves. Balanced at standard medium difficulty.</string>
+    <string name="sub_diff_easy">Gentle pace • Casual</string>
+    <string name="sub_diff_hard">Standard challenge • Intense</string>
+
+    <string name="section_game_mode">TIME &amp; PACING</string>
+    <string name="section_character">CHARACTER</string>
+    <string name="character_warrior">Warrior</string>
+    <string name="character_archer">Archer</string>
+    <string name="character_mage">Mage</string>
+    <string name="character_warrior_weapon">Starting weapon: Sword Lv1</string>
+    <string name="character_archer_weapon">Starting weapon: Bow Lv1</string>
+    <string name="character_mage_weapon">Starting weapon: Fireball Lv1</string>
+    <string name="character_card_weapon_warrior">Sword Lv1</string>
+    <string name="character_card_weapon_archer">Bow Lv1</string>
+    <string name="character_card_weapon_mage">Fireball Lv1</string>
+    <string name="character_card_desc_warrior">Balanced sword fighter.</string>
+    <string name="character_card_desc_archer">Long-range archer.</string>
+    <string name="character_card_desc_mage">Ranged spellcaster.</string>
+    <string name="character_card_owned_free">OWNED · FREE</string>
+    <string name="character_card_owned">UNLOCKED</string>
+    <string name="character_card_locked">LOCKED · %1$d coins</string>
+    <string name="character_unlock_save_failed">Could not save. Please try again.</string>
+    <string name="character_wallet_format">Coins: %1$d</string>
+    <string name="character_owned">Owned</string>
+    <string name="character_locked_price">Locked • Price: %1$d coins</string>
+    <string name="character_option_owned">%1$s — Owned</string>
+    <string name="character_option_locked">%1$s — %2$d coins</string>
+    <string name="character_unlock_button">Unlock</string>
+    <string name="character_unlock_button_price">Unlock • %1$d coins</string>
+    <string name="character_unlock_title">Unlock character</string>
+    <string name="character_unlock_confirm">Unlock %1$s for %2$d coins?</string>
+    <string name="character_unlock_cancel">Cancel</string>
+    <string name="character_unlock_success">Character unlocked.</string>
+    <string name="character_unlock_insufficient">You need %1$d coins to unlock this character.</string>
+    <string name="character_locked_start">Unlock this character before starting.</string>
+    <string name="mode_normal">NORMAL (10 MIN)</string>
+    <string name="mode_demo">QUICK TRIAL</string>
+    <string name="desc_mode_normal">Standard 10-minute survival experience. Night falls at minute 5 with stronger monsters. Survive the darkness to win!</string>
+    <string name="desc_mode_demo">Quick Trial shortens the match to about 90 seconds. Character and projectile speeds stay normal.</string>
+    <string name="sub_mode_normal">Night at min 5 • Standard</string>
+    <string name="sub_mode_demo">Compressed • Fast test</string>
+    <string name="mode_detail_heading">MATCH SETUP DETAILS</string>
+    <string name="mode_badge_format">%1$s + %2$s</string>
+
+    <!-- Settings -->
+    <string name="title_settings">SYSTEM SETTINGS</string>
+    <string name="section_audio">AUDIO &amp; SOUNDTRACK</string>
+    <string name="section_system">SYSTEM &amp; DISPLAY</string>
+    <string name="setting_music">Background Music (BGM)</string>
+    <string name="setting_sfx">Sound Effects (SFX)</string>
+    <string name="setting_music_volume">Music Volume: %1$d%%</string>
+    <string name="setting_sfx_volume">SFX Volume: %1$d%%</string>
+    <string name="setting_vibration">Haptic Vibration</string>
+    <string name="setting_theme_title">Interface Theme</string>
+    <string name="setting_language_title">Language / Ngôn ngữ</string>
+    <string name="lang_vietnamese">Tiếng Việt</string>
+    <string name="lang_english">English</string>
+    <string name="setting_reset_defaults">Reset to Defaults</string>
+    <string name="settings_audio_note">Note: Language and audio settings are saved in SharedPreferences matching the Codex contract.</string>
+    <string name="toast_theme_forest">Forest theme applied</string>
+    <string name="toast_theme_dark">Dark Magic theme applied</string>
+    <string name="toast_theme_changed">Theme updated successfully</string>
+    <string name="toast_defaults_reset">Settings reset to defaults</string>
+    <string name="toast_language_changed">Language switched to English</string>
+
+    <!-- Achievements -->
+    <string name="title_achievements">HALL OF ACHIEVEMENTS</string>
+    <string name="ach_section_lifetime">LIFETIME STATISTICS</string>
+    <string name="ach_section_list">HERO ACHIEVEMENTS</string>
+    <string name="ach_progress_summary">Progress: %1$d / %2$d Unlocked (%3$d%%)</string>
+    <string name="ach_status_unlocked">UNLOCKED</string>
+    <string name="ach_status_locked">LOCKED</string>
+    <string name="ach_empty_badge">No Data</string>
+    <string name="ach_empty_title">NO SURVIVAL RECORDS YET</string>
+    <string name="ach_empty_desc">Enter battle and endure monster hordes. Match results will automatically record here to unlock achievement badges and track your lifetime hero stats!</string>
+
+    <string name="ach_item_first_blood_title">First Steps</string>
+    <string name="ach_item_first_blood_desc">Complete your first Normal match.</string>
+    <string name="ach_item_novice_survivor_title">Survivor</string>
+    <string name="ach_item_novice_survivor_desc">Survive at least 5 real minutes in a completed Normal match.</string>
+    <string name="ach_item_monster_slayer_title">Hunter</string>
+    <string name="ach_item_monster_slayer_desc">Defeat a total of 100 monsters in completed Normal matches.</string>
+    <string name="ach_item_centurion_slayer_title">Monster Assassin</string>
+    <string name="ach_item_centurion_slayer_desc">Defeat a total of 1,000 monsters in completed Normal matches.</string>
+    <string name="ach_item_lich_bane_title">Boss Slayer</string>
+    <string name="ach_item_lich_bane_desc">Defeat a Mini Boss in a completed Normal match.</string>
+    <string name="ach_item_legendary_victor_title">First Victory</string>
+    <string name="ach_item_legendary_victor_desc">Defeat the Lich Lord and win in Normal mode.</string>
+
+    <string name="ach_best_time">Best Survival Time</string>
+    <string name="ach_best_time_desc">Longest real survival time in a completed Normal match.</string>
+    <string name="ach_total_kills">Total Monsters Defeated</string>
+    <string name="ach_total_kills_desc">Monsters defeated in completed Normal matches.</string>
+    <string name="ach_victories">Total Victories</string>
+    <string name="ach_victories_desc">Normal matches won after defeating the Lich Lord.</string>
+    <string name="ach_matches">Completed Matches</string>
+    <string name="ach_matches_desc">Only Normal matches ending in Game Over or Victory count.</string>
+    <string name="ach_boss">Lich Lord Vanquished</string>
+    <string name="ach_boss_desc">Number of times the Lich Lord was brought to justice.</string>
+    <string name="ach_boss_status_defeated">%1$d times slain</string>
+    <string name="ach_boss_status_none">Not defeated yet</string>
+
+    <!-- How To Play -->
+    <string name="title_how_to_play">SURVIVAL HANDBOOK</string>
+    <string name="htp_intro">Greetings, warrior! Master these survival principles to endure the night in the monster forest:</string>
+    <string name="guide_joystick_title">1. Intuitive 360° Floating Joystick</string>
+    <string name="guide_joystick_desc">Touch anywhere on the left screen to spawn the dynamic floating joystick. Drag to steer around monsters and navigate terrain (trees, rocks, lakes). Release to halt immediately.</string>
+    <string name="guide_weapons_title">2. Auto-Combat &amp; 4 Arsenal Weapons</string>
+    <string name="guide_weapons_desc">Weapons automatically target and attack the nearest enemy. Equip up to 3 weapons simultaneously from: Holy Sword (melee cleave), Forest Bow (piercing arrows), Fireball (explosive blast), and Wrath Lightning (chain arcs). Normal tiers range 1 to 5.</string>
+    <string name="guide_evolution_title">3. Mythic Weapon Evolution</string>
+    <string name="guide_evolution_desc">When a weapon reaches Level 5, the next weapon chest unlocks EVOLUTION into a mythic master form: Blade Orbit (revolving blade shield), Arrow Storm (5-lane volley), Inferno Meteor (searing blast zone), or Thunder Web (arcing lightning network).</string>
+    <string name="guide_skills_title">4. Tactical Skills: Dash &amp; Ultimate</string>
+    <string name="guide_skills_desc">The Dash button (cyan icon) grants a swift dash with brief full invulnerability (iframes) to escape encirclement. The Ultimate button (gold icon) unleashes an energy shockwave that sweeps away enemy projectiles and knocks back nearby hordes.</string>
+    <string name="guide_boxes_title">5. Battlefield Pickups &amp; Skill Chests</string>
+    <string name="guide_boxes_desc">Collect Health Boxes (heal or boost Max HP), Damage Boxes, Speed Boxes, and Weapon Chests. Additionally, cyan Skill Chests spawn periodically, allowing you to level up Dash and Ultimate (reducing cooldown and amplifying power).</string>
+    <string name="guide_night_title">6. Nightfall &amp; Monster Special Skills</string>
+    <string name="guide_night_desc">At minute 5 (300s), night descends and narrows your field of vision. 67 monster species possess special skills: straight shots, fan bursts, poison, burn, slow, and slams. Always watch the red ground warning telegraphs to dodge in time!</string>
+    <string name="guide_boss_title">7. Mini-Boss &amp; Lich Lord Final Boss</string>
+    <string name="guide_boss_desc">At minute 5, a Mini-Boss emerges to test your mettle. At minute 9 (540s), the ancient Lich Lord awakens with 2 dangerous combat phases (including enrage) boasting immense vitality and lethal spells.</string>
+    <string name="guide_win_title">8. Victory Conditions &amp; Endless Mode</string>
+    <string name="guide_win_desc">SURVIVE PAST 10 MINUTES AND VANQUISH THE LICH LORD! Endure the full 10-minute battle (or 90 seconds in Demo mode) and slay the final boss to claim glorious victory. In Endless mode, test your ultimate survival limits and hunt down as many Boss waves as possible!</string>
+
+    <!-- Dialogs -->
+    <string name="dialog_exit_title">Exit Game?</string>
+    <string name="dialog_exit_msg">Are you sure you want to leave Monster Survivor?</string>
+    <string name="dialog_yes">Yes, Exit</string>
+    <string name="dialog_no">Cancel</string>
+    <string name="dialog_close">Close</string>
+    <string name="dialog_about_title">About Monster Survivor</string>
+    <string name="dialog_about_msg">Monster Survivor v1.1\nCrafted by the Android UI/UX team.\n\nArt &amp; Assets:\n• Hero &amp; Terrain: Kenney Roguelike / Tiny Questers (CC0 &amp; Game License)\n• Monsters: Willosuna RPG Monsters Top-Down Demo &amp; MonstersCreatures\n• Font: Roboto Apache-2.0 Latin/NFC Vietnamese\n\nPlatform: Android Native UI + libGDX Engine.</string>
+
+    <!-- Match Results (Victory / Defeat / Pause) -->
+    <string name="result_victory_title">VICTORY!</string>
+    <string name="result_victory_subtitle">YOU CONQUERED THE DARKNESS!</string>
+    <string name="result_gameover_title">GAME OVER</string>
+    <string name="result_gameover_subtitle">THE WARRIOR HAS FALLEN!</string>
+    <string name="result_pause_title">GAME PAUSED</string>
+    <string name="stat_survival_time">Survival Time: %1$s</string>
+    <string name="stat_kills">Monsters Slain: %1$d</string>
+    <string name="stat_difficulty">Difficulty: %1$s</string>
+    <string name="stat_game_mode">Mode: %1$s</string>
+    <string name="stat_boss_status">Boss Status: %1$s</string>
+    <string name="stat_boss_defeated">Defeated (+1000 pts)</string>
+    <string name="stat_boss_alive">Alive</string>
+    <string name="preview_title">PREVIEW MATCH RESULT / PAUSE UI</string>
+    <string name="preview_btn_victory">VICTORY</string>
+    <string name="preview_btn_gameover">GAME OVER</string>
+    <string name="preview_btn_pause">PAUSE</string>
+    <string name="toast_preview_retry">Retry button: Restart the match</string>
+    <string name="toast_preview_resume">Resume button: Continue gameplay</string>
+    <string name="ach_item_hard_title">Indomitable Warrior</string>
+    <string name="ach_item_hard_desc">Defeat the Lich Lord and win on Hard/Normal.</string>
+    <string name="ach_item_evolution_title">Weapon Master</string>
+    <string name="ach_item_evolution_desc">Evolve a weapon in a completed Normal match.</string>
+    <string name="ach_extra_stats">Play time (completed Normal matches): %1$s\nMini Bosses: %2$d  ·  Hard wins: %3$d  ·  Weapon evolutions: %4$d</string>
+    <string name="ach_unlocked_date">Unlocked on %1$s</string>
+    <string name="ach_progress_empty">Progress: 0 / 8 Unlocked (0%)</string>
+    <string name="mode_endless">ENDLESS</string>
+    <string name="sub_mode_endless">No time limit</string>
+    <string name="desc_mode_endless">No time limit. A Boss appears every 5 minutes, and newly spawned enemies grow stronger. Each new Boss waits until the current one is defeated. The run ends on death or when you leave; Endless gives no Victory or Normal achievements.</string>
+    <string name="title_item_shop">POTION SHOP</string>
+    <string name="shop_wallet">Coins: %1$d</string>
+    <string name="potion_health_name">Healing Potion</string>
+    <string name="potion_health_desc">Restore 4 HP now. Unavailable at full health.</string>
+    <string name="potion_speed_name">Speed Potion</string>
+    <string name="potion_speed_desc">Run 25% faster for 8 seconds. Does not boost Dash.</string>
+    <string name="potion_cooldown_name">Cooldown Potion</string>
+    <string name="potion_cooldown_desc">Recharge Dash, Ultimate and passive skills 25% faster for 8 seconds.</string>
+    <string name="shop_price">Price: %1$d coins</string>
+    <string name="shop_owned">Owned: %1$d</string>
+    <string name="shop_buy">BUY</string>
+    <string name="shop_full">FULL</string>
+    <string name="shop_purchase_success">Potion purchased.</string>
+    <string name="shop_purchase_insufficient">Not enough coins.</string>
+    <string name="shop_purchase_failed">Could not save the purchase. Try again.</string>
+    <string name="shop_action_label">Shop</string>
+    <string name="coin_test_button">Test Coins</string>
+    <string name="coin_test_title">Test Coin Top-up · No Payment</string>
+    <string name="coin_test_option">Add %1$d coins (test)</string>
+    <string name="coin_test_success">Added %1$d test coins.</string>
+    <string name="coin_test_error">Could not add test coins.</string>
+</resources>

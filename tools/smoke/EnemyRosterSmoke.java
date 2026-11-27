@@ -42,7 +42,7 @@ public final class EnemyRosterSmoke extends ApplicationAdapter {
                 check(screen.getAssets()==assets && assets.textureCount()==19 && assets.textureBytes()==bytes,"Retry never accumulates textures");
                 check(screen.getSession().enemies.size()==0 && screen.getSession().weapons.loadout.size()==1 && screen.getSession().night.strength()==0,"fresh match roster/weapon/night state");
             }
-            check(screen.getMap().width==200 && screen.getMap().height==200 && Math.abs(screen.getCamera().viewportHeight-240/1.15f)<.01,"map/zoom retained");
+            check(screen.getMap().width==150 && screen.getMap().height==150 && Math.abs(screen.getCamera().viewportHeight-240/1.15f)<.01,"map/zoom retained");
             screen.home();check(home==1 && Gdx.gl.glGetError()==GL20.GL_NO_ERROR,"Home and final GL cleanup");
             System.out.println("ROSTER GAME SCREEN PASSED: "+checks+" checks, 82 actual gameplay species, 3 Retry cycles, textures=19 RGBA="+bytes);
         }catch(Throwable t) {failed=true;t.printStackTrace();}Gdx.app.exit();

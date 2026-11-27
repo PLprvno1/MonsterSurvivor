@@ -3,6 +3,7 @@ import com.example.monstersurvivor.assets.GameAssets.*;
 import com.example.monstersurvivor.combat.SwordCombat;
 import com.example.monstersurvivor.config.*;
 import com.example.monstersurvivor.entity.*;
+import com.example.monstersurvivor.render.PixelCamera;
 import com.example.monstersurvivor.world.*;
 
 /** Task 02.1 behavioral checks, split by implementation phase to avoid repeated heavy suites. */
@@ -57,28 +58,38 @@ public final class Task021Checks {
         for(long seed:seeds) {
             long start=System.nanoTime();ForestGenerator.Layout layout=ForestGenerator.generate(seed);CollisionGrid grid=layout.grid;
             check(!layout.fallback && layout.seed==seed,"Requested seed generates normally");
-            check(grid.width==200 && grid.height==200 && layout.walkableTiles>=34000,"200x200 map with at least 85 percent walkable");
-            check(grid.canOccupy(1608,1608,4,3),"Player spawn is safe");
+            float spawnX=(ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,spawnY=(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE;
+            check(grid.width==150 && grid.height==150 && layout.walkableTiles>=ForestGenerator.CELLS*.85f,"150x150 map with at least 85 percent walkable");
+            check(grid.canOccupy(spawnX,spawnY,4,3),"Player spawn is safe");
+            float worldWidth=grid.width*grid.tileSize,worldHeight=grid.height*grid.tileSize,viewWidth=320/1.15f,viewHeight=240/1.15f;
+            PixelCamera worldCamera=new PixelCamera(PixelCamera.Mode.SCREEN);
+            worldCamera.update(0,0,viewWidth,viewHeight,960,540,worldWidth,worldHeight);
+            check(worldCamera.cameraX>=viewWidth/2-.01f && worldCamera.cameraY>=viewHeight/2-.01f,"Camera clamps to lower world bounds");
+            worldCamera.update(worldWidth,worldHeight,viewWidth,viewHeight,960,540,worldWidth,worldHeight);
+            check(worldCamera.cameraX<=worldWidth-viewWidth/2+.01f && worldCamera.cameraY<=worldHeight-viewHeight/2+.01f,"Camera clamps to upper world bounds");
             NavigationGrid nav=new NavigationGrid(grid);int free=0,trees=0,rocks=0,water=0,hash=1;
-            for(int y=0;y<200;y++)for(int x=0;x<200;x++) {
+            int spawnCell=nav.cell(spawnX,spawnY);
+            for(int y=0;y<grid.height;y++)for(int x=0;x<grid.width;x++) {
                 int mask=grid.mask(x,y);hash=31*hash+mask;
-                if(mask==0) {free++;check(nav.connected(y*200+x,20100,false),"All walkable nodes connect to spawn");}
+                if(mask==0) {free++;check(nav.connected(y*grid.width+x,spawnCell,false),"All walkable nodes connect to spawn");}
                 if(mask==CollisionGrid.TREE)trees++;if(mask==CollisionGrid.ROCK)rocks++;if(mask==CollisionGrid.WATER)water++;
-                float dx=(x-100)/22f,dy=(y-100)/18f;
+                float scale=ForestGenerator.WIDTH/200f,dx=(x-ForestGenerator.CENTER_X)/(22f*scale),dy=(y-ForestGenerator.CENTER_Y)/(18f*scale);
                 if(dx*dx+dy*dy<=1)check(mask==0,"Large center clearing is protected");
-                if(x==0 || x==199 || y==0 || y==199)check(mask==CollisionGrid.BOUNDARY,"Map boundary is closed");
-                check(layout.terrain[y*200+x]!=null,"Terrain is fully assigned");
+                if(x==0 || x==grid.width-1 || y==0 || y==grid.height-1)check(mask==CollisionGrid.BOUNDARY,"Map boundary is closed");
+                check(layout.terrain[y*grid.width+x]!=null,"Terrain is fully assigned");
             }
             check(free==layout.walkableTiles && trees>0 && rocks>0 && water>0,"Each seed contains real forest, rocks and ponds");
             ForestGenerator.Layout again=ForestGenerator.generate(seed);
-            for(int y=0;y<200;y++)for(int x=0;x<200;x++)check(grid.mask(x,y)==again.grid.mask(x,y),"Seed reproduces identical collision");
+            for(int y=0;y<grid.height;y++)for(int x=0;x<grid.width;x++)check(grid.mask(x,y)==again.grid.mask(x,y),"Seed reproduces identical collision");
             check(java.util.Arrays.equals(layout.terrain,again.terrain) && layout.props.size==again.props.size,"Seed reproduces visuals");
             check(previousHash==0 || previousHash!=hash,"Different seeds produce different layouts");previousHash=hash;
             AStarPathfinder finder=new AStarPathfinder(nav);com.badlogic.gdx.utils.IntArray path=new com.badlogic.gdx.utils.IntArray();
-            for(int corner:new int[]{201,398,39601,39798})check(finder.find(20100,corner,false,path),"A* reaches each outer map quadrant");
+            int low=1,high=grid.width-2,top=grid.height-2;
+            for(int corner:new int[]{low*grid.width+low,low*grid.width+high,top*grid.width+low,top*grid.width+high})
+                check(finder.find(spawnCell,corner,false,path),"A* reaches each outer map quadrant");
             GameConfig config=new GameConfig.Builder().population(6,40).build();EnemySystem enemies=new EnemySystem(nav,null,config);
-            var spawner=new com.example.monstersurvivor.spawn.EnemySpawner(config,enemies,seed);Player player=new Player(1608,1608);
-            for(int i=0;i<180;i++)spawner.update(.1f,0,player,1388,1504,1828,1712);
+            var spawner=new com.example.monstersurvivor.spawn.EnemySpawner(config,enemies,seed);Player player=new Player(spawnX,spawnY);
+            for(int i=0;i<180;i++)spawner.update(.1f,0,player,player.x-220,player.y-104,player.x+220,player.y+104);
             check(enemies.size()==6,"Spawner uses generated navigation");
             for(int i=0;i<enemies.size();i++){Enemy e=enemies.get(i);check(grid.canOccupy(e.x,e.y,5,3,e.definition.flying),"Spawn never occupies generated obstacles");}
             for(int frame=0;frame<180;frame++) {
@@ -89,7 +100,8 @@ public final class Task021Checks {
                 +" repairs="+layout.repairs+" hash="+hash+" checkMs="+(System.nanoTime()-start)/1e6);
         }
         var fallback=ForestGenerator.fallback(123);NavigationGrid nav=new NavigationGrid(fallback.grid);
-        check(fallback.fallback && fallback.walkableTiles>=34000 && nav.connected(20100,201,false),"Fallback remains valid and connected");
+        int spawn=nav.cell((ForestGenerator.CENTER_X+.5f)*ForestGenerator.TILE_SIZE,(ForestGenerator.CENTER_Y+.5f)*ForestGenerator.TILE_SIZE);
+        check(fallback.fallback && fallback.walkableTiles>=ForestGenerator.CELLS*.85f && nav.connected(spawn,nav.cell(24,24),false),"Fallback remains valid and connected");
     }
     private static void collisionAndUpdate() {
         byte[] data=new byte[400];data[10*20+10]=CollisionGrid.TREE;

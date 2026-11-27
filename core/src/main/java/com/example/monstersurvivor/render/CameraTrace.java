@@ -31,9 +31,8 @@ public final class CameraTrace {
         segmentSeconds=json.getFloat("segmentSeconds",2);exit=json.getBoolean("exit",true);
         raster=json.getBoolean("raster",false);
     }
-    public static CameraTrace load() {
-        FileHandle file=Gdx.files.local("camera-check.json");
-        return file.exists() ? new CameraTrace(new JsonReader().parse(file)) : null;
+    public static CameraTrace load(com.example.monstersurvivor.debug.DiagnosticRun run) {
+        var value=run.object("camera-check.json");return value==null?null:new CameraTrace(value);
     }
     public void beforeFrame(GameScreen screen) {
         if(done)return;

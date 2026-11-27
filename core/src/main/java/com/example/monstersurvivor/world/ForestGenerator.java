@@ -6,12 +6,15 @@ import java.util.Arrays;
 
 /** Bounded cluster placement with wide buffers, safe roads and validated connectivity. No GL/IO. */
 public final class ForestGenerator {
-    public static final int WIDTH=200,HEIGHT=200,TILE_SIZE=16,CELLS=WIDTH*HEIGHT,CENTER_X=WIDTH/2,CENTER_Y=HEIGHT/2,SPAWN_CELL=CENTER_Y*WIDTH+CENTER_X;
-    private static final int MAX_INTERIOR_BLOCKED=4000,MAX_REPAIRS=12;
+    public static final int WIDTH=150,HEIGHT=150,TILE_SIZE=16,CELLS=WIDTH*HEIGHT,CENTER_X=WIDTH/2,CENTER_Y=HEIGHT/2,SPAWN_CELL=CENTER_Y*WIDTH+CENTER_X;
+    private static final float MAP_SCALE=WIDTH/200f;
+    private static final int MAX_INTERIOR_BLOCKED=4000*CELLS/(200*200),MAX_REPAIRS=12;
+    private static final int ROAD_RADIUS=Math.max(1,(int)(2*MAP_SCALE));
+    private static int scaled(int value) {return Math.max(1,Math.round(value*MAP_SCALE));}
     public static final class Prop {
         public final String region;
         public final float x,y,scale;
-        Prop(String region,int col,int row,float scale) {this.region=region;x=col*16+8;y=row*16+2;this.scale=scale;}
+        Prop(String region,int col,int row,float scale) {this.region=region;x=col*TILE_SIZE+TILE_SIZE/2;y=row*TILE_SIZE+2;this.scale=scale;}
     }
     public static final class Layout {
         public final long seed;
@@ -50,23 +53,25 @@ public final class ForestGenerator {
             Arrays.fill(terrain,"grass");
             for(int y=0;y<HEIGHT;y++)for(int x=0;x<WIDTH;x++) {
                 int id=y*WIDTH+x;if(x==0 || y==0 || x==WIDTH-1 || y==HEIGHT-1)masks[id]=CollisionGrid.BOUNDARY;
-                float dx=(x-CENTER_X)/22f,dy=(y-CENTER_Y)/18f;if(dx*dx+dy*dy<=1)protectedTiles[id]=true;
+                float dx=(x-CENTER_X)/(22f*MAP_SCALE),dy=(y-CENTER_Y)/(18f*MAP_SCALE);if(dx*dx+dy*dy<=1)protectedTiles[id]=true;
             }
             float h=random.nextFloat()*6.283185f,v=random.nextFloat()*6.283185f;
             for(int i=1;i<WIDTH-1;i++) {
-                float envelope=Math.min(1,Math.abs(i-CENTER_X)/20f);
-                int row=CENTER_Y+Math.round(3*(float)Math.sin((i-CENTER_X)*.09f+h)*envelope),col=CENTER_X+Math.round(3*(float)Math.sin((i-CENTER_X)*.085f+v)*envelope);
-                for(int offset=-2;offset<=2;offset++) {road(i,row+offset);road(col+offset,i);}
+                float normalized=(i-CENTER_X)/MAP_SCALE,envelope=Math.min(1,Math.abs(normalized)/20f);
+                int row=CENTER_Y+Math.round(scaled(3)*(float)Math.sin(normalized*.09f+h)*envelope),col=CENTER_X+Math.round(scaled(3)*(float)Math.sin(normalized*.085f+v)*envelope);
+                for(int offset=-ROAD_RADIUS;offset<=ROAD_RADIUS;offset++) {road(i,row+offset);road(col+offset,i);}
             }
             // Secondary wide routes connect distant quadrants without narrow chokes.
-            for(int i=1;i<WIDTH-1;i++)for(int offset=-2;offset<=2;offset++) {
+            for(int i=1;i<WIDTH-1;i++)for(int offset=-ROAD_RADIUS;offset<=ROAD_RADIUS;offset++) {
                 road(i,HEIGHT/4+offset);road(i,HEIGHT*3/4+offset);
                 road(WIDTH/4+offset,i);road(WIDTH*3/4+offset,i);
             }
         }
         void biomes() {
             for(int patch=0;patch<32;patch++) {
-                int cx=12+random.nextInt(WIDTH-24),cy=12+random.nextInt(HEIGHT-24),rx=7+random.nextInt(12),ry=6+random.nextInt(10);
+                int margin=scaled(12),minRx=scaled(7),rxRange=scaled(18)-minRx+1,minRy=scaled(6),ryRange=scaled(15)-minRy+1;
+                int cx=margin+random.nextInt(WIDTH-2*margin),cy=margin+random.nextInt(HEIGHT-2*margin);
+                int rx=minRx+random.nextInt(rxRange),ry=minRy+random.nextInt(ryRange);
                 byte kind=(byte)(2+patch%3);
                 for(int y=Math.max(1,cy-ry);y<=Math.min(HEIGHT-2,cy+ry);y++)for(int x=Math.max(1,cx-rx);x<=Math.min(WIDTH-2,cx+rx);x++)
                     if(!protectedTiles[y*WIDTH+x] && inside(x,y,cx,cy,rx,ry))biome[y*WIDTH+x]=kind;
@@ -77,8 +82,10 @@ public final class ForestGenerator {
             int id=y*WIDTH+x;masks[id]=0;protectedTiles[id]=true;biome[id]=1;terrain[id]="dirt";
         }
         void islands(int mask,int count,int minRx,int maxRx,int minRy,int maxRy) {
+            minRx=scaled(minRx);maxRx=scaled(maxRx);minRy=scaled(minRy);maxRy=scaled(maxRy);
+            int margin=scaled(6);
             for(int island=0;island<count;island++)for(int attempt=0;attempt<40;attempt++) {
-                int cx=6+random.nextInt(WIDTH-12),cy=6+random.nextInt(HEIGHT-12),rx=minRx+random.nextInt(maxRx-minRx+1),ry=minRy+random.nextInt(maxRy-minRy+1);
+                int cx=margin+random.nextInt(WIDTH-2*margin),cy=margin+random.nextInt(HEIGHT-2*margin),rx=minRx+random.nextInt(maxRx-minRx+1),ry=minRy+random.nextInt(maxRy-minRy+1);
                 if(!room(cx,cy,rx,ry))continue;int area=0;
                 for(int y=cy-ry;y<=cy+ry;y++)for(int x=cx-rx;x<=cx+rx;x++)if(inside(x,y,cx,cy,rx,ry))area++;
                 if(blockedInterior+area>MAX_INTERIOR_BLOCKED)continue;
@@ -87,8 +94,9 @@ public final class ForestGenerator {
             }
         }
         boolean room(int cx,int cy,int rx,int ry) {
-            if(cx-rx-3<1 || cy-ry-3<1 || cx+rx+3>WIDTH-2 || cy+ry+3>HEIGHT-2)return false;
-            for(int y=cy-ry-3;y<=cy+ry+3;y++)for(int x=cx-rx-3;x<=cx+rx+3;x++)
+            int buffer=scaled(3);
+            if(cx-rx-buffer<1 || cy-ry-buffer<1 || cx+rx+buffer>WIDTH-2 || cy+ry+buffer>HEIGHT-2)return false;
+            for(int y=cy-ry-buffer;y<=cy+ry+buffer;y++)for(int x=cx-rx-buffer;x<=cx+rx+buffer;x++)
                 if(masks[y*WIDTH+x]!=0 || protectedTiles[y*WIDTH+x])return false;
             return true;
         }
@@ -147,7 +155,8 @@ public final class ForestGenerator {
             }
             // A few small camps on non-road, non-blocking cells; no fake collectible props.
             int camps=0;
-            for(int y=12;y<HEIGHT-12 && camps<8;y+=11)for(int x=12;x<WIDTH-12 && camps<8;x+=13) {
+            int margin=scaled(12),stepY=scaled(11),stepX=scaled(13);
+            for(int y=margin;y<HEIGHT-margin && camps<8;y+=stepY)for(int x=margin;x<WIDTH-margin && camps<8;x+=stepX) {
                 int id=y*WIDTH+x;if(protectedTiles[id] || masks[id]!=0 || masks[id+1]!=0 || masks[id-1]!=0 || hash(x+51,y+33)>.1f)continue;
                 props.add(new Prop("campfire",x,y,1));props.add(new Prop("camp_barrel",x+1,y,1));props.add(new Prop("camp_stool",x-1,y,1));camps++;
             }

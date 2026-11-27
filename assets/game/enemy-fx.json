@@ -1,0 +1,2956 @@
+{
+  "size": [
+    512,
+    512
+  ],
+  "primitivePixel": [
+    511,
+    511,
+    1,
+    1
+  ],
+  "clips": {
+    "arrow_right": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          2,
+          16,
+          16
+        ],
+        [
+          22,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "arrow_left": {
+      "fps": 12,
+      "frames": [
+        [
+          42,
+          2,
+          16,
+          16
+        ],
+        [
+          62,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "arrow_up": {
+      "fps": 12,
+      "frames": [
+        [
+          82,
+          2,
+          16,
+          16
+        ],
+        [
+          102,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "arrow_down": {
+      "fps": 12,
+      "frames": [
+        [
+          122,
+          2,
+          16,
+          16
+        ],
+        [
+          142,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "arrow_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          162,
+          2,
+          16,
+          16
+        ],
+        [
+          182,
+          2,
+          16,
+          16
+        ],
+        [
+          202,
+          2,
+          16,
+          16
+        ],
+        [
+          222,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "rock_right": {
+      "fps": 12,
+      "frames": [
+        [
+          242,
+          2,
+          16,
+          16
+        ],
+        [
+          262,
+          2,
+          16,
+          16
+        ],
+        [
+          282,
+          2,
+          16,
+          16
+        ],
+        [
+          302,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "rock_left": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          2,
+          16,
+          16
+        ],
+        [
+          342,
+          2,
+          16,
+          16
+        ],
+        [
+          362,
+          2,
+          16,
+          16
+        ],
+        [
+          382,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "rock_up": {
+      "fps": 12,
+      "frames": [
+        [
+          402,
+          2,
+          16,
+          16
+        ],
+        [
+          422,
+          2,
+          16,
+          16
+        ],
+        [
+          442,
+          2,
+          16,
+          16
+        ],
+        [
+          462,
+          2,
+          16,
+          16
+        ]
+      ]
+    },
+    "rock_down": {
+      "fps": 12,
+      "frames": [
+        [
+          482,
+          2,
+          16,
+          16
+        ],
+        [
+          2,
+          22,
+          16,
+          16
+        ],
+        [
+          22,
+          22,
+          16,
+          16
+        ],
+        [
+          42,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "rock_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          62,
+          22,
+          16,
+          16
+        ],
+        [
+          82,
+          22,
+          16,
+          16
+        ],
+        [
+          102,
+          22,
+          16,
+          16
+        ],
+        [
+          122,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "coin_shot_right": {
+      "fps": 12,
+      "frames": [
+        [
+          142,
+          22,
+          16,
+          16
+        ],
+        [
+          162,
+          22,
+          16,
+          16
+        ],
+        [
+          182,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "coin_shot_left": {
+      "fps": 12,
+      "frames": [
+        [
+          202,
+          22,
+          16,
+          16
+        ],
+        [
+          222,
+          22,
+          16,
+          16
+        ],
+        [
+          242,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "coin_shot_up": {
+      "fps": 12,
+      "frames": [
+        [
+          262,
+          22,
+          16,
+          16
+        ],
+        [
+          282,
+          22,
+          16,
+          16
+        ],
+        [
+          302,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "coin_shot_down": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          22,
+          16,
+          16
+        ],
+        [
+          342,
+          22,
+          16,
+          16
+        ],
+        [
+          362,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "coin_shot_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          382,
+          22,
+          16,
+          16
+        ],
+        [
+          402,
+          22,
+          16,
+          16
+        ],
+        [
+          422,
+          22,
+          16,
+          16
+        ],
+        [
+          442,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "seed_right": {
+      "fps": 12,
+      "frames": [
+        [
+          462,
+          22,
+          16,
+          16
+        ],
+        [
+          482,
+          22,
+          16,
+          16
+        ]
+      ]
+    },
+    "seed_left": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          42,
+          16,
+          16
+        ],
+        [
+          22,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "seed_up": {
+      "fps": 12,
+      "frames": [
+        [
+          42,
+          42,
+          16,
+          16
+        ],
+        [
+          62,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "seed_down": {
+      "fps": 12,
+      "frames": [
+        [
+          82,
+          42,
+          16,
+          16
+        ],
+        [
+          102,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "seed_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          122,
+          42,
+          16,
+          16
+        ],
+        [
+          142,
+          42,
+          16,
+          16
+        ],
+        [
+          162,
+          42,
+          16,
+          16
+        ],
+        [
+          182,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "thorn_right": {
+      "fps": 12,
+      "frames": [
+        [
+          202,
+          42,
+          16,
+          16
+        ],
+        [
+          222,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "thorn_left": {
+      "fps": 12,
+      "frames": [
+        [
+          242,
+          42,
+          16,
+          16
+        ],
+        [
+          262,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "thorn_up": {
+      "fps": 12,
+      "frames": [
+        [
+          282,
+          42,
+          16,
+          16
+        ],
+        [
+          302,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "thorn_down": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          42,
+          16,
+          16
+        ],
+        [
+          342,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "thorn_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          362,
+          42,
+          16,
+          16
+        ],
+        [
+          382,
+          42,
+          16,
+          16
+        ],
+        [
+          402,
+          42,
+          16,
+          16
+        ],
+        [
+          422,
+          42,
+          16,
+          16
+        ]
+      ]
+    },
+    "spore_right": {
+      "fps": 12,
+      "frames": [
+        [
+          442,
+          42,
+          16,
+          16
+        ],
+        [
+          462,
+          42,
+          16,
+          16
+        ],
+        [
+          482,
+          42,
+          16,
+          16
+        ],
+        [
+          2,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "spore_left": {
+      "fps": 12,
+      "frames": [
+        [
+          22,
+          62,
+          16,
+          16
+        ],
+        [
+          42,
+          62,
+          16,
+          16
+        ],
+        [
+          62,
+          62,
+          16,
+          16
+        ],
+        [
+          82,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "spore_up": {
+      "fps": 12,
+      "frames": [
+        [
+          102,
+          62,
+          16,
+          16
+        ],
+        [
+          122,
+          62,
+          16,
+          16
+        ],
+        [
+          142,
+          62,
+          16,
+          16
+        ],
+        [
+          162,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "spore_down": {
+      "fps": 12,
+      "frames": [
+        [
+          182,
+          62,
+          16,
+          16
+        ],
+        [
+          202,
+          62,
+          16,
+          16
+        ],
+        [
+          222,
+          62,
+          16,
+          16
+        ],
+        [
+          242,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "spore_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          262,
+          62,
+          16,
+          16
+        ],
+        [
+          282,
+          62,
+          16,
+          16
+        ],
+        [
+          302,
+          62,
+          16,
+          16
+        ],
+        [
+          322,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "poison_spit_right": {
+      "fps": 12,
+      "frames": [
+        [
+          342,
+          62,
+          16,
+          16
+        ],
+        [
+          362,
+          62,
+          16,
+          16
+        ],
+        [
+          382,
+          62,
+          16,
+          16
+        ],
+        [
+          402,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "poison_spit_left": {
+      "fps": 12,
+      "frames": [
+        [
+          422,
+          62,
+          16,
+          16
+        ],
+        [
+          442,
+          62,
+          16,
+          16
+        ],
+        [
+          462,
+          62,
+          16,
+          16
+        ],
+        [
+          482,
+          62,
+          16,
+          16
+        ]
+      ]
+    },
+    "poison_spit_up": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          82,
+          16,
+          16
+        ],
+        [
+          22,
+          82,
+          16,
+          16
+        ],
+        [
+          42,
+          82,
+          16,
+          16
+        ],
+        [
+          62,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "poison_spit_down": {
+      "fps": 12,
+      "frames": [
+        [
+          82,
+          82,
+          16,
+          16
+        ],
+        [
+          102,
+          82,
+          16,
+          16
+        ],
+        [
+          122,
+          82,
+          16,
+          16
+        ],
+        [
+          142,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "poison_spit_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          162,
+          82,
+          16,
+          16
+        ],
+        [
+          182,
+          82,
+          16,
+          16
+        ],
+        [
+          202,
+          82,
+          16,
+          16
+        ],
+        [
+          222,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "fireball_right": {
+      "fps": 12,
+      "frames": [
+        [
+          242,
+          82,
+          16,
+          16
+        ],
+        [
+          262,
+          82,
+          16,
+          16
+        ],
+        [
+          282,
+          82,
+          16,
+          16
+        ],
+        [
+          302,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "fireball_left": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          82,
+          16,
+          16
+        ],
+        [
+          342,
+          82,
+          16,
+          16
+        ],
+        [
+          362,
+          82,
+          16,
+          16
+        ],
+        [
+          382,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "fireball_up": {
+      "fps": 12,
+      "frames": [
+        [
+          402,
+          82,
+          16,
+          16
+        ],
+        [
+          422,
+          82,
+          16,
+          16
+        ],
+        [
+          442,
+          82,
+          16,
+          16
+        ],
+        [
+          462,
+          82,
+          16,
+          16
+        ]
+      ]
+    },
+    "fireball_down": {
+      "fps": 12,
+      "frames": [
+        [
+          482,
+          82,
+          16,
+          16
+        ],
+        [
+          2,
+          102,
+          16,
+          16
+        ],
+        [
+          22,
+          102,
+          16,
+          16
+        ],
+        [
+          42,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "fireball_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          62,
+          102,
+          16,
+          16
+        ],
+        [
+          82,
+          102,
+          16,
+          16
+        ],
+        [
+          102,
+          102,
+          16,
+          16
+        ],
+        [
+          122,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "lava_glob_right": {
+      "fps": 12,
+      "frames": [
+        [
+          142,
+          102,
+          16,
+          16
+        ],
+        [
+          162,
+          102,
+          16,
+          16
+        ],
+        [
+          182,
+          102,
+          16,
+          16
+        ],
+        [
+          202,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "lava_glob_left": {
+      "fps": 12,
+      "frames": [
+        [
+          222,
+          102,
+          16,
+          16
+        ],
+        [
+          242,
+          102,
+          16,
+          16
+        ],
+        [
+          262,
+          102,
+          16,
+          16
+        ],
+        [
+          282,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "lava_glob_up": {
+      "fps": 12,
+      "frames": [
+        [
+          302,
+          102,
+          16,
+          16
+        ],
+        [
+          322,
+          102,
+          16,
+          16
+        ],
+        [
+          342,
+          102,
+          16,
+          16
+        ],
+        [
+          362,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "lava_glob_down": {
+      "fps": 12,
+      "frames": [
+        [
+          382,
+          102,
+          16,
+          16
+        ],
+        [
+          402,
+          102,
+          16,
+          16
+        ],
+        [
+          422,
+          102,
+          16,
+          16
+        ],
+        [
+          442,
+          102,
+          16,
+          16
+        ]
+      ]
+    },
+    "lava_glob_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          462,
+          102,
+          16,
+          16
+        ],
+        [
+          482,
+          102,
+          16,
+          16
+        ],
+        [
+          2,
+          122,
+          16,
+          16
+        ],
+        [
+          22,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "ice_shard_right": {
+      "fps": 12,
+      "frames": [
+        [
+          42,
+          122,
+          16,
+          16
+        ],
+        [
+          62,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "ice_shard_left": {
+      "fps": 12,
+      "frames": [
+        [
+          82,
+          122,
+          16,
+          16
+        ],
+        [
+          102,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "ice_shard_up": {
+      "fps": 12,
+      "frames": [
+        [
+          122,
+          122,
+          16,
+          16
+        ],
+        [
+          142,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "ice_shard_down": {
+      "fps": 12,
+      "frames": [
+        [
+          162,
+          122,
+          16,
+          16
+        ],
+        [
+          182,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "ice_shard_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          202,
+          122,
+          16,
+          16
+        ],
+        [
+          222,
+          122,
+          16,
+          16
+        ],
+        [
+          242,
+          122,
+          16,
+          16
+        ],
+        [
+          262,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "snowball_right": {
+      "fps": 12,
+      "frames": [
+        [
+          282,
+          122,
+          16,
+          16
+        ],
+        [
+          302,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "snowball_left": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          122,
+          16,
+          16
+        ],
+        [
+          342,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "snowball_up": {
+      "fps": 12,
+      "frames": [
+        [
+          362,
+          122,
+          16,
+          16
+        ],
+        [
+          382,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "snowball_down": {
+      "fps": 12,
+      "frames": [
+        [
+          402,
+          122,
+          16,
+          16
+        ],
+        [
+          422,
+          122,
+          16,
+          16
+        ]
+      ]
+    },
+    "snowball_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          442,
+          122,
+          16,
+          16
+        ],
+        [
+          462,
+          122,
+          16,
+          16
+        ],
+        [
+          482,
+          122,
+          16,
+          16
+        ],
+        [
+          2,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "hex_bolt_right": {
+      "fps": 12,
+      "frames": [
+        [
+          22,
+          142,
+          16,
+          16
+        ],
+        [
+          42,
+          142,
+          16,
+          16
+        ],
+        [
+          62,
+          142,
+          16,
+          16
+        ],
+        [
+          82,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "hex_bolt_left": {
+      "fps": 12,
+      "frames": [
+        [
+          102,
+          142,
+          16,
+          16
+        ],
+        [
+          122,
+          142,
+          16,
+          16
+        ],
+        [
+          142,
+          142,
+          16,
+          16
+        ],
+        [
+          162,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "hex_bolt_up": {
+      "fps": 12,
+      "frames": [
+        [
+          182,
+          142,
+          16,
+          16
+        ],
+        [
+          202,
+          142,
+          16,
+          16
+        ],
+        [
+          222,
+          142,
+          16,
+          16
+        ],
+        [
+          242,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "hex_bolt_down": {
+      "fps": 12,
+      "frames": [
+        [
+          262,
+          142,
+          16,
+          16
+        ],
+        [
+          282,
+          142,
+          16,
+          16
+        ],
+        [
+          302,
+          142,
+          16,
+          16
+        ],
+        [
+          322,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "hex_bolt_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          342,
+          142,
+          16,
+          16
+        ],
+        [
+          362,
+          142,
+          16,
+          16
+        ],
+        [
+          382,
+          142,
+          16,
+          16
+        ],
+        [
+          402,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "shadow_orb_right": {
+      "fps": 12,
+      "frames": [
+        [
+          422,
+          142,
+          16,
+          16
+        ],
+        [
+          442,
+          142,
+          16,
+          16
+        ],
+        [
+          462,
+          142,
+          16,
+          16
+        ],
+        [
+          482,
+          142,
+          16,
+          16
+        ]
+      ]
+    },
+    "shadow_orb_left": {
+      "fps": 12,
+      "frames": [
+        [
+          2,
+          162,
+          16,
+          16
+        ],
+        [
+          22,
+          162,
+          16,
+          16
+        ],
+        [
+          42,
+          162,
+          16,
+          16
+        ],
+        [
+          62,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "shadow_orb_up": {
+      "fps": 12,
+      "frames": [
+        [
+          82,
+          162,
+          16,
+          16
+        ],
+        [
+          102,
+          162,
+          16,
+          16
+        ],
+        [
+          122,
+          162,
+          16,
+          16
+        ],
+        [
+          142,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "shadow_orb_down": {
+      "fps": 12,
+      "frames": [
+        [
+          162,
+          162,
+          16,
+          16
+        ],
+        [
+          182,
+          162,
+          16,
+          16
+        ],
+        [
+          202,
+          162,
+          16,
+          16
+        ],
+        [
+          222,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "shadow_orb_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          242,
+          162,
+          16,
+          16
+        ],
+        [
+          262,
+          162,
+          16,
+          16
+        ],
+        [
+          282,
+          162,
+          16,
+          16
+        ],
+        [
+          302,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "bubble_right": {
+      "fps": 12,
+      "frames": [
+        [
+          322,
+          162,
+          16,
+          16
+        ],
+        [
+          342,
+          162,
+          16,
+          16
+        ],
+        [
+          362,
+          162,
+          16,
+          16
+        ],
+        [
+          382,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "bubble_left": {
+      "fps": 12,
+      "frames": [
+        [
+          402,
+          162,
+          16,
+          16
+        ],
+        [
+          422,
+          162,
+          16,
+          16
+        ],
+        [
+          442,
+          162,
+          16,
+          16
+        ],
+        [
+          462,
+          162,
+          16,
+          16
+        ]
+      ]
+    },
+    "bubble_up": {
+      "fps": 12,
+      "frames": [
+        [
+          482,
+          162,
+          16,
+          16
+        ],
+        [
+          2,
+          182,
+          16,
+          16
+        ],
+        [
+          22,
+          182,
+          16,
+          16
+        ],
+        [
+          42,
+          182,
+          16,
+          16
+        ]
+      ]
+    },
+    "bubble_down": {
+      "fps": 12,
+      "frames": [
+        [
+          62,
+          182,
+          16,
+          16
+        ],
+        [
+          82,
+          182,
+          16,
+          16
+        ],
+        [
+          102,
+          182,
+          16,
+          16
+        ],
+        [
+          122,
+          182,
+          16,
+          16
+        ]
+      ]
+    },
+    "bubble_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          142,
+          182,
+          16,
+          16
+        ],
+        [
+          162,
+          182,
+          16,
+          16
+        ],
+        [
+          182,
+          182,
+          16,
+          16
+        ],
+        [
+          202,
+          182,
+          16,
+          16
+        ]
+      ]
+    },
+    "bomb_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          222,
+          182,
+          16,
+          16
+        ],
+        [
+          242,
+          182,
+          16,
+          16
+        ],
+        [
+          262,
+          182,
+          16,
+          16
+        ],
+        [
+          282,
+          182,
+          16,
+          16
+        ]
+      ]
+    },
+    "magic_orb_impact": {
+      "fps": 16,
+      "frames": [
+        [
+          302,
+          182,
+          16,
+          16
+        ],
+        [
+          322,
+          182,
+          16,
+          16
+        ],
+        [
+          342,
+          182,
+          16,
+          16
+        ],
+        [
+          362,
+          182,
+          16,
+          16
+        ]
+      ]
+    },
+    "quake": {
+      "fps": 12.5,
+      "frames": [
+        [
+          382,
+          182,
+          32,
+          32
+        ],
+        [
+          418,
+          182,
+          32,
+          32
+        ],
+        [
+          454,
+          182,
+          32,
+          32
+        ],
+        [
+          2,
+          218,
+          32,
+          32
+        ],
+        [
+          38,
+          218,
+          32,
+          32
+        ]
+      ]
+    },
+    "shockwave": {
+      "fps": 15,
+      "frames": [
+        [
+          74,
+          218,
+          64,
+          32
+        ],
+        [
+          142,
+          218,
+          64,
+          32
+        ],
+        [
+          210,
+          218,
+          64,
+          32
+        ],
+        [
+          278,
+          218,
+          64,
+          32
+        ],
+        [
+          346,
+          218,
+          64,
+          32
+        ],
+        [
+          414,
+          218,
+          64,
+          32
+        ]
+      ]
+    },
+    "cast": {
+      "fps": 16,
+      "frames": [
+        [
+          482,
+          218,
+          16,
+          16
+        ],
+        [
+          2,
+          254,
+          16,
+          16
+        ],
+        [
+          22,
+          254,
+          16,
+          16
+        ],
+        [
+          42,
+          254,
+          16,
+          16
+        ]
+      ]
+    },
+    "overlay_poison": {
+      "fps": 8,
+      "frames": [
+        [
+          62,
+          254,
+          32,
+          32
+        ],
+        [
+          98,
+          254,
+          32,
+          32
+        ],
+        [
+          134,
+          254,
+          32,
+          32
+        ],
+        [
+          170,
+          254,
+          32,
+          32
+        ]
+      ]
+    },
+    "status_poison": {
+      "fps": 1,
+      "frames": [
+        [
+          206,
+          254,
+          16,
+          16
+        ]
+      ]
+    },
+    "overlay_burn": {
+      "fps": 8,
+      "frames": [
+        [
+          226,
+          254,
+          32,
+          32
+        ],
+        [
+          262,
+          254,
+          32,
+          32
+        ],
+        [
+          298,
+          254,
+          32,
+          32
+        ],
+        [
+          334,
+          254,
+          32,
+          32
+        ]
+      ]
+    },
+    "status_burn": {
+      "fps": 1,
+      "frames": [
+        [
+          370,
+          254,
+          16,
+          16
+        ]
+      ]
+    },
+    "overlay_slow": {
+      "fps": 8,
+      "frames": [
+        [
+          390,
+          254,
+          32,
+          32
+        ],
+        [
+          426,
+          254,
+          32,
+          32
+        ],
+        [
+          462,
+          254,
+          32,
+          32
+        ],
+        [
+          2,
+          290,
+          32,
+          32
+        ]
+      ]
+    },
+    "status_slow": {
+      "fps": 1,
+      "frames": [
+        [
+          38,
+          290,
+          16,
+          16
+        ]
+      ]
+    }
+  },
+  "provenance": [
+    {
+      "clip": "arrow_right",
+      "source": "03_Projectiles_FX/Projectiles/arrow_right_2f.png",
+      "sha256": "11d130ed361e0351c9abafea2a1859451b9e670c5ec8ecf974e9aac2a37da27c",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "arrow_left",
+      "source": "03_Projectiles_FX/Projectiles/arrow_left_2f.png",
+      "sha256": "9f2159671fb3a64a2870a84e7c1b6fa4d199b5040f4dfd57abd096be808ec064",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "arrow_up",
+      "source": "03_Projectiles_FX/Projectiles/arrow_up_2f.png",
+      "sha256": "f1b400d31625fde8e9029652ceb5d21338990c1ce5e92ae0268d61c40aa30e89",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "arrow_down",
+      "source": "03_Projectiles_FX/Projectiles/arrow_down_2f.png",
+      "sha256": "eb7853af8b99ea14f2edfeac6d5e5392f9278b0196bdcf8e82286ea6963827ff",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "arrow_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/arrow_impact_4f.png",
+      "sha256": "dc4d18012723da7800075c10ae17649e962c6f99ca50bbf7ff1ffe2b44b91eac",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "rock_right",
+      "source": "03_Projectiles_FX/Projectiles/rock_right_4f.png",
+      "sha256": "bcbe9ac13c6e3073e3c49a210b6b1ddbe44464e3d6a06e3306796ca44ae97f25",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "rock_left",
+      "source": "03_Projectiles_FX/Projectiles/rock_left_4f.png",
+      "sha256": "e412334080fd3d5617e5cb19bbca6728ce1e15d3b50a09c6d3a6ed1d520e3cdf",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "rock_up",
+      "source": "03_Projectiles_FX/Projectiles/rock_up_4f.png",
+      "sha256": "38bd860f08e47b92dad9c96ac896b6810c21b3ce3874cb05abfa9175b8268169",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "rock_down",
+      "source": "03_Projectiles_FX/Projectiles/rock_down_4f.png",
+      "sha256": "0c276c5060ed948d21baddd484295944fe3af5cad5517f21c8988aecb0d56541",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "rock_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/rock_impact_4f.png",
+      "sha256": "26344fcda466b3d99a0720bfe7634257e2eba47e79000b82970f30a3ea032e27",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "coin_shot_right",
+      "source": "03_Projectiles_FX/Projectiles/coin_shot_right_pingpong_3f.png",
+      "sha256": "8d4d8a54a38e3b23cf39237a94a9f31c3481d827b0041748ea060bac6be98a44",
+      "count": 3,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "coin_shot_left",
+      "source": "03_Projectiles_FX/Projectiles/coin_shot_left_pingpong_3f.png",
+      "sha256": "dd30e70d941cc65f9f3fbc1909bf78e900b6f30fa04f7233fa9a1a5653652fdb",
+      "count": 3,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "coin_shot_up",
+      "source": "03_Projectiles_FX/Projectiles/coin_shot_up_pingpong_3f.png",
+      "sha256": "0df24bdb755f5d9af51582223031e5644a84657fc577b47d738823edea1e5363",
+      "count": 3,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "coin_shot_down",
+      "source": "03_Projectiles_FX/Projectiles/coin_shot_down_pingpong_3f.png",
+      "sha256": "bebe25f9b51aecad0ec3ac837726bc73a00aa7f74f440fa3519f71e8a1975560",
+      "count": 3,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "coin_shot_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/coin_shot_impact_4f.png",
+      "sha256": "0ececf33d649cf158a428ead71a6c57378980714a36e1ad38a77e845d1a6715a",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "seed_right",
+      "source": "03_Projectiles_FX/Projectiles/seed_right_2f.png",
+      "sha256": "84c8cd68080110879aa4e7967f6092fae1d8722862534b57f1deef2e91271f71",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "seed_left",
+      "source": "03_Projectiles_FX/Projectiles/seed_left_2f.png",
+      "sha256": "caec0e29902b0231bfa4c7274afbb8286b1903b947401c482cb75250ad4de7eb",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "seed_up",
+      "source": "03_Projectiles_FX/Projectiles/seed_up_2f.png",
+      "sha256": "b6cc303f989e07a3a19fdbd8e72376d222b6f5f46c30222d19560be512711977",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "seed_down",
+      "source": "03_Projectiles_FX/Projectiles/seed_down_2f.png",
+      "sha256": "9baec24c0525f5d46c7e1ae9ca84aaca51ba616de55e667cd0c406a7a7768a57",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "seed_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/seed_impact_4f.png",
+      "sha256": "84d65b3d6d34a666a74bb27f4997d28c653a8a30b1e3fc19779b6537c332a238",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "thorn_right",
+      "source": "03_Projectiles_FX/Projectiles/thorn_right_2f.png",
+      "sha256": "bfbb25659248d81cbd77f14eca935709f901809eb4621bd2f1dce3c80e68deb1",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "thorn_left",
+      "source": "03_Projectiles_FX/Projectiles/thorn_left_2f.png",
+      "sha256": "7ab76b6b81f29a47de7d561616455f99c0511056111922396d50fbae2f39bcdb",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "thorn_up",
+      "source": "03_Projectiles_FX/Projectiles/thorn_up_2f.png",
+      "sha256": "33d96c4de1b6f442d52c15e9d0fc0eb5c9422018eb8ef9059134f8dbdcd3461a",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "thorn_down",
+      "source": "03_Projectiles_FX/Projectiles/thorn_down_2f.png",
+      "sha256": "45a473e99c4ca9be131c542872be074fb84c0db21b2fa68c73c813a213a84bf1",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "thorn_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/thorn_impact_4f.png",
+      "sha256": "afab7d2ed845f62388b9bd55c3787ee6bb29c544c0c05238257456f31c18df7a",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "spore_right",
+      "source": "03_Projectiles_FX/Projectiles/spore_right_4f.png",
+      "sha256": "fc05077245978fcb2001fefe6f6b9ad16bc03e41fdfd8f805d34bade9219e8ee",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "spore_left",
+      "source": "03_Projectiles_FX/Projectiles/spore_left_4f.png",
+      "sha256": "dbed68a871151a70571d7550817f32ae0e5b450597f18a786d8c9a321604b200",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "spore_up",
+      "source": "03_Projectiles_FX/Projectiles/spore_up_4f.png",
+      "sha256": "1e3c272cfa128e5f3e305e7271dc894a3fb57c9c2119c8d586cafe6e5b6abc37",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "spore_down",
+      "source": "03_Projectiles_FX/Projectiles/spore_down_4f.png",
+      "sha256": "c27b6db6c0172599c7decdcc20b9307cb6345efa3bc694bb0a3956b80786695e",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "spore_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/spore_impact_4f.png",
+      "sha256": "1f40b01a8ff6d40948190dd283838199ac762888014bbd8fe4ad26c8fa112d0b",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "poison_spit_right",
+      "source": "03_Projectiles_FX/Projectiles/poison_spit_right_4f.png",
+      "sha256": "89dfdfe506f35e13aedd9825271fd45008a646aaf007f04ab293328cfe4a5cee",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "poison_spit_left",
+      "source": "03_Projectiles_FX/Projectiles/poison_spit_left_4f.png",
+      "sha256": "95b0a153a65ab4494c190684984c440430a840bbba7a439e2889f79630c74ad6",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "poison_spit_up",
+      "source": "03_Projectiles_FX/Projectiles/poison_spit_up_4f.png",
+      "sha256": "062e118b770719c798aa024efbce0bb78bd29b6c7243a84d7f0450f95fb5bd9a",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "poison_spit_down",
+      "source": "03_Projectiles_FX/Projectiles/poison_spit_down_4f.png",
+      "sha256": "864dd4c5ecad02bdf870f8d45a0dcdd983b3c63acaedd8c84fedb5dadf264000",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "poison_spit_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/poison_spit_impact_4f.png",
+      "sha256": "0f77c95043f60a61b7f71cf52675f4ff0d6023733894c55f9e57e68cce403c61",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "fireball_right",
+      "source": "03_Projectiles_FX/Projectiles/fireball_right_4f.png",
+      "sha256": "7250f2c3ea5610ca103285c7730e457b899ebbfee4dab4c176e8033d1fe25aea",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "fireball_left",
+      "source": "03_Projectiles_FX/Projectiles/fireball_left_4f.png",
+      "sha256": "e9b5fae99fc1a7091c589707ffa396bf4971568bd056cf47a539e9232b425a7a",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "fireball_up",
+      "source": "03_Projectiles_FX/Projectiles/fireball_up_4f.png",
+      "sha256": "b448226ce50ea34ca44cf331714ed7d828bc2ce85044101491fe0dd3b151ce31",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "fireball_down",
+      "source": "03_Projectiles_FX/Projectiles/fireball_down_4f.png",
+      "sha256": "1e91166ab1f857b4534150a2b4d0c5450b3657cb527e562361c40b95b6b4e730",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "fireball_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/fireball_impact_4f.png",
+      "sha256": "f351dee53308a7f3f29790986eaea13173d0e8b961c8bced8c09c047f698eba0",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "lava_glob_right",
+      "source": "03_Projectiles_FX/Projectiles/lava_glob_right_4f.png",
+      "sha256": "e9546eb27c1164528e2b36dc507d4dab6367de3fc2887b4c6e8af2273fbff5c7",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "lava_glob_left",
+      "source": "03_Projectiles_FX/Projectiles/lava_glob_left_4f.png",
+      "sha256": "c5acbe457c0025d94dab24c87320bf347f7cc63f52b9dd3ba2ee220c4a8a9c4e",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "lava_glob_up",
+      "source": "03_Projectiles_FX/Projectiles/lava_glob_up_4f.png",
+      "sha256": "ab11b6989f27d4e688b88804e56fc255881a75f21892b21f00890cc32724ff02",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "lava_glob_down",
+      "source": "03_Projectiles_FX/Projectiles/lava_glob_down_4f.png",
+      "sha256": "16cc1a74c916dc8621da9f1996ab92f8ab19fd7a628f29d7b8b398313a60fff1",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "lava_glob_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/lava_glob_impact_4f.png",
+      "sha256": "8f46a12d87bba0c45c30833bf17339aa0fbc94d1fca6376db6e9fa094dc5f099",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "ice_shard_right",
+      "source": "03_Projectiles_FX/Projectiles/ice_shard_right_2f.png",
+      "sha256": "f78c53ae3cd584248e3d3eaedaedf1ec03adac703911cbf97108117e09d70e57",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "ice_shard_left",
+      "source": "03_Projectiles_FX/Projectiles/ice_shard_left_2f.png",
+      "sha256": "bc52ebfe7f43c8a3ec464e7efa33d6cf98fe4f38784a490451ef3c5f592fb7d3",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "ice_shard_up",
+      "source": "03_Projectiles_FX/Projectiles/ice_shard_up_2f.png",
+      "sha256": "533c1f50376e9b7425cc2428d87fcebebafebfdb28d09b04641f73f1d9812902",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "ice_shard_down",
+      "source": "03_Projectiles_FX/Projectiles/ice_shard_down_2f.png",
+      "sha256": "be0a05b7d2085721faf8f79258166e2834147685a8ed1d1cecd2a6d9e6550bbe",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "ice_shard_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/ice_shard_impact_4f.png",
+      "sha256": "21245c71a27e5f9c9fa2d504b6caaaae7ab5c45babd6adb6ff1fab3a651637c0",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "snowball_right",
+      "source": "03_Projectiles_FX/Projectiles/snowball_right_2f.png",
+      "sha256": "1f62ff3c8876aa8e50ae845bce97a639f0c46467ca34c47ec26b317e238f1b1c",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "snowball_left",
+      "source": "03_Projectiles_FX/Projectiles/snowball_left_2f.png",
+      "sha256": "afa947e6fec1614c8d4e03d6d916582a86bcfe181e30156858ca781286ea1532",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "snowball_up",
+      "source": "03_Projectiles_FX/Projectiles/snowball_up_2f.png",
+      "sha256": "f0d29d64044c66833031f69153bbbfd15163c2d1165c8784d7489ea9fb88f626",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "snowball_down",
+      "source": "03_Projectiles_FX/Projectiles/snowball_down_2f.png",
+      "sha256": "2376551d5ffb1b2eef1da8cc25c129e9d8ec8d0e0a6666fa0bbc6fc33baaff5b",
+      "count": 2,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "snowball_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/snowball_impact_4f.png",
+      "sha256": "d2360c68c2a85822f7dbfc152d98171c438239cdf21dba662d7003ba6b742ced",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "hex_bolt_right",
+      "source": "03_Projectiles_FX/Projectiles/hex_bolt_right_4f.png",
+      "sha256": "f103be1be5adab868e19861b649ed3cb7b9c98aea8975d33a366046b43b2741c",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "hex_bolt_left",
+      "source": "03_Projectiles_FX/Projectiles/hex_bolt_left_4f.png",
+      "sha256": "14fc05040a0530539a543904dcf3c9d3d4668805e688b6d08ca18e8b5a8eb9e9",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "hex_bolt_up",
+      "source": "03_Projectiles_FX/Projectiles/hex_bolt_up_4f.png",
+      "sha256": "fc7ca914c1d6b46c0cec0acfceb1fbf7155678e9bf45e9f95cd7f3b81abead63",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "hex_bolt_down",
+      "source": "03_Projectiles_FX/Projectiles/hex_bolt_down_4f.png",
+      "sha256": "618a472f4a21d7b25844d6cfca37e43fd8f5bef0b41bda275cab9014840646e3",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "hex_bolt_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/hex_bolt_impact_4f.png",
+      "sha256": "4d38e24cf20d29df5730c30982eed09a38871aa1057627bafa262e7dd04cd8ef",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "shadow_orb_right",
+      "source": "03_Projectiles_FX/Projectiles/shadow_orb_right_4f.png",
+      "sha256": "57159f0d666d4754e9d102c4ed02979d87f1ba4ac3324a1a54f3cc32fe1d58d7",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "shadow_orb_left",
+      "source": "03_Projectiles_FX/Projectiles/shadow_orb_left_4f.png",
+      "sha256": "48588124c3a07d030832cc36e1727f5230e515903306c891e3b77bed7ac95bd4",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "shadow_orb_up",
+      "source": "03_Projectiles_FX/Projectiles/shadow_orb_up_4f.png",
+      "sha256": "c2352424381577e36e234d00c8f319e72c96465d9ea03b9362f616f332d15097",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "shadow_orb_down",
+      "source": "03_Projectiles_FX/Projectiles/shadow_orb_down_4f.png",
+      "sha256": "3ba4a01768e25ec55f7b1daf845b1d83878a5c52fefb5c5f97c0df0bdf336c9d",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "shadow_orb_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/shadow_orb_impact_4f.png",
+      "sha256": "bcfcf64054107d481a2ba07a5f25dee28f7dd872a1c43c8606025ab5674ab329",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "bubble_right",
+      "source": "03_Projectiles_FX/Projectiles/bubble_right_4f.png",
+      "sha256": "600ebc1377d01bd3e8d086c952e1d80a457cd83ba83a86785740fe85e601b195",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "bubble_left",
+      "source": "03_Projectiles_FX/Projectiles/bubble_left_4f.png",
+      "sha256": "00762021a49599d9db12eb064b588eb4a3536b53f804fa5a60d1b54fca024eac",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "bubble_up",
+      "source": "03_Projectiles_FX/Projectiles/bubble_up_4f.png",
+      "sha256": "767d9feb577ddebbd4ab79031ba9018992a2e7928a3d158619a42d58a6da0256",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "bubble_down",
+      "source": "03_Projectiles_FX/Projectiles/bubble_down_4f.png",
+      "sha256": "29201d62d2fb43751d147a12f821598b8aa23ec839a2c4d73ac04b5313bb9f43",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 12
+    },
+    {
+      "clip": "bubble_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/bubble_impact_4f.png",
+      "sha256": "158fd087f2faca785c36f494ede5bbe33803a31a7b863f58fe5154170c07def5",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "bomb_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/bomb_impact_4f.png",
+      "sha256": "1163604d0692811c59c24c1a3010ca1e7e95880d378e6da52f66977322fef06a",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "magic_orb_impact",
+      "source": "03_Projectiles_FX/Projectiles/Impacts/magic_orb_impact_4f.png",
+      "sha256": "c5155a4295375b229827761d08a0dcafd2305b7b11d8c1933c25573fca9d105b",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "quake",
+      "source": "03_Projectiles_FX/Combat_FX/ground_quake_32x32_5f.png",
+      "sha256": "6b72453be864ad83a789f3bbf1c3e4a9f1d9ea45a31926a7b0b53ee817fa30bc",
+      "count": 5,
+      "cell": [
+        32,
+        32
+      ],
+      "fps": 12.5
+    },
+    {
+      "clip": "shockwave",
+      "source": "03_Projectiles_FX/Combat_FX/shockwave_64x32_6f.png",
+      "sha256": "1146c7321b9fe0938f541ded986fdda2eb58636deddb5e7d4cd3f702c9c30314",
+      "count": 6,
+      "cell": [
+        64,
+        32
+      ],
+      "fps": 15
+    },
+    {
+      "clip": "cast",
+      "source": "03_Projectiles_FX/Combat_FX/hit_spark_16x16_4f.png",
+      "sha256": "2cb6e1a98d86052c17ef548126246fcc58055bdb7a4ce87bca9876e8eebdd2af",
+      "count": 4,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 16
+    },
+    {
+      "clip": "overlay_poison",
+      "source": "04_Status_Effects/Overlays_32x32/overlay_poison_32x32_4f.png",
+      "sha256": "e44a3efee7bf4c304ad829469f70cbd70dbba60a6a096d8f87d738593372c722",
+      "count": 4,
+      "cell": [
+        32,
+        32
+      ],
+      "fps": 8
+    },
+    {
+      "clip": "status_poison",
+      "source": "04_Status_Effects/Icons/status_poison.png",
+      "sha256": "d2517ea2a63ddc5567bb8f90767460777cc65d7197b8ab2c8873822ecc9e8aed",
+      "count": 1,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 1
+    },
+    {
+      "clip": "overlay_burn",
+      "source": "04_Status_Effects/Overlays_32x32/overlay_burn_32x32_4f.png",
+      "sha256": "41d6ad4e19556a75c4d5637576d9a1667ebfe13abaee5db603f0fd029615d17f",
+      "count": 4,
+      "cell": [
+        32,
+        32
+      ],
+      "fps": 8
+    },
+    {
+      "clip": "status_burn",
+      "source": "04_Status_Effects/Icons/status_burn.png",
+      "sha256": "88304a1ecb71312e0c9cea8ba5829e9c6b2b19e6daef1af2268d80fa48bc1a84",
+      "count": 1,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 1
+    },
+    {
+      "clip": "overlay_slow",
+      "source": "04_Status_Effects/Overlays_32x32/overlay_slow_32x32_4f.png",
+      "sha256": "7ef04a8fadc787612456ed549b0814aad3b7c4d9b3fa6b469630cc5535a3c7ab",
+      "count": 4,
+      "cell": [
+        32,
+        32
+      ],
+      "fps": 8
+    },
+    {
+      "clip": "status_slow",
+      "source": "04_Status_Effects/Icons/status_slow.png",
+      "sha256": "5eb95848debb9e3c4e8d632871885f4040e266d10ec459cffe517bbdd2a11828",
+      "count": 1,
+      "cell": [
+        16,
+        16
+      ],
+      "fps": 1
+    }
+  ]
+}

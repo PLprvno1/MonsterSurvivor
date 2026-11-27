@@ -6,7 +6,11 @@ public enum PickupType {
     HEALTH_BOX("potion_green","H",.3f,1,.45f,true),
     SPEED_BOX("potion_blue","S",.25f,.7f,1,true),
     HEALTH_DROP("potion_green","+",.3f,1,.45f,false),
-    WEAPON_BOX("pickup_chest","W",.85f,.4f,1,true);
+    TREASURE_CHEST("pickup_chest","*",.95f,.72f,.28f,true),
+    /** Legacy identifiers are normalized to TREASURE_CHEST at spawn time. */
+    WEAPON_BOX("pickup_chest","W",.85f,.4f,1,true),
+    SKILL_BOX("pickup_chest","*",.3f,1,.85f,true),
+    COIN("coin_shot_right","C",1,.78f,.24f,false);
     public final String region,label;
     public final float r,g,b;
     public final boolean box;

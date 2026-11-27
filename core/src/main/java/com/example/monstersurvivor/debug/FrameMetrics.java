@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 /** Opt-in instrumentation only. Normal matches have no instance and no nanoTime calls. */
 public final class FrameMetrics {
-    public enum Part { PLAYER, AI, ASTAR, SEPARATION, COLLISION, ANIMATION, COMBAT, SPAWN, PICKUPS, WORLD_RENDER, HUD, PROJECTILES, NIGHT_RENDER, WEAPON_RENDER }
+    public enum Part { PLAYER, AI, ASTAR, SEPARATION, COLLISION, ANIMATION, COMBAT, SPAWN, PICKUPS, WORLD_RENDER, HUD, PROJECTILES, NIGHT_RENDER, WEAPON_RENDER, ENEMY_SKILLS, ENEMY_PROJECTILES, ENEMY_FX }
     private final long[] nanos=new long[Part.values().length];
     public boolean active=true;
     public int separationPairs,occupancyChecks;

@@ -18,6 +18,8 @@
     <dimen name="card_corner_radius">6dp</dimen>
     <dimen name="card_elevation">4dp</dimen>
     <dimen name="pixel_border_width">2dp</dimen>
+    <dimen name="dialog_min_width_major">440dp</dimen>
+    <dimen name="dialog_min_width_minor">320dp</dimen>
 
     <!-- Typography -->
     <dimen name="text_size_title">26sp</dimen>

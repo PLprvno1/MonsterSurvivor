@@ -14,6 +14,7 @@
         <item name="android:textColorSecondary">@color/text_secondary</item>
         <item name="android:fontFamily">sans-serif-medium</item>
         <item name="alertDialogTheme">@style/Theme.MonsterSurvivor.Dialog</item>
+        <item name="materialAlertDialogTheme">@style/Theme.MonsterSurvivor.Dialog</item>
     </style>
 
     <!-- Forest Theme (Default) -->
@@ -34,12 +35,61 @@
         <item name="android:windowBackground">@drawable/bg_fantasy_dark</item>
     </style>
 
-    <!-- Fantasy Dialog Theme -->
+    <!-- Fantasy Dialog Theme (Single clean frame, no nested borders, proper landscape sizing) -->
     <style name="Theme.MonsterSurvivor.Dialog" parent="Theme.MaterialComponents.Dialog.Alert">
-        <item name="android:background">@drawable/panel_fantasy_frame</item>
+        <item name="android:windowBackground">@drawable/dialog_fantasy_window_bg</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:backgroundDimAmount">0.65</item>
         <item name="android:textColorPrimary">@color/text_primary</item>
         <item name="android:textColorSecondary">@color/text_secondary</item>
         <item name="colorAccent">@color/gold_bright</item>
+        <item name="android:windowMinWidthMajor">@dimen/dialog_min_width_major</item>
+        <item name="android:windowMinWidthMinor">@dimen/dialog_min_width_minor</item>
+        <item name="materialAlertDialogTitleTextStyle">@style/TextAppearance.MonsterSurvivor.Dialog.Title</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/TextAppearance.MonsterSurvivor.Dialog.Body</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Widget.MonsterSurvivor.Dialog.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Widget.MonsterSurvivor.Dialog.Button.Negative</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Widget.MonsterSurvivor.Dialog.Button.Neutral</item>
+    </style>
+
+    <style name="TextAppearance.MonsterSurvivor.Dialog.Title" parent="TextAppearance.MaterialComponents.Headline6">
+        <item name="android:textColor">@color/gold_bright</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.MonsterSurvivor.Dialog.Body" parent="TextAppearance.MaterialComponents.Body2">
+        <item name="android:textColor">@color/text_primary</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+    </style>
+
+    <style name="Widget.MonsterSurvivor.Dialog.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/gold_bright</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minWidth">80dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="rippleColor">@color/gold_mid</item>
+    </style>
+
+    <style name="Widget.MonsterSurvivor.Dialog.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/text_secondary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minWidth">80dp</item>
+        <item name="android:minHeight">40dp</item>
+        <item name="rippleColor">@color/forest_primary_light</item>
+    </style>
+
+    <style name="Widget.MonsterSurvivor.Dialog.Button.Neutral" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/text_muted</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:minWidth">80dp</item>
+        <item name="android:minHeight">40dp</item>
     </style>
 
     <!-- Fantasy Toolbar Style -->
@@ -70,6 +120,9 @@
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:drawablePadding">4dp</item>
         <item name="android:stateListAnimator">@null</item>
         <item name="backgroundTint" tools:ignore="PrivateResource">@null</item>
     </style>
@@ -80,6 +133,9 @@
         <item name="android:textColor">@color/text_primary</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/text_size_body</item>
+        <item name="android:paddingStart">8dp</item>
+        <item name="android:paddingEnd">8dp</item>
+        <item name="android:drawablePadding">4dp</item>
         <item name="android:stateListAnimator">@null</item>
         <item name="backgroundTint" tools:ignore="PrivateResource">@null</item>
     </style>

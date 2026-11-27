@@ -81,7 +81,7 @@ public final class CombatSmokeLauncher extends ApplicationAdapter {
         p=screen.getPlayer();x=p.x;screen.getControls().keyDown(Input.Keys.D);tick(60,1f/60);screen.getControls().keyUp(Input.Keys.D);
         check(Math.abs(p.x-x-80)<.1f,"Gameplay keyboard speed remains 80 units/s");
         check(Math.abs(screen.getCamera().position.x-p.x)<1,"Established pixel camera follows movement");
-        screen.resize(3200,100);screen.render(0);check(screen.getCamera().viewportWidth<=1600 && screen.getCamera().viewportHeight<=1600,"Extreme viewport respects map extent");
+        screen.resize(3200,100);screen.render(0);check(screen.getCamera().viewportWidth<=screen.getMap().pixelWidth() && screen.getCamera().viewportHeight<=screen.getMap().pixelHeight(),"Extreme viewport respects map extent");
         screen.resize(Gdx.graphics.getWidth(),Gdx.graphics.getHeight());
         // Default spawning runs through the actual screen, not only the model.
         screen(new GameConfig.Builder().playerHp(10000).build());tick(120,.1f);

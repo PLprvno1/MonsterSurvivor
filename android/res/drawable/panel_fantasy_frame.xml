@@ -3,7 +3,7 @@
     android:shape="rectangle">
     <solid android:color="@color/bg_forest_panel" />
     <stroke
-        android:width="3dp"
+        android:width="2dp"
         android:color="@color/gold_border" />
     <corners android:radius="10dp" />
     <padding

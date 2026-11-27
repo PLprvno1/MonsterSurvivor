@@ -51,7 +51,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="ÂM THANH &amp; NHẠC NỀN"
+                android:text="@string/section_audio"
                 android:textColor="@color/gold_bright"
                 android:textSize="13sp"
                 android:textStyle="bold"
@@ -120,7 +120,7 @@
 
         </LinearLayout>
 
-        <!-- Column 2: System, Theme, About -->
+        <!-- Column 2: System, Theme, Language, About -->
         <LinearLayout
             android:layout_width="0dp"
             android:layout_height="match_parent"
@@ -133,7 +133,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HỆ THỐNG &amp; GIAO DIỆN"
+                android:text="@string/section_system"
                 android:textColor="@color/gold_bright"
                 android:textSize="13sp"
                 android:textStyle="bold"
@@ -150,6 +150,40 @@
                 app:thumbTint="@color/gold_bright"
                 app:trackTint="@color/forest_primary_light" />
 
+            <!-- Language RadioGroup -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/setting_language_title"
+                android:textColor="@color/text_secondary"
+                android:textSize="12sp"
+                android:layout_marginTop="4dp" />
+
+            <RadioGroup
+                android:id="@+id/rg_language"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="6dp">
+
+                <RadioButton
+                    android:id="@+id/rb_lang_vi"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lang_vietnamese"
+                    android:textColor="@color/text_primary"
+                    android:checked="true" />
+
+                <RadioButton
+                    android:id="@+id/rb_lang_en"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/lang_english"
+                    android:textColor="@color/text_primary" />
+            </RadioGroup>
+
             <!-- Theme RadioGroup -->
             <TextView
                 android:layout_width="wrap_content"
@@ -157,7 +191,7 @@
                 android:text="@string/setting_theme_title"
                 android:textColor="@color/text_secondary"
                 android:textSize="12sp"
-                android:layout_marginTop="4dp" />
+                android:layout_marginTop="2dp" />
 
             <RadioGroup
                 android:id="@+id/rg_theme"
@@ -198,6 +232,10 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:layout_marginEnd="4dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="@string/setting_reset_defaults"
                     android:textSize="12sp" />
 
@@ -208,6 +246,10 @@
                     android:layout_height="40dp"
                     android:layout_weight="1"
                     android:layout_marginStart="4dp"
+                    android:paddingStart="4dp"
+                    android:paddingEnd="4dp"
+                    android:maxLines="1"
+                    android:ellipsize="end"
                     android:text="@string/menu_about"
                     android:textSize="12sp" />
             </LinearLayout>

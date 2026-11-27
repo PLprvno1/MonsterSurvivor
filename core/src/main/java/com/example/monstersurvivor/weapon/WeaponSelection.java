@@ -22,12 +22,14 @@ public final class WeaponSelection {
     public WeaponOffer get(int index) {if(index<0 || index>=count)throw new IndexOutOfBoundsException();return offers[index];}
     public static boolean hasReward(WeaponLoadout loadout,Player player) {
         if(!player.alive())return false;
-        for(WeaponType type:TYPES)if(loadout.canGrant(type))return true;
+        for(WeaponType type:TYPES)if(loadout.canGrant(type) || loadout.canEvolve(type))return true;
         return player.stats.damage()<Integer.MAX_VALUE || player.maxHp()<Integer.MAX_VALUE || player.stats.speed()<20;
     }
     public boolean open(long id,WeaponLoadout loadout,Player player) {
         if(pending!=-1 || !player.alive())return false;
         pending=id;token=NEXT_TOKEN.incrementAndGet();count=0;int n=0;
+        // Every eligible owned evolution is guaranteed on this next box (at most three).
+        for(WeaponType type:TYPES)if(loadout.canEvolve(type))offers[count++]=WeaponOffer.evolution(type,strings);
         for(WeaponType type:TYPES)if(loadout.canGrant(type) && (loadout.size()>1 || type!=WeaponType.SWORD))candidates[n++]=type;
         // First box offers all three new weapons; later boxes randomize eligible unique types.
         if(loadout.size()>1)for(int i=n-1;i>0;i--) {int j=random.nextInt(i+1);WeaponType t=candidates[i];candidates[i]=candidates[j];candidates[j]=t;}

@@ -1,0 +1,8 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application>
+        <activity android:name="com.example.monstersurvivor.android.DiagnosticLauncher"
+            android:exported="true" android:screenOrientation="landscape"
+            android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenSize|screenLayout"
+            android:excludeFromRecents="true" android:theme="@style/GdxTheme" />
+    </application>
+</manifest>

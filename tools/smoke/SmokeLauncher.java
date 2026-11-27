@@ -58,7 +58,7 @@ public class SmokeLauncher extends ApplicationAdapter {
         com.badlogic.gdx.graphics.g2d.SpriteBatch validationBatch=new com.badlogic.gdx.graphics.g2d.SpriteBatch();
         int actualW=Gdx.graphics.getWidth(),actualH=Gdx.graphics.getHeight();
         screen.resize(3200,100);screen.render(0);
-        check(screen.getCamera().viewportWidth<=1600&&screen.getCamera().viewportHeight<=1600,"Extreme window aspect keeps camera inside map");
+        check(screen.getCamera().viewportWidth<=screen.getMap().pixelWidth()&&screen.getCamera().viewportHeight<=screen.getMap().pixelHeight(),"Extreme window aspect keeps camera inside map");
         screen.resize(actualW,actualH);
         screen.render(0);capture("desktop-start.png");
         check(screen.getAssets().textureCount()==16,"Exactly 16 runtime textures including pickups and shared weapon texel");

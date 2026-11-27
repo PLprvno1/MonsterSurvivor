@@ -1,0 +1,5 @@
+Asset: FREE Top Down Pixel Art Wizard
+Author/source: GandalfHardcore (the supplied source folder includes gandalfhardcore.itch.io)
+Imported file: Wizard sheet.png, trimmed into the Mage runtime atlas without scaling its frames.
+
+The supplied READ ME grants use in commercial and non-commercial video games/projects and allows modification. It prohibits reselling, repackaging, or redistributing the assets, AI training, NFT projects, and use in game development tools or printed materials. It does not state a credit requirement. Keep the wizard artwork embedded in the completed game; do not distribute the source sheet or atlas as a reusable asset.
